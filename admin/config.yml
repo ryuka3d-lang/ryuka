@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main # Si tu rama principal se llama "master", cambiá "main" por "master"
+
+media_folder: "" # Guarda las imágenes nuevas en la carpeta raíz (como tus fotos actuales)
+public_folder: ""
+
+collections:
+  - name: "catalogo"
+    label: "Catálogo de Productos Ryuka"
+    file: "productos.json" # Aquí se guardará la lista de productos
+    create: true # Permite crear productos nuevos desde el panel
+    fields:
+      - label: "Lista de Productos"
+        name: "productos"
+        widget: "list"
+        summary: "{{fields.title}}" # Muestra el nombre del producto en la lista
+        fields:
+          - { label: "ID (número único)", name: "id", widget: "number" }
+          - { label: "Nombre del Producto", name: "title", widget: "string" }
+          - { label: "Categoría", name: "category", widget: "string", hint: "Ej: agencia llavero (separadas por espacio)" }
+          - { label: "Descripción Corta", name: "shortDesc", widget: "string" }
+          - { label: "Descripción Completa", name: "longDesc", widget: "text" }
+          - { label: "Imagen (ej: 20.jpeg)", name: "image", widget: "image" }
+          - label: "Etiqueta"
+            name: "badge"
+            widget: "select"
+            options:
+              - { label: "Ninguna", value: "" }
+              - { label: "Nuevo", value: "new" }
+              - { label: "Popular", value: "popular" }
