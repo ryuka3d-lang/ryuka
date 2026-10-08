@@ -161,6 +161,12 @@
       "longDesc": "Llavero con forma de guitarra eléctrica tipo Les Paul, personalizado con el logo 'KRZ' de Ale Kurz.",
       "image": "19.jpeg",
       "badge": "popular"
+    },
+    {
+      "id": 20,
+      "title": "naad",
+      "category": "agencia llavero",
+      "image": "/images/uploads/favicon.png"
     }
   ]
 }
