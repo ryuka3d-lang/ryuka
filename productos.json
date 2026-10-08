@@ -1,0 +1,166 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "category": "restaurante llavero",
+      "title": "Llavero El Nono Restaurante",
+      "shortDesc": "Llavero ovalado con diseño personalizado para el sector gastronómico.",
+      "longDesc": "Llavero ovalado con borde decorativo, fabricado en impresión 3D multicolor. Ideal para restaurantes, bares y cafeterías.",
+      "image": "1.jpeg",
+      "badge": ""
+    },
+    {
+      "id": 2,
+      "category": "souvenir llavero",
+      "title": "Llavero Formula 1",
+      "shortDesc": "Llavero con el icónico logo de F1. Ideal para ferias y eventos.",
+      "longDesc": "Llavero con el logo oficial de Formula 1 en relieve, con acabado multicolor de alta definición.",
+      "image": "2.jpeg",
+      "badge": "popular"
+    },
+    {
+      "id": 3,
+      "category": "agencia llavero",
+      "title": "Llavero Camiseta Argentina - KAVAK",
+      "shortDesc": "Réplica en 3D de la camiseta de Argentina con logo de KAVAK.",
+      "longDesc": "Llavero con forma de camiseta de la selección argentina, con el número 10, 3 estrellas doradas y el logo de KAVAK.",
+      "image": "3.jpeg",
+      "badge": "new"
+    },
+    {
+      "id": 4,
+      "category": "agencia llavero",
+      "title": "Llavero Circular con Cadena Metálica",
+      "shortDesc": "Diseño circular clásico con cadena metálica. Ideal para concesionarias.",
+      "longDesc": "Llavero circular premium con cadena metálica de alta calidad. El formato más elegido por concesionarias.",
+      "image": "4.jpeg",
+      "badge": "popular"
+    },
+    {
+      "id": 5,
+      "category": "agencia llavero",
+      "title": "Llavero KOY - Diseño Dragón",
+      "shortDesc": "Llavero con logo personalizado de alta definición.",
+      "longDesc": "Llavero circular con diseño de dragón en relieve y texto central.",
+      "image": "5.jpeg",
+      "badge": ""
+    },
+    {
+      "id": 6,
+      "category": "souvenir llavero",
+      "title": "Llaveros Chimuelo - Cómo Entrenar a tu Dragón",
+      "shortDesc": "Llaveros articulados de Chimuelo y Furia Nocturna.",
+      "longDesc": "Set de llaveros articulados inspirados en Chimuelo y Furia Nocturna Blanca.",
+      "image": "6.jpeg",
+      "badge": "new"
+    },
+    {
+      "id": 7,
+      "category": "anime",
+      "title": "Figura Colgante Charizard Volador",
+      "shortDesc": "Figura articulada de Charizard con alas móviles.",
+      "longDesc": "Figura colgante de Charizard con alas articuladas que se mueven. Diseño multicolor.",
+      "image": "7.jpeg",
+      "badge": ""
+    },
+    {
+      "id": 8,
+      "category": "souvenir llavero",
+      "title": "Portacelular con Llavero",
+      "shortDesc": "Soporte para celular plegable con llavero integrado.",
+      "longDesc": "Portacelular plegable en forma de trípode con llavero integrado. Diseño personalizado con logo.",
+      "image": "8.jpeg",
+      "badge": ""
+    },
+    {
+      "id": 9,
+      "category": "ninos",
+      "title": "Rompecabezas 3D de Dinosaurios",
+      "shortDesc": "Puzzle educativo con piezas encastrables de dinosaurios.",
+      "longDesc": "Rompecabezas 3D con 5 dinosaurios diferentes que se encastran en una base temática.",
+      "image": "9.jpeg",
+      "badge": "new"
+    },
+    {
+      "id": 10,
+      "category": "souvenir llavero",
+      "title": "Llaveros Malvinas Argentinas",
+      "shortDesc": "Llaveros con diseño patriótico y mapa de las Islas Malvinas.",
+      "longDesc": "Set de llaveros cuadrados con diseño patriótico argentino. Incluye mapa de las Islas Malvinas en relieve.",
+      "image": "10.jpeg",
+      "badge": ""
+    },
+    {
+      "id": 11,
+      "category": "anime",
+      "title": "Display para Cartas Pokémon",
+      "shortDesc": "Soporte exhibidor para cartas coleccionables.",
+      "longDesc": "Display/soporte para exhibir cartas coleccionables de Pokémon, Yu-Gi-Oh, Magic u otros TCG.",
+      "image": "11.jpeg",
+      "badge": ""
+    },
+    {
+      "id": 12,
+      "category": "costura",
+      "title": "Caja Organizadora de Bobinas",
+      "shortDesc": "Organizador personalizado para bobinas de hilo.",
+      "longDesc": "Caja organizadora diseñada específicamente para almacenar y organizar bobinas de hilo de costura.",
+      "image": "12.jpeg",
+      "badge": ""
+    },
+    {
+      "id": 13,
+      "category": "souvenir ninos",
+      "title": "Porta Lápices Bota Cowboy",
+      "shortDesc": "Porta lápices con forma de bota vaquera y espuela dorada.",
+      "longDesc": "Porta lápices con forma de bota vaquera detallada, incluyendo espuela dorada en el talón.",
+      "image": "14.jpeg",
+      "badge": ""
+    },
+    {
+      "id": 14,
+      "category": "ninos",
+      "title": "Auto F1 para Armar",
+      "shortDesc": "Kit de auto de Fórmula 1 para armar.",
+      "longDesc": "Kit de auto de Fórmula 1 para armar, inspirado en los modelos de plástico.",
+      "image": "15.jpeg",
+      "badge": "new"
+    },
+    {
+      "id": 15,
+      "category": "ninos anime",
+      "title": "Figuras Pokémon para Pintar",
+      "shortDesc": "Figuras de Gengar, Charmander y Eevee listas para pintar.",
+      "longDesc": "Set de figuras de Pokémon en blanco con contorno negro, listas para que los niños las pinten.",
+      "image": "16.jpeg",
+      "badge": ""
+    },
+    {
+      "id": 16,
+      "category": "fitness llavero",
+      "title": "Llavero FOCUS Calisthenics",
+      "shortDesc": "Llavero circular con acabado glitter para gimnasios.",
+      "longDesc": "Llavero circular premium con acabado glitter negro y borde metálico.",
+      "image": "17.jpeg",
+      "badge": ""
+    },
+    {
+      "id": 17,
+      "category": "anime",
+      "title": "Señaladores de Manga y Libros",
+      "shortDesc": "Set de señaladores con personajes de anime.",
+      "longDesc": "Set de 9 señaladores para libros con personajes de anime populares.",
+      "image": "18.jpeg",
+      "badge": ""
+    },
+    {
+      "id": 18,
+      "category": "musica llavero",
+      "title": "Llavero Guitarra - Ale Kurz",
+      "shortDesc": "Llavero con forma de guitarra eléctrica personalizado.",
+      "longDesc": "Llavero con forma de guitarra eléctrica tipo Les Paul, personalizado con el logo 'KRZ' de Ale Kurz.",
+      "image": "19.jpeg",
+      "badge": "popular"
+    }
+  ]
+}
