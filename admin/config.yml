@@ -2,8 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: ""
-public_folder: ""
+# Carpeta donde se guardan las imágenes nuevas
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "catalogo"
@@ -16,14 +17,36 @@ collections:
           - label: "Lista de Productos"
             name: "productos"
             widget: "list"
-            summary: "{{fields.title}}"
+            summary: "{{fields.title}} ({{fields.category}})"
             fields:
               - { label: "ID (número único)", name: "id", widget: "number" }
               - { label: "Nombre del Producto", name: "title", widget: "string" }
-              - { label: "Categoría", name: "category", widget: "string", hint: "Ej: agencia llavero" }
+              - label: "Categoría"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Agencia + Llavero", value: "agencia llavero" }
+                  - { label: "Restaurante + Llavero", value: "restaurante llavero" }
+                  - { label: "Souvenir + Llavero", value: "souvenir llavero" }
+                  - { label: "Anime", value: "anime" }
+                  - { label: "Niños", value: "ninos" }
+                  - { label: "Niños + Anime", value: "ninos anime" }
+                  - { label: "Souvenir + Niños", value: "souvenir ninos" }
+                  - { label: "Costura", value: "costura" }
+                  - { label: "Fitness + Llavero", value: "fitness llavero" }
+                  - { label: "Música + Llavero", value: "musica llavero" }
+                  - { label: "Souvenir", value: "souvenir" }
+                  - { label: "Fitness", value: "fitness" }
+                  - { label: "Música", value: "musica" }
+                allow_add: true
               - { label: "Descripción Corta", name: "shortDesc", widget: "string" }
               - { label: "Descripción Completa", name: "longDesc", widget: "text" }
-              - { label: "Imagen (ej: 20.jpeg)", name: "image", widget: "image" }
+              - label: "Imagen del producto"
+                name: "image"
+                widget: "image"
+                allow_multiple: false
+                media_folder: "images/uploads"
+                public_folder: "/images/uploads"
               - label: "Etiqueta"
                 name: "badge"
                 widget: "select"
