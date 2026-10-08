@@ -2,7 +2,6 @@ backend:
   name: git-gateway
   branch: main
 
-# Carpeta donde se guardan las imágenes nuevas
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
@@ -19,11 +18,12 @@ collections:
             widget: "list"
             summary: "{{fields.title}} ({{fields.category}})"
             fields:
-              - { label: "ID (número único)", name: "id", widget: "number" }
-              - { label: "Nombre del Producto", name: "title", widget: "string" }
+              - { label: "ID (número único)", name: "id", widget: "number", required: true }
+              - { label: "Nombre del Producto", name: "title", widget: "string", required: true }
               - label: "Categoría"
                 name: "category"
                 widget: "select"
+                required: true
                 options:
                   - { label: "Agencia + Llavero", value: "agencia llavero" }
                   - { label: "Restaurante + Llavero", value: "restaurante llavero" }
@@ -39,17 +39,19 @@ collections:
                   - { label: "Fitness", value: "fitness" }
                   - { label: "Música", value: "musica" }
                 allow_add: true
-              - { label: "Descripción Corta", name: "shortDesc", widget: "string" }
-              - { label: "Descripción Completa", name: "longDesc", widget: "text" }
+              - { label: "Descripción Corta", name: "shortDesc", widget: "string", required: false }
+              - { label: "Descripción Completa", name: "longDesc", widget: "text", required: false }
               - label: "Imagen del producto"
                 name: "image"
                 widget: "image"
+                required: false
                 allow_multiple: false
                 media_folder: "images/uploads"
                 public_folder: "/images/uploads"
               - label: "Etiqueta"
                 name: "badge"
                 widget: "select"
+                required: false
                 options:
                   - { label: "Ninguna", value: "" }
                   - { label: "Nuevo", value: "new" }
