@@ -517,12 +517,12 @@ async function cargarProductos() {
         let lastScrollY = 0;
 
         // ============ INICIALIZACIÓN ============
-        document.addEventListener('DOMContentLoaded', () => {
-            applyLanguage(currentLang);
-            applyTheme(currentTheme);
-            renderProducts('todos');
-            setupScrollBehavior();
-        });
+       document.addEventListener('DOMContentLoaded', () => {
+    applyLanguage(currentLang);
+    applyTheme(currentTheme);
+    cargarProductos();
+    setupScrollBehavior();
+});
 
         // ============ RENDERIZAR PRODUCTOS ============
         function renderProducts(category) {
