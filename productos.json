@@ -5,18 +5,34 @@
       "category": "restaurante llavero",
       "title": "Llavero El Nono Restaurante",
       "shortDesc": "Llavero ovalado con diseño personalizado para el sector gastronómico.",
-      "longDesc": "Llavero ovalado con borde decorativo, fabricado en impresión 3D multicolor.",
+      "longDesc": "Llavero ovalado con borde decorativo, fabricado en impresión 3D multicolor. Ideal para restaurantes, bares y cafeterías que buscan un souvenir memorable.",
       "image": "1.jpeg",
-      "badge": ""
+      "badge": "",
+      "colors": [
+        { "name": { "es": "Rojo/Blanco", "en": "Red/White" }, "hex": "#dc2626" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #ff0000, #00ff00, #0000ff)" }
+      ],
+      "features": {
+        "es": ["Impresión 3D multicolor", "Cadena metálica incluida", "Logo en relieve", "Diseño 100% personalizable"],
+        "en": ["Multicolor 3D printing", "Metal chain included", "Embossed logo", "100% customizable design"]
+      }
     },
     {
       "id": 2,
       "category": "souvenir llavero",
       "title": "Llavero Formula 1",
       "shortDesc": "Llavero con el icónico logo de F1. Ideal para ferias y eventos.",
-      "longDesc": "Llavero con el logo oficial de Formula 1 en relieve, con acabado multicolor.",
+      "longDesc": "Llavero con el logo oficial de Formula 1 en relieve, con acabado multicolor de alta definición.",
       "image": "2.jpeg",
-      "badge": "popular"
+      "badge": "popular",
+      "colors": [
+        { "name": { "es": "Rojo/Negro/Blanco", "en": "Red/Black/White" }, "hex": "#dc2626" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #ff0000, #0000ff)" }
+      ],
+      "features": {
+        "es": ["Logo en relieve 3D", "Acabado multicolor", "Cadena metálica", "Varios tamaños disponibles"],
+        "en": ["3D embossed logo", "Multicolor finish", "Metal chain", "Various sizes available"]
+      }
     },
     {
       "id": 3,
@@ -25,16 +41,33 @@
       "shortDesc": "Réplica en 3D de la camiseta de Argentina con logo de KAVAK.",
       "longDesc": "Llavero con forma de camiseta de la selección argentina, con el número 10, 3 estrellas doradas y el logo de KAVAK.",
       "image": "3.jpeg",
-      "badge": "new"
+      "badge": "new",
+      "colors": [
+        { "name": { "es": "Celeste/Blanco", "en": "Light blue/White" }, "hex": "#38bdf8" },
+        { "name": { "es": "Colores de tu equipo", "en": "Your team colors" }, "hex": "linear-gradient(45deg, #ff0000, #ffff00)" }
+      ],
+      "features": {
+        "es": ["Diseño de camiseta detallado", "Número y estrellas personalizadas", "Logo de patrocinante", "Cadena metálica incluida"],
+        "en": ["Detailed jersey design", "Custom number and stars", "Sponsor logo", "Metal chain included"]
+      }
     },
     {
       "id": 4,
       "category": "agencia llavero",
       "title": "Llavero Circular con Cadena Metálica",
       "shortDesc": "Diseño circular clásico con cadena metálica. Ideal para concesionarias.",
-      "longDesc": "Llavero circular premium con cadena metálica de alta calidad.",
+      "longDesc": "Llavero circular premium con cadena metálica de alta calidad. El formato más elegido por concesionarias.",
       "image": "4.jpeg",
-      "badge": "popular"
+      "badge": "popular",
+      "colors": [
+        { "name": { "es": "Negro/Blanco", "en": "Black/White" }, "hex": "#000000" },
+        { "name": { "es": "Blanco/Azul", "en": "White/Blue" }, "hex": "#38bdf8" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #ff0000, #0000ff, #ffff00)" }
+      ],
+      "features": {
+        "es": ["Cadena metálica premium", "Logo en relieve 3D", "Opción con QR funcional", "Múltiples colores"],
+        "en": ["Premium metal chain", "3D embossed logo", "Optional functional QR", "Multiple colors"]
+      }
     },
     {
       "id": 5,
@@ -43,7 +76,15 @@
       "shortDesc": "Llavero con logo personalizado de alta definición.",
       "longDesc": "Llavero circular con diseño de dragón en relieve y texto central.",
       "image": "5.jpeg",
-      "badge": ""
+      "badge": "",
+      "colors": [
+        { "name": { "es": "Negro/Blanco", "en": "Black/White" }, "hex": "#000000" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #810404, #f59e0b)" }
+      ],
+      "features": {
+        "es": ["Diseño complejo en relieve", "Alta definición de detalles", "Acabado profesional", "Cadena metálica"],
+        "en": ["Complex embossed design", "High detail definition", "Professional finish", "Metal chain"]
+      }
     },
     {
       "id": 6,
@@ -52,7 +93,16 @@
       "shortDesc": "Llaveros articulados de Chimuelo y Furia Nocturna.",
       "longDesc": "Set de llaveros articulados inspirados en Chimuelo y Furia Nocturna Blanca.",
       "image": "6.jpeg",
-      "badge": "new"
+      "badge": "new",
+      "colors": [
+        { "name": { "es": "Negro (Chimuelo)", "en": "Black (Toothless)" }, "hex": "#000000" },
+        { "name": { "es": "Blanco (Furia Nocturna)", "en": "White (Light Fury)" }, "hex": "#ffffff" },
+        { "name": { "es": "Pack mixto", "en": "Mixed pack" }, "hex": "linear-gradient(45deg, #000000, #ffffff)" }
+      ],
+      "features": {
+        "es": ["Cuerpo articulado móvil", "Ojos de colores detallados", "Alas con textura", "Cadena metálica incluida"],
+        "en": ["Movable articulated body", "Detailed colored eyes", "Textured wings", "Metal chain included"]
+      }
     },
     {
       "id": 7,
@@ -61,7 +111,15 @@
       "shortDesc": "Figura articulada de Charizard con alas móviles.",
       "longDesc": "Figura colgante de Charizard con alas articuladas que se mueven.",
       "image": "7.jpeg",
-      "badge": ""
+      "badge": "",
+      "colors": [
+        { "name": { "es": "Naranja/Azul", "en": "Orange/Blue" }, "hex": "#f97316" },
+        { "name": { "es": "Otros personajes", "en": "Other characters" }, "hex": "linear-gradient(45deg, #ff0000, #00ff00, #0000ff)" }
+      ],
+      "features": {
+        "es": ["Alas articuladas móviles", "Multicolor detallado", "Anillo para colgar", "Resistente y liviano"],
+        "en": ["Movable articulated wings", "Detailed multicolor", "Hanging ring", "Resistant and lightweight"]
+      }
     },
     {
       "id": 8,
@@ -70,7 +128,15 @@
       "shortDesc": "Soporte para celular plegable con llavero integrado.",
       "longDesc": "Portacelular plegable en forma de trípode con llavero integrado.",
       "image": "8.jpeg",
-      "badge": ""
+      "badge": "",
+      "colors": [
+        { "name": { "es": "Azul", "en": "Blue" }, "hex": "#3b82f6" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #ff0000, #0000ff)" }
+      ],
+      "features": {
+        "es": ["Función de soporte para celular", "Llavero integrado", "Plegable y portable", "Logo personalizado"],
+        "en": ["Phone stand function", "Integrated keychain", "Foldable and portable", "Custom logo"]
+      }
     },
     {
       "id": 9,
@@ -79,7 +145,16 @@
       "shortDesc": "Puzzle educativo con piezas encastrables de dinosaurios.",
       "longDesc": "Rompecabezas 3D con 5 dinosaurios diferentes que se encastran en una base temática.",
       "image": "9.jpeg",
-      "badge": "new"
+      "badge": "new",
+      "colors": [
+        { "name": { "es": "Blanco/Negro", "en": "Black/White" }, "hex": "#ffffff" },
+        { "name": { "es": "Base azul personalizada", "en": "Custom blue base" }, "hex": "#1e40af" },
+        { "name": { "es": "Colores a elección", "en": "Colors of choice" }, "hex": "linear-gradient(45deg, #ff0000, #ffff00, #00ff00)" }
+      ],
+      "features": {
+        "es": ["5 dinosaurios diferentes", "Piezas encastrables", "Base temática incluida", "Educativo y divertido"],
+        "en": ["5 different dinosaurs", "Interlocking pieces", "Themed base included", "Educational and fun"]
+      }
     },
     {
       "id": 10,
@@ -88,7 +163,15 @@
       "shortDesc": "Llaveros con diseño patriótico y mapa de las Islas Malvinas.",
       "longDesc": "Set de llaveros cuadrados con diseño patriótico argentino.",
       "image": "10.jpeg",
-      "badge": ""
+      "badge": "",
+      "colors": [
+        { "name": { "es": "Blanco/Celeste", "en": "White/Light blue" }, "hex": "#38bdf8" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #38bdf8, #ffffff)" }
+      ],
+      "features": {
+        "es": ["Diseño patriótico", "Mapa en relieve", "Texto personalizable", "Cadena metálica"],
+        "en": ["Patriotic design", "Embossed map", "Customizable text", "Metal chain"]
+      }
     },
     {
       "id": 11,
@@ -97,7 +180,17 @@
       "shortDesc": "Soporte exhibidor para cartas coleccionables.",
       "longDesc": "Display/soporte para exhibir cartas coleccionables de Pokémon, Yu-Gi-Oh, Magic.",
       "image": "11.jpeg",
-      "badge": ""
+      "badge": "",
+      "colors": [
+        { "name": { "es": "Rojo", "en": "Red" }, "hex": "#dc2626" },
+        { "name": { "es": "Negro", "en": "Black" }, "hex": "#000000" },
+        { "name": { "es": "Blanco", "en": "White" }, "hex": "#ffffff" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #ff0000, #0000ff)" }
+      ],
+      "features": {
+        "es": ["Compatible con cartas estándar", "Acabado profesional", "Colores personalizables", "Ideal para tiendas y torneos"],
+        "en": ["Compatible with standard cards", "Professional finish", "Customizable colors", "Ideal for shops and tournaments"]
+      }
     },
     {
       "id": 12,
@@ -106,7 +199,16 @@
       "shortDesc": "Organizador personalizado para bobinas de hilo.",
       "longDesc": "Caja organizadora diseñada específicamente para almacenar y organizar bobinas de hilo.",
       "image": "12.jpeg",
-      "badge": ""
+      "badge": "",
+      "colors": [
+        { "name": { "es": "Blanco", "en": "White" }, "hex": "#ffffff" },
+        { "name": { "es": "Negro", "en": "Black" }, "hex": "#000000" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #ff0000, #0000ff, #ffff00)" }
+      ],
+      "features": {
+        "es": ["Compartimentos individuales", "Tapa con cierre", "Logo en relieve opcional", "Diseño a medida"],
+        "en": ["Individual compartments", "Lid with closure", "Optional embossed logo", "Custom design"]
+      }
     },
     {
       "id": 13,
@@ -115,7 +217,15 @@
       "shortDesc": "Porta lápices con forma de bota vaquera y espuela dorada.",
       "longDesc": "Porta lápices con forma de bota vaquera detallada, incluyendo espuela dorada.",
       "image": "14.jpeg",
-      "badge": ""
+      "badge": "",
+      "colors": [
+        { "name": { "es": "Marrón/Dorado", "en": "Brown/Gold" }, "hex": "#78350f" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #78350f, #fbbf24)" }
+      ],
+      "features": {
+        "es": ["Diseño realista de bota", "Espuela dorada detallada", "Funcional y decorativo", "Ideal para escritorio"],
+        "en": ["Realistic boot design", "Detailed golden spur", "Functional and decorative", "Ideal for desk"]
+      }
     },
     {
       "id": 14,
@@ -124,7 +234,16 @@
       "shortDesc": "Kit de auto de Fórmula 1 para armar.",
       "longDesc": "Kit de auto de Fórmula 1 para armar, inspirado en los modelos de plástico.",
       "image": "15.jpeg",
-      "badge": "new"
+      "badge": "new",
+      "colors": [
+        { "name": { "es": "Rojo/Negro", "en": "Red/Black" }, "hex": "#dc2626" },
+        { "name": { "es": "Azul/Blanco", "en": "Blue/White" }, "hex": "#3b82f6" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #ff0000, #0000ff)" }
+      ],
+      "features": {
+        "es": ["Kit para armar", "Piezas encastrables", "Estilo plastic model kit", "Varios colores disponibles"],
+        "en": ["Buildable kit", "Interlocking pieces", "Plastic model kit style", "Various colors available"]
+      }
     },
     {
       "id": 15,
@@ -133,7 +252,14 @@
       "shortDesc": "Figuras de Gengar, Charmander y Eevee listas para pintar.",
       "longDesc": "Set de figuras de Pokémon en blanco con contorno negro, listas para pintar.",
       "image": "16.jpeg",
-      "badge": ""
+      "badge": "",
+      "colors": [
+        { "name": { "es": "Blanco/Negro (para pintar)", "en": "Black/White (to paint)" }, "hex": "#ffffff" }
+      ],
+      "features": {
+        "es": ["Listas para pintar", "3 personajes incluidos", "Fomentan la creatividad", "Ideal para talleres"],
+        "en": ["Ready to paint", "3 characters included", "Encourage creativity", "Ideal for workshops"]
+      }
     },
     {
       "id": 16,
@@ -142,7 +268,15 @@
       "shortDesc": "Llavero circular con acabado glitter para gimnasios.",
       "longDesc": "Llavero circular premium con acabado glitter negro y borde metálico.",
       "image": "17.jpeg",
-      "badge": ""
+      "badge": "",
+      "colors": [
+        { "name": { "es": "Negro glitter", "en": "Black glitter" }, "hex": "#000000" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #810404, #f59e0b)" }
+      ],
+      "features": {
+        "es": ["Acabado glitter premium", "Borde metálico", "Logo en relieve", "También contenedores de suplementos"],
+        "en": ["Premium glitter finish", "Metallic border", "Embossed logo", "Also supplement containers"]
+      }
     },
     {
       "id": 17,
@@ -151,7 +285,15 @@
       "shortDesc": "Set de señaladores con personajes de anime.",
       "longDesc": "Set de 9 señaladores para libros con personajes de anime populares.",
       "image": "18.jpeg",
-      "badge": ""
+      "badge": "",
+      "colors": [
+        { "name": { "es": "Blanco/Negro", "en": "Black/White" }, "hex": "#ffffff" },
+        { "name": { "es": "Colores personalizados", "en": "Custom colors" }, "hex": "linear-gradient(45deg, #ff0000, #0000ff)" }
+      ],
+      "features": {
+        "es": ["9 personajes diferentes", "Estilo manga blanco y negro", "Soporte exhibidor incluido", "Ideal para librerías"],
+        "en": ["9 different characters", "Black and white manga style", "Display stand included", "Ideal for bookstores"]
+      }
     },
     {
       "id": 18,
@@ -160,7 +302,15 @@
       "shortDesc": "Llavero con forma de guitarra eléctrica personalizado.",
       "longDesc": "Llavero con forma de guitarra eléctrica tipo Les Paul, personalizado con el logo KRZ de Ale Kurz.",
       "image": "19.jpeg",
-      "badge": "popular"
+      "badge": "popular",
+      "colors": [
+        { "name": { "es": "Rojo/Negro", "en": "Red/Black" }, "hex": "#dc2626" },
+        { "name": { "es": "Personalizable", "en": "Customizable" }, "hex": "linear-gradient(45deg, #dc2626, #000000)" }
+      ],
+      "features": {
+        "es": ["Forma de guitarra detallada", "Logo del artista", "Dos versiones disponibles", "Cadena para llavero"],
+        "en": ["Detailed guitar shape", "Artist logo", "Two versions available", "Keychain chain"]
+      }
     }
   ]
 }
