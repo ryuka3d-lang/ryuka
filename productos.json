@@ -5,7 +5,7 @@
       "category": "restaurante llavero",
       "title": "Llavero El Nono Restaurante",
       "shortDesc": "Llavero ovalado con diseño personalizado para el sector gastronómico.",
-      "longDesc": "Llavero ovalado con borde decorativo, fabricado en impresión 3D multicolor. Ideal para restaurantes, bares y cafeterías.",
+      "longDesc": "Llavero ovalado con borde decorativo, fabricado en impresión 3D multicolor.",
       "image": "1.jpeg",
       "badge": ""
     },
@@ -14,7 +14,7 @@
       "category": "souvenir llavero",
       "title": "Llavero Formula 1",
       "shortDesc": "Llavero con el icónico logo de F1. Ideal para ferias y eventos.",
-      "longDesc": "Llavero con el logo oficial de Formula 1 en relieve, con acabado multicolor de alta definición.",
+      "longDesc": "Llavero con el logo oficial de Formula 1 en relieve, con acabado multicolor.",
       "image": "2.jpeg",
       "badge": "popular"
     },
@@ -32,7 +32,7 @@
       "category": "agencia llavero",
       "title": "Llavero Circular con Cadena Metálica",
       "shortDesc": "Diseño circular clásico con cadena metálica. Ideal para concesionarias.",
-      "longDesc": "Llavero circular premium con cadena metálica de alta calidad. El formato más elegido por concesionarias.",
+      "longDesc": "Llavero circular premium con cadena metálica de alta calidad.",
       "image": "4.jpeg",
       "badge": "popular"
     },
@@ -59,7 +59,7 @@
       "category": "anime",
       "title": "Figura Colgante Charizard Volador",
       "shortDesc": "Figura articulada de Charizard con alas móviles.",
-      "longDesc": "Figura colgante de Charizard con alas articuladas que se mueven. Diseño multicolor.",
+      "longDesc": "Figura colgante de Charizard con alas articuladas que se mueven.",
       "image": "7.jpeg",
       "badge": ""
     },
@@ -68,7 +68,7 @@
       "category": "souvenir llavero",
       "title": "Portacelular con Llavero",
       "shortDesc": "Soporte para celular plegable con llavero integrado.",
-      "longDesc": "Portacelular plegable en forma de trípode con llavero integrado. Diseño personalizado con logo.",
+      "longDesc": "Portacelular plegable en forma de trípode con llavero integrado.",
       "image": "8.jpeg",
       "badge": ""
     },
@@ -86,7 +86,7 @@
       "category": "souvenir llavero",
       "title": "Llaveros Malvinas Argentinas",
       "shortDesc": "Llaveros con diseño patriótico y mapa de las Islas Malvinas.",
-      "longDesc": "Set de llaveros cuadrados con diseño patriótico argentino. Incluye mapa de las Islas Malvinas en relieve.",
+      "longDesc": "Set de llaveros cuadrados con diseño patriótico argentino.",
       "image": "10.jpeg",
       "badge": ""
     },
@@ -95,7 +95,7 @@
       "category": "anime",
       "title": "Display para Cartas Pokémon",
       "shortDesc": "Soporte exhibidor para cartas coleccionables.",
-      "longDesc": "Display/soporte para exhibir cartas coleccionables de Pokémon, Yu-Gi-Oh, Magic u otros TCG.",
+      "longDesc": "Display/soporte para exhibir cartas coleccionables de Pokémon, Yu-Gi-Oh, Magic.",
       "image": "11.jpeg",
       "badge": ""
     },
@@ -104,7 +104,7 @@
       "category": "costura",
       "title": "Caja Organizadora de Bobinas",
       "shortDesc": "Organizador personalizado para bobinas de hilo.",
-      "longDesc": "Caja organizadora diseñada específicamente para almacenar y organizar bobinas de hilo de costura.",
+      "longDesc": "Caja organizadora diseñada específicamente para almacenar y organizar bobinas de hilo.",
       "image": "12.jpeg",
       "badge": ""
     },
@@ -113,7 +113,7 @@
       "category": "souvenir ninos",
       "title": "Porta Lápices Bota Cowboy",
       "shortDesc": "Porta lápices con forma de bota vaquera y espuela dorada.",
-      "longDesc": "Porta lápices con forma de bota vaquera detallada, incluyendo espuela dorada en el talón.",
+      "longDesc": "Porta lápices con forma de bota vaquera detallada, incluyendo espuela dorada.",
       "image": "14.jpeg",
       "badge": ""
     },
@@ -131,7 +131,7 @@
       "category": "ninos anime",
       "title": "Figuras Pokémon para Pintar",
       "shortDesc": "Figuras de Gengar, Charmander y Eevee listas para pintar.",
-      "longDesc": "Set de figuras de Pokémon en blanco con contorno negro, listas para que los niños las pinten.",
+      "longDesc": "Set de figuras de Pokémon en blanco con contorno negro, listas para pintar.",
       "image": "16.jpeg",
       "badge": ""
     },
@@ -158,15 +158,9 @@
       "category": "musica llavero",
       "title": "Llavero Guitarra - Ale Kurz",
       "shortDesc": "Llavero con forma de guitarra eléctrica personalizado.",
-      "longDesc": "Llavero con forma de guitarra eléctrica tipo Les Paul, personalizado con el logo 'KRZ' de Ale Kurz.",
+      "longDesc": "Llavero con forma de guitarra eléctrica tipo Les Paul, personalizado con el logo KRZ de Ale Kurz.",
       "image": "19.jpeg",
       "badge": "popular"
-    },
-    {
-      "id": 20,
-      "title": "naad",
-      "category": "agencia llavero",
-      "image": "/images/uploads/favicon.png"
     }
   ]
 }
