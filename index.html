@@ -29,7 +29,7 @@
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
             --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
             --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: all 0.2s ease;
         }
 
         body.dark-mode {
@@ -46,31 +46,32 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--light); color: var(--text); line-height: 1.6; overflow-x: hidden; transition: background-color 0.3s, color 0.3s; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--light); color: var(--text); line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
         a { text-decoration: none; color: inherit; }
         img { max-width: 100%; display: block; }
         button { font-family: 'Inter', sans-serif; }
 
         /* HEADER */
-        header { background: var(--white); padding: 1rem 5%; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); border-bottom: 2px solid var(--primary); transition: background-color 0.3s; }
+        header { background: var(--white); padding: 1rem 5%; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); border-bottom: 2px solid var(--primary); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; gap: 10px; }
         .logo-container { display: flex; align-items: center; }
-        .logo-img { height: 60px; width: auto; transition: var(--transition); }
+        .logo-img { height: 60px; width: auto; }
         .logo-img:hover { transform: scale(1.05); }
         .nav-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-        .nav-links a { color: var(--text); font-size: 0.95rem; font-weight: 500; transition: var(--transition); position: relative; }
-        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--primary); transition: var(--transition); }
+        .nav-links a { color: var(--text); font-size: 0.95rem; font-weight: 500; transition: var(--transition); position: relative; cursor: pointer; }
         .nav-links a:hover { color: var(--primary); }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-cta { background: var(--primary); color: white !important; padding: 10px 20px; border-radius: 8px; font-weight: 600; transition: var(--transition); }
-        .nav-cta:hover { background: var(--primary-dark); transform: translateY(-2px); }
-        .nav-cta::after { display: none !important; }
+        .nav-cta { background: var(--primary); color: white !important; padding: 10px 20px; border-radius: 8px; font-weight: 600; }
+        .nav-cta:hover { background: var(--primary-dark); }
 
-        /* CONTROLES */
         .controls { display: flex; gap: 10px; align-items: center; }
-        .control-btn { background: var(--light); border: 2px solid var(--gray-light); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: var(--transition); color: var(--text); font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+        .control-btn { background: var(--light); border: 2px solid var(--gray-light); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; color: var(--text); font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
         .control-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* CARRITO DE CONSULTA */
+        .cart-btn { position: relative; background: var(--primary); color: white; border: none; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+        .cart-btn:hover { background: var(--primary-dark); }
+        .cart-count { background: var(--accent); color: var(--secondary); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; }
 
         /* HERO */
         .hero { 
@@ -78,38 +79,44 @@
                         url('hero-bg.jpeg'); 
             background-size: cover; 
             background-position: center; 
-            background-attachment: fixed;
             color: white; 
             text-align: center; 
             padding: 6rem 1rem; 
             position: relative; 
             overflow: hidden; 
         }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%); }
         .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-        .badge { background: rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 30px; font-size: 0.9rem; display: inline-block; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); font-weight: 500; }
+        .badge { background: rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 30px; font-size: 0.9rem; display: inline-block; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.3); font-weight: 500; }
         .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; font-weight: 800; }
         .hero h1 span { color: var(--accent); }
         .hero p { font-size: 1.25rem; max-width: 600px; margin: 0 auto 2.5rem; opacity: 0.95; font-weight: 300; }
         .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .btn-primary { background: var(--accent); color: var(--secondary); padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: var(--transition); display: inline-block; border: none; cursor: pointer; }
-        .btn-primary:hover { background: #fbbf24; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4); }
-        .btn-secondary { background: transparent; color: white; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: var(--transition); display: inline-block; border: 2px solid rgba(255,255,255,0.5); }
-        .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: white; transform: translateY(-3px); }
+        .btn-primary { background: var(--accent); color: var(--secondary); padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; display: inline-block; border: none; cursor: pointer; }
+        .btn-primary:hover { background: #fbbf24; }
+        .btn-secondary { background: transparent; color: white; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 1rem; display: inline-block; border: 2px solid rgba(255,255,255,0.5); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
         /* STATS */
-        .stats { background: var(--white); padding: 2rem 1rem; border-bottom: 1px solid var(--gray-light); transition: background-color 0.3s; }
+        .stats { background: var(--white); padding: 2rem 1rem; border-bottom: 1px solid var(--gray-light); }
         .stats-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; }
         .stat-item h3 { font-size: 2.5rem; color: var(--primary); font-weight: 800; margin-bottom: 0.5rem; }
         .stat-item p { color: var(--gray); font-size: 0.95rem; font-weight: 500; }
 
+        /* SOBRE NOSOTROS */
+        .about { padding: 5rem 1rem; background: var(--white); }
+        .about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .about-text h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1.5rem; }
+        .about-text h2 span { color: var(--primary); }
+        .about-text p { color: var(--gray); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; }
+        .about-image { border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-lg); }
+        .about-image img { width: 100%; height: 400px; object-fit: cover; }
+
         /* FILTROS */
-        .filters-section { background: var(--white); padding: 2rem 1rem; position: sticky; top: 82px; z-index: 50; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, background-color 0.3s; }
-        .filters-section.hidden { transform: translateY(-100%); }
+        .filters-section { background: var(--white); padding: 2rem 1rem; position: sticky; top: 82px; z-index: 50; box-shadow: var(--shadow-sm); }
         .filters { text-align: center; max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        .filter-btn { background: var(--light); border: 2px solid var(--gray-light); padding: 10px 24px; border-radius: 30px; cursor: pointer; font-weight: 600; transition: var(--transition); color: var(--text); font-size: 0.9rem; }
+        .filter-btn { background: var(--light); border: 2px solid var(--gray-light); padding: 10px 24px; border-radius: 30px; cursor: pointer; font-weight: 600; color: var(--text); font-size: 0.9rem; }
         .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
-        .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 4px 12px rgba(129, 4, 4, 0.3); }
+        .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
         /* CATÁLOGO */
         .catalog-section { padding: 3rem 1rem 5rem; max-width: 1400px; margin: 0 auto; }
@@ -117,36 +124,37 @@
         .section-header h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
         .section-header p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
         .catalog { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-        .product-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); display: flex; flex-direction: column; position: relative; border: 1px solid var(--gray-light); cursor: pointer; }
-        .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
-        .product-badge { position: absolute; top: 15px; left: 15px; background: var(--accent); color: var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; z-index: 2; }
+        .product-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; position: relative; border: 1px solid var(--gray-light); cursor: pointer; }
+        .product-card:hover { box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .product-badge { position: absolute; top: 15px; left: 15px; background: var(--accent); color: var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; z-index: 2; }
         .product-badge.new { background: #10b981; color: white; }
         .product-badge.popular { background: var(--primary); color: white; }
         .product-img-container { position: relative; overflow: hidden; height: 280px; background: var(--light); }
-        .product-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .product-card:hover .product-img { transform: scale(1.08); }
-        .zoom-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); background: rgba(255,255,255,0.9); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition); opacity: 0; font-size: 1.5rem; }
-        .product-card:hover .zoom-icon { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        .product-img { width: 100%; height: 100%; object-fit: cover; }
         .product-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
         .product-category { font-size: 0.75rem; text-transform: uppercase; color: var(--primary); font-weight: 700; letter-spacing: 1.5px; margin-bottom: 0.5rem; }
         .product-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text); line-height: 1.3; }
         .product-desc { font-size: 0.9rem; color: var(--gray); margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.6; }
-        .product-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--gray-light); }
+        .product-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--gray-light); gap: 10px; }
         .product-price { font-size: 0.85rem; color: var(--gray); font-weight: 500; }
         .product-price strong { color: var(--text); font-size: 1rem; }
-        .view-btn { background: var(--primary); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; transition: var(--transition); font-size: 0.9rem; border: none; cursor: pointer; }
-        .view-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .product-actions { display: flex; gap: 8px; }
+        .view-btn { background: var(--primary); color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; }
+        .view-btn:hover { background: var(--primary-dark); }
+        .add-cart-btn { background: var(--accent); color: var(--secondary); padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; }
+        .add-cart-btn:hover { background: #fbbf24; }
+        .add-cart-btn.added { background: #10b981; color: white; }
 
         /* VISTA DE PRODUCTO */
         .product-view { display: none; padding: 2rem 1rem 5rem; max-width: 1200px; margin: 0 auto; }
         .product-view.active { display: block; }
-        .back-btn { background: var(--light); border: 2px solid var(--gray-light); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; color: var(--text); margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); }
+        .back-btn { background: var(--light); border: 2px solid var(--gray-light); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; color: var(--text); margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 8px; }
         .back-btn:hover { border-color: var(--primary); color: var(--primary); }
         .product-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; background: var(--card-bg); padding: 2rem; border-radius: 16px; box-shadow: var(--shadow-md); border: 1px solid var(--gray-light); }
         .product-gallery { position: relative; }
         .main-image { width: 100%; height: 500px; object-fit: cover; border-radius: 12px; background: var(--light); margin-bottom: 1rem; }
         .thumbnail-list { display: flex; gap: 10px; overflow-x: auto; }
-        .thumbnail { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid var(--gray-light); transition: var(--transition); }
+        .thumbnail { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid var(--gray-light); }
         .thumbnail:hover, .thumbnail.active { border-color: var(--primary); }
         .product-detail-info h1 { font-size: 2rem; color: var(--text); margin-bottom: 1rem; }
         .detail-category { font-size: 0.85rem; text-transform: uppercase; color: var(--primary); font-weight: 700; letter-spacing: 1.5px; margin-bottom: 1rem; display: inline-block; background: rgba(129, 4, 4, 0.1); padding: 5px 12px; border-radius: 20px; }
@@ -160,19 +168,40 @@
         .features-list li { padding: 8px 0; color: var(--text); display: flex; align-items: center; gap: 10px; }
         .features-list li::before { content: '✓'; color: var(--primary); font-weight: bold; font-size: 1.2rem; }
         .detail-cta { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
-        .btn-large { padding: 16px 32px; font-size: 1rem; border-radius: 10px; font-weight: 700; cursor: pointer; border: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+        .btn-large { padding: 16px 32px; font-size: 1rem; border-radius: 10px; font-weight: 700; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
         .btn-whatsapp-large { background: #25D366; color: white; }
-        .btn-whatsapp-large:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); }
+        .btn-whatsapp-large:hover { background: #128C7E; }
         .btn-back-large { background: var(--light); color: var(--text); border: 2px solid var(--gray-light); }
         .btn-back-large:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* PANEL CARRITO */
+        .cart-panel { position: fixed; top: 0; right: -400px; width: 400px; max-width: 100%; height: 100vh; background: var(--white); box-shadow: -5px 0 20px rgba(0,0,0,0.2); z-index: 200; transition: right 0.3s ease; overflow-y: auto; padding: 2rem; }
+        .cart-panel.open { right: 0; }
+        .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 150; display: none; }
+        .cart-overlay.open { display: block; }
+        .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid var(--gray-light); }
+        .cart-header h2 { font-size: 1.5rem; color: var(--text); }
+        .cart-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+        .cart-items { margin-bottom: 2rem; }
+        .cart-item { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--gray-light); align-items: center; }
+        .cart-item-img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
+        .cart-item-info { flex-grow: 1; }
+        .cart-item-title { font-weight: 600; color: var(--text); font-size: 0.9rem; margin-bottom: 4px; }
+        .cart-item-category { font-size: 0.75rem; color: var(--gray); }
+        .cart-item-remove { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 1.2rem; }
+        .cart-empty { text-align: center; color: var(--gray); padding: 3rem 0; }
+        .cart-footer { position: sticky; bottom: 0; background: var(--white); padding-top: 1rem; border-top: 2px solid var(--gray-light); }
+        .cart-send-btn { width: 100%; background: #25D366; color: white; padding: 14px; border-radius: 10px; font-weight: 700; font-size: 1rem; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .cart-send-btn:hover { background: #128C7E; }
+        .cart-send-btn:disabled { background: var(--gray-light); color: var(--gray); cursor: not-allowed; }
 
         /* CLIENTES */
         .clients { padding: 4rem 1rem; background: var(--light); text-align: center; }
         .clients h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--text); }
         .clients > p { color: var(--gray); margin-bottom: 3rem; font-size: 1.1rem; }
         .clients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
-        .client-card { background: var(--card-bg); padding: 2rem 1.5rem; border-radius: 12px; box-shadow: var(--shadow-sm); transition: var(--transition); border: 2px solid transparent; }
-        .client-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+        .client-card { background: var(--card-bg); padding: 2rem 1.5rem; border-radius: 12px; box-shadow: var(--shadow-sm); border: 2px solid transparent; }
+        .client-card:hover { border-color: var(--primary); }
         .client-card h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 0.5rem; }
         .client-card p { color: var(--gray); font-size: 0.9rem; }
 
@@ -181,8 +210,8 @@
         .process h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text); }
         .process > p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; }
         .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .step { padding: 2rem 1.5rem; background: var(--light); border-radius: 16px; transition: var(--transition); border: 2px solid transparent; }
-        .step:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .step { padding: 2rem 1.5rem; background: var(--light); border-radius: 16px; border: 2px solid transparent; }
+        .step:hover { border-color: var(--primary); }
         .step-number { width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; margin: 0 auto 1.5rem; font-family: 'Montserrat', sans-serif; }
         .step h3 { font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text); }
         .step p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
@@ -192,23 +221,16 @@
         .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
         .cta-section p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; }
         .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .btn-white { background: white; color: var(--primary); padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
-        .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .btn-white { background: white; color: var(--primary); padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-white:hover { transform: translateY(-3px); }
 
         /* FOOTER */
         footer { background: var(--secondary); color: white; padding: 3rem 1rem 2rem; }
         .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2rem; }
         .footer-col h3 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--accent); }
-        .footer-col p, .footer-col a { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.8; display: block; transition: var(--transition); }
+        .footer-col p, .footer-col a { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.8; display: block; }
         .footer-col a:hover { color: var(--accent); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.9rem; }
-
-        /* LIGHTBOX */
-        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; padding: 2rem; }
-        .lightbox.active { display: flex; }
-        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
-        .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 2.5rem; cursor: pointer; background: none; border: none; transition: var(--transition); }
-        .lightbox-close:hover { color: var(--accent); transform: rotate(90deg); }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
@@ -221,7 +243,9 @@
             .product-detail { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem; }
             .main-image { height: 350px; }
             .controls { width: 100%; justify-content: center; }
-            .filters-section { position: static; }
+            .about-container { grid-template-columns: 1fr; }
+            .about-image img { height: 250px; }
+            .cart-panel { width: 100%; right: -100%; }
         }
         @media (max-width: 480px) {
             .hero { padding: 4rem 1rem; }
@@ -235,22 +259,43 @@
     <header>
         <div class="nav-container">
             <div class="logo-container">
-                <a href="#catalogo">
+                <a href="#" onclick="goHome(); return false;">
                     <img src="logo.png" alt="Ryuka Logo" class="logo-img" onerror="this.style.display='none'">
                 </a>
             </div>
             <nav class="nav-links">
-                <a href="#catalogo" data-i18n="nav_catalog">Catálogo</a>
-                <a href="#clientes" data-i18n="nav_clients">Clientes</a>
-                <a href="#proceso" data-i18n="nav_process">Cómo Trabajamos</a>
-                <a href="#contacto" class="nav-cta" data-i18n="nav_contact">Contactar</a>
+                <a onclick="navigateTo('catalogo')" data-i18n="nav_catalog">Catálogo</a>
+                <a onclick="navigateTo('clientes')" data-i18n="nav_clients">Clientes</a>
+                <a onclick="navigateTo('sobre')" data-i18n="nav_about">Sobre Nosotros</a>
+                <a onclick="navigateTo('proceso')" data-i18n="nav_process">Cómo Trabajamos</a>
+                <a onclick="navigateTo('contacto')" class="nav-cta" data-i18n="nav_contact">Contactar</a>
             </nav>
             <div class="controls">
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 <span class="cart-count" id="cartCount">0</span>
+                </button>
                 <button class="control-btn" id="langBtn" onclick="toggleLanguage()">🌐 EN</button>
                 <button class="control-btn" id="themeBtn" onclick="toggleTheme()">🌙 <span data-i18n="theme_dark">Oscuro</span></button>
             </div>
         </div>
     </header>
+
+    <!-- PANEL CARRITO -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2 data-i18n="cart_title"> Consulta de productos</h2>
+            <button class="cart-close" onclick="toggleCart()"></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty" data-i18n="cart_empty">No hay productos seleccionados</div>
+        </div>
+        <div class="cart-footer">
+            <button class="cart-send-btn" id="cartSendBtn" onclick="sendCartWhatsApp()" disabled>
+                💬 <span data-i18n="cart_send">Enviar consulta por WhatsApp</span>
+            </button>
+        </div>
+    </div>
 
     <!-- HERO -->
     <section class="hero">
@@ -259,7 +304,7 @@
             <h1 data-i18n="hero_title">Tu marca en <span>3D</span>, tu estilo en cada detalle</h1>
             <p data-i18n="hero_desc">Diseñamos y fabricamos merchandising personalizado para cualquier industria con calidad premium.</p>
             <div class="hero-buttons">
-                <a href="#catalogo" class="btn-primary" data-i18n="hero_btn_catalog">Ver Catálogo</a>
+                <a onclick="navigateTo('catalogo')" class="btn-primary" style="cursor:pointer" data-i18n="hero_btn_catalog">Ver Catálogo</a>
                 <a href="https://wa.me/5491125467576" target="_blank" class="btn-secondary" data-i18n="hero_btn_whatsapp">💬 Hablar por WhatsApp</a>
             </div>
         </div>
@@ -279,6 +324,22 @@
             <div class="stat-item">
                 <h3>QR</h3>
                 <p data-i18n="stat_3">Funcional integrado opcional</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="sobre" class="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 data-i18n="about_title">Sobre <span>Ryuka</span></h2>
+                <p data-i18n="about_p1">Detrás de cada idea, hay un mundo por crear.</p>
+                <p data-i18n="about_p2">Somos Ryuka, un emprendimiento de impresión 3D creado por dos personas apasionadas por diseñar, crear y transformar ideas en algo real.</p>
+                <p data-i18n="about_p3">Trabajamos con particulares, marcas y empresas para desarrollar productos personalizados, poniendo dedicación, creatividad y atención en cada detalle. Nos gusta escuchar cada idea, acompañar el proceso y encontrar juntos la mejor manera de hacerla realidad.</p>
+                <p data-i18n="about_p4">En Ryuka, cada proyecto empieza con una idea y crece con nosotros.</p>
+            </div>
+            <div class="about-image">
+                <img src="hero-bg.jpeg" alt="Ryuka 3D">
             </div>
         </div>
     </section>
@@ -375,19 +436,18 @@
     </section>
 
     <!-- CTA -->
-    <section class="cta-section">
+    <section class="cta-section" id="contacto">
         <h2 data-i18n="cta_title">¿Listo para tener tu merchandising 3D?</h2>
         <p data-i18n="cta_desc">Conversemos sobre tu proyecto. Te llevamos una muestra física sin cargo.</p>
         <div class="cta-buttons">
             <a href="https://wa.me/5491125467576?text=Hola!%20Vi%20su%20catálogo%20web%20y%20me%20interesa%20consultar%20por%20merchandising%203D%20personalizado" target="_blank" class="btn-white">
                 💬 <span data-i18n="cta_btn_whatsapp">Escribir por WhatsApp</span>
             </a>
-            <a href="#catalogo" class="btn-secondary" style="border-color: white; color: white;" data-i18n="cta_btn_catalog">Ver Catálogo</a>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer id="contacto">
+    <footer>
         <div class="footer-content">
             <div class="footer-col">
                 <h3>RYUKA 3D Merch</h3>
@@ -395,14 +455,15 @@
             </div>
             <div class="footer-col">
                 <h3 data-i18n="footer_contact">Contacto</h3>
-                <a href="https://wa.me/5491125467576"> WhatsApp: +54 9 11 2546-7576</a>
+                <a href="https://wa.me/5491125467576">📱 WhatsApp: +54 9 11 2546-7576</a>
                 <p data-i18n="footer_location">📍 Zona de cobertura: CABA y GBA</p>
             </div>
             <div class="footer-col">
                 <h3 data-i18n="footer_links">Enlaces</h3>
-                <a href="#catalogo" data-i18n="nav_catalog">Catálogo</a>
-                <a href="#clientes" data-i18n="nav_clients">Clientes</a>
-                <a href="#proceso" data-i18n="nav_process">Cómo Trabajamos</a>
+                <a onclick="navigateTo('catalogo')" style="cursor:pointer" data-i18n="nav_catalog">Catálogo</a>
+                <a onclick="navigateTo('clientes')" style="cursor:pointer" data-i18n="nav_clients">Clientes</a>
+                <a onclick="navigateTo('sobre')" style="cursor:pointer" data-i18n="nav_about">Sobre Nosotros</a>
+                <a onclick="navigateTo('proceso')" style="cursor:pointer" data-i18n="nav_process">Cómo Trabajamos</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -410,55 +471,33 @@
         </div>
     </footer>
 
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <button class="lightbox-close">&times;</button>
-        <img src="" alt="Vista ampliada" id="lightbox-img">
-    </div>
-
     <script>
-        // ============ DATOS DE PRODUCTOS (Se cargan desde productos.json) ============
-let products = [];
-
-async function cargarProductos() {
-    try {
-        const response = await fetch('productos.json');
-        const data = await response.json();
-        products = data.productos || [];
-        
-        // Asignar valores por defecto a campos que el panel no maneja
-        products.forEach(p => {
-            if (!p.categoryLabel) p.categoryLabel = { es: p.category || '', en: p.category || '' };
-            if (!p.images) p.images = [p.image || ''];
-            if (!p.colors) p.colors = [{ name: { es: 'Consultar', en: 'Inquire' }, hex: '#810404' }];
-            if (!p.features) p.features = { es: ['Consultar características', 'Personalizable'], en: ['Inquire features', 'Customizable'] };
-            if (!p.longDesc) p.longDesc = p.shortDesc || '';
-        });
-        
-        renderProducts('todos');
-    } catch (error) {
-        console.error('Error cargando productos:', error);
-        products = [];
-        renderProducts('todos');
-    }
-}
+        // ============ DATOS DE PRODUCTOS ============
+        let products = [];
+        let cart = [];
 
         // ============ TRADUCCIONES ============
         const i18n = {
             es: {
-                nav_catalog: "Catálogo", nav_clients: "Clientes", nav_process: "Cómo Trabajamos", nav_contact: "Contactar",
+                nav_catalog: "Catálogo", nav_clients: "Clientes", nav_about: "Sobre Nosotros", nav_process: "Cómo Trabajamos", nav_contact: "Contactar",
                 theme_dark: "Oscuro", theme_light: "Claro",
                 hero_badge: "🔥 Merchandising 3D Personalizado",
                 hero_title: 'Tu marca en <span>3D</span>, tu estilo en cada detalle',
                 hero_desc: "Diseñamos y fabricamos merchandising personalizado para cualquier industria con calidad premium.",
                 hero_btn_catalog: "Ver Catálogo", hero_btn_whatsapp: "💬 Hablar por WhatsApp",
                 stat_1: "Personalizable", stat_2: "Impresión de alta calidad", stat_3: "Funcional integrado opcional",
+                about_title: 'Sobre <span>Ryuka</span>',
+                about_p1: "Detrás de cada idea, hay un mundo por crear.",
+                about_p2: "Somos Ryuka, un emprendimiento de impresión 3D creado por dos personas apasionadas por diseñar, crear y transformar ideas en algo real.",
+                about_p3: "Trabajamos con particulares, marcas y empresas para desarrollar productos personalizados, poniendo dedicación, creatividad y atención en cada detalle. Nos gusta escuchar cada idea, acompañar el proceso y encontrar juntos la mejor manera de hacerla realidad.",
+                about_p4: "En Ryuka, cada proyecto empieza con una idea y crece con nosotros.",
                 filter_all: "Todos", filter_agency: "Agencia", filter_restaurant: "Restaurante", filter_souvenir: "Souvenir",
                 filter_anime: "Anime", filter_kids: "Niños", filter_sewing: "Costura", filter_fitness: "Fitness",
                 filter_music: "Música", filter_keychains: "Llaveros",
                 catalog_title: "Nuestro Catálogo", catalog_desc: "Cada pieza es única, diseñada y fabricada para representar tu marca con la más alta calidad.",
                 back_catalog: "Volver al catálogo", product_colors: "Colores disponibles", product_features: "Características",
                 product_description: "Descripción", consult_whatsapp: "💬 Consultar por WhatsApp",
+                add_to_consult: "Agregar a consulta", added_to_consult: "✓ Agregado",
                 clients_title: "Confían en Nosotros", clients_desc: "Marcas y emprendimientos que eligieron Ryuka para su merchandising",
                 client_kavak: "Concesionaria de autos usados. Llaveros corporativos con QR para entrega de vehículos.",
                 client_nono: "Restaurante. Llaveros personalizados con logo para clientes y promociones.",
@@ -472,25 +511,33 @@ async function cargarProductos() {
                 step3_title: "Muestra física", step3_desc: "Te llevamos un prototipo real en 24-48hs para que apruebes la calidad.",
                 step4_title: "Producción y entrega", step4_desc: "Fabricamos tu pedido y lo entregamos en tu local, agencia o coordinamos envío.",
                 cta_title: "¿Listo para tener tu merchandising 3D?", cta_desc: "Conversemos sobre tu proyecto. Te llevamos una muestra física sin cargo.",
-                cta_btn_whatsapp: "Escribir por WhatsApp", cta_btn_catalog: "Ver Catálogo",
+                cta_btn_whatsapp: "Escribir por WhatsApp",
                 footer_desc: "Merchandising 3D personalizado para cualquier marca. Calidad premium y diseños únicos.",
                 footer_contact: "Contacto", footer_location: "📍 Zona de cobertura: CABA y GBA",
-                footer_links: "Enlaces", footer_rights: "Todos los derechos reservados."
+                footer_links: "Enlaces", footer_rights: "Todos los derechos reservados.",
+                cart_title: "📋 Consulta de productos", cart_empty: "No hay productos seleccionados",
+                cart_send: "Enviar consulta por WhatsApp", cart_count_text: "productos en consulta"
             },
             en: {
-                nav_catalog: "Catalog", nav_clients: "Clients", nav_process: "How We Work", nav_contact: "Contact",
+                nav_catalog: "Catalog", nav_clients: "Clients", nav_about: "About Us", nav_process: "How We Work", nav_contact: "Contact",
                 theme_dark: "Dark", theme_light: "Light",
                 hero_badge: " Custom 3D Merchandising",
                 hero_title: 'Your brand in <span>3D</span>, your style in every detail',
                 hero_desc: "We design and manufacture custom merchandising for any industry with premium quality.",
                 hero_btn_catalog: "View Catalog", hero_btn_whatsapp: "💬 Chat on WhatsApp",
                 stat_1: "Customizable", stat_2: "High quality printing", stat_3: "Optional functional QR",
+                about_title: 'About <span>Ryuka</span>',
+                about_p1: "Behind every idea, there's a world to create.",
+                about_p2: "We are Ryuka, a 3D printing venture created by two people passionate about designing, creating and transforming ideas into something real.",
+                about_p3: "We work with individuals, brands and companies to develop personalized products, putting dedication, creativity and attention to every detail. We like to listen to each idea, accompany the process and find together the best way to make it happen.",
+                about_p4: "At Ryuka, every project starts with an idea and grows with us.",
                 filter_all: "All", filter_agency: "Agency", filter_restaurant: "Restaurant", filter_souvenir: "Souvenir",
                 filter_anime: "Anime", filter_kids: "Kids", filter_sewing: "Sewing", filter_fitness: "Fitness",
                 filter_music: "Music", filter_keychains: "Keychains",
                 catalog_title: "Our Catalog", catalog_desc: "Each piece is unique, designed and manufactured to represent your brand with the highest quality.",
                 back_catalog: "Back to catalog", product_colors: "Available colors", product_features: "Features",
                 product_description: "Description", consult_whatsapp: "💬 Consult via WhatsApp",
+                add_to_consult: "Add to inquiry", added_to_consult: "✓ Added",
                 clients_title: "They Trust Us", clients_desc: "Brands and entrepreneurs who chose Ryuka for their merchandising",
                 client_kavak: "Used car dealership. Corporate keychains with QR for vehicle delivery.",
                 client_nono: "Restaurant. Custom keychains with logo for customers and promotions.",
@@ -504,25 +551,125 @@ async function cargarProductos() {
                 step3_title: "Physical sample", step3_desc: "We bring you a real prototype in 24-48h so you can approve the quality.",
                 step4_title: "Production and delivery", step4_desc: "We manufacture your order and deliver it to your store, agency or coordinate shipping.",
                 cta_title: "Ready to have your 3D merchandising?", cta_desc: "Let's talk about your project. We bring you a physical sample free of charge.",
-                cta_btn_whatsapp: "Write on WhatsApp", cta_btn_catalog: "View Catalog",
+                cta_btn_whatsapp: "Write on WhatsApp",
                 footer_desc: "Custom 3D merchandising for any brand. Premium quality and unique designs.",
                 footer_contact: "Contact", footer_location: "📍 Coverage area: CABA and GBA",
-                footer_links: "Links", footer_rights: "All rights reserved."
+                footer_links: "Links", footer_rights: "All rights reserved.",
+                cart_title: "📋 Product inquiry", cart_empty: "No products selected",
+                cart_send: "Send inquiry via WhatsApp", cart_count_text: "products in inquiry"
             }
         };
 
         // ============ ESTADO ============
         let currentLang = localStorage.getItem('ryuka_lang') || 'es';
         let currentTheme = localStorage.getItem('ryuka_theme') || 'light';
-        let lastScrollY = 0;
 
         // ============ INICIALIZACIÓN ============
-       document.addEventListener('DOMContentLoaded', () => {
-    applyLanguage(currentLang);
-    applyTheme(currentTheme);
-    cargarProductos();
-    setupScrollBehavior();
-});
+        document.addEventListener('DOMContentLoaded', () => {
+            applyLanguage(currentLang);
+            applyTheme(currentTheme);
+            cargarProductos();
+        });
+
+        // ============ NAVEGACIÓN ============
+        function navigateTo(sectionId) {
+            closeProductView();
+            setTimeout(() => {
+                const el = document.getElementById(sectionId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        }
+
+        function goHome() {
+            closeProductView();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============ CARGAR PRODUCTOS ============
+        async function cargarProductos() {
+            try {
+                const response = await fetch('productos.json');
+                const data = await response.json();
+                products = data.productos || [];
+                
+                products.forEach(p => {
+                    // Título
+                    if (typeof p.title === 'string') {
+                        p.title = { es: p.title, en: p.title };
+                    } else if (!p.title) {
+                        p.title = { es: 'Sin nombre', en: 'Unnamed' };
+                    }
+                    
+                    // Descripciones
+                    if (typeof p.shortDesc === 'string') {
+                        p.shortDesc = { es: p.shortDesc, en: p.shortDesc };
+                    } else if (!p.shortDesc) {
+                        p.shortDesc = { es: '', en: '' };
+                    }
+                    
+                    if (typeof p.longDesc === 'string') {
+                        p.longDesc = { es: p.longDesc, en: p.longDesc };
+                    } else if (!p.longDesc) {
+                        p.longDesc = p.shortDesc || { es: '', en: '' };
+                    }
+                    
+                    // Categoría
+                    if (!p.categoryLabel) {
+                        const catMap = {
+                            'agencia llavero': { es: 'Agencia', en: 'Agency' },
+                            'restaurante llavero': { es: 'Restaurante', en: 'Restaurant' },
+                            'souvenir llavero': { es: 'Souvenir', en: 'Souvenir' },
+                            'anime': { es: 'Anime', en: 'Anime' },
+                            'ninos': { es: 'Niños', en: 'Kids' },
+                            'ninos anime': { es: 'Niños / Anime', en: 'Kids / Anime' },
+                            'souvenir ninos': { es: 'Souvenir / Niños', en: 'Souvenir / Kids' },
+                            'costura': { es: 'Costura', en: 'Sewing' },
+                            'fitness llavero': { es: 'Fitness', en: 'Fitness' },
+                            'musica llavero': { es: 'Música', en: 'Music' },
+                            'souvenir': { es: 'Souvenir', en: 'Souvenir' },
+                            'fitness': { es: 'Fitness', en: 'Fitness' },
+                            'musica': { es: 'Música', en: 'Music' }
+                        };
+                        p.categoryLabel = catMap[p.category] || { es: p.category || '', en: p.category || '' };
+                    }
+                    
+                    // Imágenes
+                    if (!p.images) p.images = [p.image || ''];
+                    
+                    // Colores
+                    if (!p.colors) {
+                        p.colors = [
+                            { name: { es: 'Personalizable', en: 'Customizable' }, hex: '#810404' },
+                            { name: { es: 'Consultar disponibilidad', en: 'Check availability' }, hex: 'linear-gradient(45deg, #ff0000, #0000ff)' }
+                        ];
+                    } else if (Array.isArray(p.colors)) {
+                        p.colors.forEach(c => {
+                            if (typeof c.name === 'string') {
+                                c.name = { es: c.name, en: c.name };
+                            }
+                        });
+                    }
+                    
+                    // Características
+                    if (!p.features) {
+                        p.features = {
+                            es: ['Impresión 3D de alta calidad', 'Diseño 100% personalizable', 'Múltiples colores disponibles'],
+                            en: ['High quality 3D printing', '100% customizable design', 'Multiple colors available']
+                        };
+                    } else if (Array.isArray(p.features)) {
+                        p.features = { es: p.features, en: p.features };
+                    }
+                });
+                
+                renderProducts('todos');
+            } catch (error) {
+                console.error('Error cargando productos:', error);
+                products = [];
+                renderProducts('todos');
+            }
+        }
 
         // ============ RENDERIZAR PRODUCTOS ============
         function renderProducts(category) {
@@ -534,25 +681,30 @@ async function cargarProductos() {
                 
                 const card = document.createElement('div');
                 card.className = 'product-card';
-                card.onclick = () => openProductView(product.id);
                 
                 let badgeHTML = '';
                 if (product.badge === 'popular') badgeHTML = `<span class="product-badge popular">${currentLang === 'es' ? 'Popular' : 'Popular'}</span>`;
                 if (product.badge === 'new') badgeHTML = `<span class="product-badge new">${currentLang === 'es' ? 'Nuevo' : 'New'}</span>`;
                 
+                const isInCart = cart.some(item => item.id === product.id);
+                const btnText = isInCart ? i18n[currentLang].added_to_consult : i18n[currentLang].add_to_consult;
+                const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
+                
                 card.innerHTML = `
                     ${badgeHTML}
-                    <div class="product-img-container">
-                        <img src="${product.images[0]}" alt="${product.title[currentLang]}" class="product-img">
-                        <div class="zoom-icon">🔍</div>
+                    <div class="product-img-container" onclick="openProductView(${product.id})">
+                        <img src="${product.images[0]}" alt="${product.title[currentLang] || 'Producto'}" class="product-img">
                     </div>
                     <div class="product-info">
-                        <div class="product-category">${product.categoryLabel[currentLang]}</div>
-                        <h3 class="product-title">${product.title[currentLang]}</h3>
-                        <p class="product-desc">${product.shortDesc[currentLang]}</p>
+                        <div class="product-category">${product.categoryLabel[currentLang] || ''}</div>
+                        <h3 class="product-title">${product.title[currentLang] || 'Sin nombre'}</h3>
+                        <p class="product-desc">${product.shortDesc[currentLang] || ''}</p>
                         <div class="product-footer">
                             <span class="product-price">${currentLang === 'es' ? 'Desde' : 'From'} <strong>${currentLang === 'es' ? 'Consultar' : 'Inquire'}</strong></span>
-                            <button class="view-btn">${currentLang === 'es' ? 'Ver detalles' : 'View details'}</button>
+                            <div class="product-actions">
+                                <button class="${btnClass}" onclick="event.stopPropagation(); toggleCartProduct(${product.id})">${btnText}</button>
+                                <button class="view-btn" onclick="event.stopPropagation(); openProductView(${product.id})">${currentLang === 'es' ? 'Ver detalles' : 'View details'}</button>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -572,24 +724,28 @@ async function cargarProductos() {
             ).join('');
             
             let colorsHTML = product.colors.map(c => 
-                `<div class="color-item"><span class="color-dot" style="background: ${c.hex}"></span>${c.name[currentLang]}</div>`
+                `<div class="color-item"><span class="color-dot" style="background: ${c.hex}"></span>${c.name[currentLang] || c.name.es || ''}</div>`
             ).join('');
             
-            let featuresHTML = product.features[currentLang].map(f => `<li>${f}</li>`).join('');
+            let featuresHTML = (product.features[currentLang] || product.features.es || []).map(f => `<li>${f}</li>`).join('');
             
-            const whatsappMsg = encodeURIComponent(`Hola! Vi su catálogo web y me interesa consultar por: *${product.title[currentLang]}*. ¿Me podrían pasar precios y tiempos de entrega?`);
+            const whatsappMsg = encodeURIComponent(`Hola! Vi su catálogo web y me interesa consultar por: *${product.title[currentLang] || product.title.es}*. ¿Me podrían pasar precios y tiempos de entrega?`);
+            
+            const isInCart = cart.some(item => item.id === product.id);
+            const btnText = isInCart ? i18n[currentLang].added_to_consult : i18n[currentLang].add_to_consult;
+            const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
             
             detail.innerHTML = `
                 <div class="product-gallery">
-                    <img src="${product.images[0]}" class="main-image" id="mainImage" alt="${product.title[currentLang]}">
+                    <img src="${product.images[0]}" class="main-image" id="mainImage" alt="${product.title[currentLang] || ''}">
                     ${product.images.length > 1 ? `<div class="thumbnail-list">${thumbnailsHTML}</div>` : ''}
                 </div>
                 <div class="product-detail-info">
-                    <span class="detail-category">${product.categoryLabel[currentLang]}</span>
-                    <h1>${product.title[currentLang]}</h1>
+                    <span class="detail-category">${product.categoryLabel[currentLang] || ''}</span>
+                    <h1>${product.title[currentLang] || ''}</h1>
                     <div class="detail-section">
                         <h3>${i18n[currentLang].product_description}</h3>
-                        <p class="detail-description">${product.longDesc[currentLang]}</p>
+                        <p class="detail-description">${product.longDesc[currentLang] || product.longDesc.es || ''}</p>
                     </div>
                     <div class="detail-section">
                         <h3>${i18n[currentLang].product_colors}</h3>
@@ -601,6 +757,7 @@ async function cargarProductos() {
                     </div>
                     <div class="detail-cta">
                         <a href="https://wa.me/5491125467576?text=${whatsappMsg}" target="_blank" class="btn-large btn-whatsapp-large">${i18n[currentLang].consult_whatsapp}</a>
+                        <button class="btn-large ${btnClass}" onclick="toggleCartProduct(${product.id})">${btnText}</button>
                         <button class="btn-large btn-back-large" onclick="closeProductView()">← ${i18n[currentLang].back_catalog}</button>
                     </div>
                 </div>
@@ -609,7 +766,11 @@ async function cargarProductos() {
             document.getElementById('catalogo').style.display = 'none';
             document.querySelector('.filters-section').style.display = 'none';
             document.getElementById('productView').classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Scroll a la vista del producto, no al inicio
+            setTimeout(() => {
+                document.getElementById('productView').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
         }
 
         function closeProductView() {
@@ -624,6 +785,95 @@ async function cargarProductos() {
             thumb.classList.add('active');
         }
 
+        // ============ CARRITO DE CONSULTA ============
+        function toggleCartProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+            
+            const index = cart.findIndex(item => item.id === id);
+            if (index > -1) {
+                cart.splice(index, 1);
+            } else {
+                cart.push(product);
+            }
+            
+            updateCartUI();
+            renderProducts(document.querySelector('.filter-btn.active')?.textContent.toLowerCase() === 'todos' ? 'todos' : getCurrentFilter());
+            
+            // Si estamos en la vista de producto, actualizar el botón
+            if (document.getElementById('productView').classList.contains('active')) {
+                openProductView(id);
+            }
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+            renderProducts(getCurrentFilter());
+        }
+
+        function getCurrentFilter() {
+            const activeBtn = document.querySelector('.filter-btn.active');
+            if (!activeBtn) return 'todos';
+            const text = activeBtn.textContent.toLowerCase();
+            const map = {
+                'todos': 'todos', 'all': 'todos',
+                'agencia': 'agencia', 'agency': 'agencia',
+                'restaurante': 'restaurante', 'restaurant': 'restaurante',
+                'souvenir': 'souvenir',
+                'anime': 'anime',
+                'niños': 'ninos', 'kids': 'ninos',
+                'costura': 'costura', 'sewing': 'costura',
+                'fitness': 'fitness',
+                'música': 'musica', 'music': 'musica',
+                'llaveros': 'llavero', 'keychains': 'llavero'
+            };
+            return map[text] || 'todos';
+        }
+
+        function updateCartUI() {
+            document.getElementById('cartCount').textContent = cart.length;
+            
+            const cartItems = document.getElementById('cartItems');
+            const sendBtn = document.getElementById('cartSendBtn');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `<div class="cart-empty">${i18n[currentLang].cart_empty}</div>`;
+                sendBtn.disabled = true;
+                return;
+            }
+            
+            sendBtn.disabled = false;
+            cartItems.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <img src="${item.images[0]}" class="cart-item-img" alt="${item.title[currentLang] || ''}">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">${item.title[currentLang] || item.title.es || ''}</div>
+                        <div class="cart-item-category">${item.categoryLabel[currentLang] || ''}</div>
+                    </div>
+                    <button class="cart-item-remove" onclick="removeFromCart(${item.id})">✕</button>
+                </div>
+            `).join('');
+        }
+
+        function toggleCart() {
+            document.getElementById('cartPanel').classList.toggle('open');
+            document.getElementById('cartOverlay').classList.toggle('open');
+        }
+
+        function sendCartWhatsApp() {
+            if (cart.length === 0) return;
+            
+            let mensaje = 'Hola! Vi su catálogo web y me interesan los siguientes productos:\n\n';
+            cart.forEach((item, idx) => {
+                mensaje += `${idx + 1}. ${item.title[currentLang] || item.title.es}\n`;
+            });
+            mensaje += '\n¿Me podrían pasar precios y tiempos de entrega?';
+            
+            const url = `https://wa.me/5491125467576?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+
         // ============ FILTROS ============
         function filterProducts(category, event) {
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -636,16 +886,15 @@ async function cargarProductos() {
             currentLang = currentLang === 'es' ? 'en' : 'es';
             localStorage.setItem('ryuka_lang', currentLang);
             applyLanguage(currentLang);
-            renderProducts('todos');
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector('.filter-btn').classList.add('active');
+            renderProducts(getCurrentFilter());
+            updateCartUI();
         }
 
         function applyLanguage(lang) {
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (i18n[lang][key]) {
-                    if (key === 'hero_title') {
+                    if (key === 'hero_title' || key === 'about_title') {
                         el.innerHTML = i18n[lang][key];
                     } else {
                         el.textContent = i18n[lang][key];
@@ -672,60 +921,6 @@ async function cargarProductos() {
                 document.getElementById('themeBtn').innerHTML = '🌙 <span>' + (currentLang === 'es' ? 'Oscuro' : 'Dark') + '</span>';
             }
         }
-
-        // ============ SCROLL BAR FILTROS (MÓVIL) ============
-        function setupScrollBehavior() {
-            let ticking = false;
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(() => {
-                        const filtersSection = document.getElementById('filtersSection');
-                        const currentScrollY = window.scrollY;
-                        
-                        if (window.innerWidth <= 768) {
-                            if (currentScrollY > lastScrollY && currentScrollY > 300) {
-                                filtersSection.classList.add('hidden');
-                            } else {
-                                filtersSection.classList.remove('hidden');
-                            }
-                        }
-                        
-                        lastScrollY = currentScrollY;
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            });
-        }
-
-        // ============ LIGHTBOX ============
-        function openLightbox(src) {
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            img.src = src;
-            lightbox.classList.add('active');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeLightbox();
-        });
     </script>
-    <!-- Widget de Netlify Identity para procesar invitaciones -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
 </body>
 </html>
