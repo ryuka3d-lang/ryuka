@@ -41,6 +41,12 @@ collections:
                 allow_add: true
               - { label: "Descripción Corta", name: "shortDesc", widget: "string", required: false }
               - { label: "Descripción Completa", name: "longDesc", widget: "text", required: false }
+              
+              # 👇 AQUÍ ESTÁN LOS CAMPOS DE PRECIO NUEVOS 👇
+              - { label: "Precio Unitario", name: "precioUnitario", widget: "string", hint: "Ej: $1.500 c/u", required: false }
+              - { label: "Precio Final / Pack", name: "precioFinal", widget: "string", hint: "Ej: $15.000 (pack x10)", required: false }
+              # 👆 AQUÍ TERMINAN 👆
+
               - label: "Imagen del producto"
                 name: "image"
                 widget: "image"
