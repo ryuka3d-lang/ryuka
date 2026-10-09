@@ -198,7 +198,7 @@
       "title": "Caja Organizadora de Bobinas",
       "shortDesc": "Organizador personalizado para bobinas de hilo.",
       "longDesc": "Caja organizadora diseñada específicamente para almacenar y organizar bobinas de hilo.",
-      "image": "12.jpeg"
+      "image": "12.jpeg",
       "badge": "",
       "colors": [
         { "name": { "es": "Blanco", "en": "White" }, "hex": "#ffffff" },
