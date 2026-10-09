@@ -177,7 +177,7 @@
       "id": 11,
       "category": "anime",
       "title": "Display para Cartas Pokémon",
-      "shortDesc": "Soporte exhibidor para cartas coleccionables.",
+      "shortDesc": "Soporte exhibidor para cartas TCG.",
       "longDesc": "Display/soporte para exhibir cartas coleccionables de Pokémon, Yu-Gi-Oh, Magic.",
       "image": "11.jpeg",
       "badge": "",
@@ -198,7 +198,8 @@
       "title": "Caja Organizadora de Bobinas",
       "shortDesc": "Organizador personalizado para bobinas de hilo.",
       "longDesc": "Caja organizadora diseñada específicamente para almacenar y organizar bobinas de hilo.",
-      "image": "12.jpeg",
+      "image": "12.jpeg"
+      "image": "13.jpeg"
       "badge": "",
       "colors": [
         { "name": { "es": "Blanco", "en": "White" }, "hex": "#ffffff" },
@@ -211,12 +212,12 @@
       }
     },
     {
-      "id": 13,
+      "id": 15,
       "category": "souvenir ninos",
-      "title": "Porta Lápices Bota Cowboy",
+      "title": "Porta Lápices Bota",
       "shortDesc": "Porta lápices con forma de bota vaquera y espuela dorada.",
-      "longDesc": "Porta lápices con forma de bota vaquera detallada, incluyendo espuela dorada.",
-      "image": "14.jpeg",
+      "longDesc": "Porta lápices con forma de bota vaquera detallada",
+      "image": "15.jpeg",
       "badge": "",
       "colors": [
         { "name": { "es": "Marrón/Dorado", "en": "Brown/Gold" }, "hex": "#78350f" },
@@ -228,12 +229,12 @@
       }
     },
     {
-      "id": 14,
+      "id": 16,
       "category": "ninos",
       "title": "Auto F1 para Armar",
       "shortDesc": "Kit de auto de Fórmula 1 para armar.",
       "longDesc": "Kit de auto de Fórmula 1 para armar, inspirado en los modelos de plástico.",
-      "image": "15.jpeg",
+      "image": "16.jpeg",
       "badge": "new",
       "colors": [
         { "name": { "es": "Rojo/Negro", "en": "Red/Black" }, "hex": "#dc2626" },
@@ -246,28 +247,28 @@
       }
     },
     {
-      "id": 15,
+      "id": 17,
       "category": "ninos anime",
-      "title": "Figuras Pokémon para Pintar",
+      "title": "Figuras anime para Pintar",
       "shortDesc": "Figuras de Gengar, Charmander y Eevee listas para pintar.",
-      "longDesc": "Set de figuras de Pokémon en blanco con contorno negro, listas para pintar.",
-      "image": "16.jpeg",
+      "longDesc": "Set de figuras en blanco con contorno negro, listas para pintar. Pedí el tuyo personalizado",
+      "image": "17.jpeg",
       "badge": "",
       "colors": [
         { "name": { "es": "Blanco/Negro (para pintar)", "en": "Black/White (to paint)" }, "hex": "#ffffff" }
       ],
       "features": {
-        "es": ["Listas para pintar", "3 personajes incluidos", "Fomentan la creatividad", "Ideal para talleres"],
+        "es": ["Listas para pintar", "3 personajes incluidos y pack de fibras", "Fomentan la creatividad", "Ideal para talleres"],
         "en": ["Ready to paint", "3 characters included", "Encourage creativity", "Ideal for workshops"]
       }
     },
     {
-      "id": 16,
+      "id": 18,
       "category": "fitness llavero",
       "title": "Llavero FOCUS Calisthenics",
       "shortDesc": "Llavero circular con acabado glitter para gimnasios.",
       "longDesc": "Llavero circular premium con acabado glitter negro y borde metálico.",
-      "image": "17.jpeg",
+      "image": "18.jpeg",
       "badge": "",
       "colors": [
         { "name": { "es": "Negro glitter", "en": "Black glitter" }, "hex": "#000000" },
@@ -279,12 +280,12 @@
       }
     },
     {
-      "id": 17,
+      "id": 19,
       "category": "anime",
       "title": "Señaladores de Manga y Libros",
-      "shortDesc": "Set de señaladores con personajes de anime.",
-      "longDesc": "Set de 9 señaladores para libros con personajes de anime populares.",
-      "image": "18.jpeg",
+      "shortDesc": "Señaladores con personajes de anime.",
+      "longDesc": "Señaladores para libros con personajes de anime populares. Personaliza el tuyo",
+      "image": "19.jpeg",
       "badge": "",
       "colors": [
         { "name": { "es": "Blanco/Negro", "en": "Black/White" }, "hex": "#ffffff" },
@@ -296,12 +297,12 @@
       }
     },
     {
-      "id": 18,
+      "id": 20,
       "category": "musica llavero",
       "title": "Llavero Guitarra - Ale Kurz",
       "shortDesc": "Llavero con forma de guitarra eléctrica personalizado.",
       "longDesc": "Llavero con forma de guitarra eléctrica tipo Les Paul, personalizado con el logo KRZ de Ale Kurz.",
-      "image": "19.jpeg",
+      "image": "20.jpeg",
       "badge": "popular",
       "colors": [
         { "name": { "es": "Rojo/Negro", "en": "Red/Black" }, "hex": "#dc2626" },
