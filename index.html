@@ -273,23 +273,27 @@
 
         /* BOTÓN FLOTANTE WHATSAPP (NUEVO) */
         .float-wpp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
-            z-index: 999;
-            transition: var(--transition);
-            animation: pulse 2s infinite;
-        }
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+    z-index: 999;
+    transition: var(--transition);
+    animation: pulse 2s infinite;
+    text-decoration: none;
+}
+.float-wpp svg {
+    width: 35px;
+    height: 35px;
+}
         .float-wpp:hover { transform: scale(1.1); background: #128C7E; }
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
@@ -601,8 +605,10 @@
 
     <!-- BOTÓN FLOTANTE WHATSAPP -->
     <a href="https://wa.me/5491125467576?text=Hola!%20Vi%20su%20web%20y%20quiero%20hacer%20una%20consulta" target="_blank" class="float-wpp" title="Chateá con nosotros">
-        💬
-    </a>
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</a>
 
     <script>
         // ============ DATOS DE PRODUCTOS ============
@@ -729,85 +735,101 @@
         }
 
                // ============ VISTA DE PRODUCTO ============
-        function openProductView(id) {
-            // Buscamos el producto convirtiendo ambos a texto para evitar errores de tipo (número vs texto)
-            const product = products.find(p => String(p.id) === String(id));
+       function openProductView(id) {
+    const product = products.find(p => String(p.id) === String(id));
+    
+    if (!product) {
+        console.error("❌ Producto no encontrado. ID buscado:", id);
+        return;
+    }
+    
+    const detail = document.getElementById('productDetail');
+    
+    // Manejar thumbnails
+    let thumbnailsHTML = '';
+    if (product.images && product.images.length > 0) {
+        thumbnailsHTML = product.images.map((img, idx) => 
+            `<img src="${img}" class="thumbnail ${idx === 0 ? 'active' : ''}" onclick="changeMainImage('${img}', this)" alt="Thumbnail ${idx + 1}" loading="lazy">`
+        ).join('');
+    }
+    
+    // Manejar colores (formato bilingüe O simple)
+    let colorsHTML = '';
+    if (product.colors && product.colors.length > 0) {
+        colorsHTML = product.colors.map(c => {
+            const colorName = (typeof c.name === 'object') ? (c.name.es || c.name.en || '') : (c.name || '');
+            return `<div class="color-item"><span class="color-dot" style="background: ${c.hex}"></span>${colorName}</div>`;
+        }).join('');
+    }
+    
+    // Manejar características (formato bilingüe O simple)
+    let featuresHTML = '';
+    if (product.features) {
+        const featuresList = Array.isArray(product.features) 
+            ? product.features 
+            : (product.features.es || product.features.en || []);
+        featuresHTML = featuresList.map(f => `<li>${f}</li>`).join('');
+    }
+    
+    const whatsappMsg = encodeURIComponent(`Hola! Vi su catálogo web y me interesa consultar por: *${product.title}*. ¿Me podrían pasar precios y tiempos de entrega?`);
+    
+    const isInCart = cart.some(item => String(item.id) === String(product.id));
+    const btnText = isInCart ? '✓ Agregado' : 'Agregar a consulta';
+    const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
+    
+    detail.innerHTML = `
+        <div class="product-gallery">
+            <img src="${product.images && product.images[0] ? product.images[0] : 'hero-bg.jpeg'}" class="main-image" id="mainImage" alt="${product.title}" loading="lazy">
+            ${product.images && product.images.length > 1 ? `<div class="thumbnail-list">${thumbnailsHTML}</div>` : ''}
+        </div>
+        <div class="product-detail-info">
+            <span class="detail-category">${product.categoryLabel}</span>
+            <h1>${product.title}</h1>
             
-            if (!product) {
-                console.error("❌ Producto no encontrado. ID buscado:", id);
-                console.log("Productos cargados:", products);
-                alert("Hubo un error al cargar el producto. Revisá la consola (F12).");
-                return;
-            }
-            
-            const detail = document.getElementById('productDetail');
-            
-            let thumbnailsHTML = product.images.map((img, idx) => 
-                `<img src="${img}" class="thumbnail ${idx === 0 ? 'active' : ''}" onclick="changeMainImage('${img}', this)" alt="Thumbnail ${idx + 1}" loading="lazy">`
-            ).join('');
-            
-            let colorsHTML = product.colors.map(c => 
-                `<div class="color-item"><span class="color-dot" style="background: ${c.hex}"></span>${c.name}</div>`
-            ).join('');
-            
-            let featuresHTML = product.features.map(f => `<li>${f}</li>`).join('');
-            const whatsappMsg = encodeURIComponent(`Hola! Vi su catálogo web y me interesa consultar por: *${product.title}*. ¿Me podrían pasar precios y tiempos de entrega?`);
-            
-            const isInCart = cart.some(item => String(item.id) === String(product.id));
-            const btnText = isInCart ? '✓ Agregado' : 'Agregar a consulta';
-            const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
-            
-            detail.innerHTML = `
-                <div class="product-gallery">
-                    <img src="${product.images[0] || 'hero-bg.jpeg'}" class="main-image" id="mainImage" alt="${product.title}" loading="lazy">
-                    ${product.images.length > 1 ? `<div class="thumbnail-list">${thumbnailsHTML}</div>` : ''}
-                </div>
-                <div class="product-detail-info">
-                    <span class="detail-category">${product.categoryLabel}</span>
-                    <h1>${product.title}</h1>
-                    
-                    <div class="detail-section" style="margin-top: 0; padding-top: 0; border: none;">
-                        <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: baseline;">
-                            <div>
-                                <div style="font-size: 0.9rem; color: var(--gray);">Precio Unitario</div>
-                                <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">${product.precioUnitario || 'Consultar'}</div>
-                            </div>
-                            ${product.precioFinal ? `
-                            <div>
-                                <div style="font-size: 0.9rem; color: var(--gray);">Precio Final / Pack</div>
-                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent);">${product.precioFinal}</div>
-                            </div>` : ''}
-                        </div>
+            <div class="detail-section" style="margin-top: 0; padding-top: 0; border: none;">
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: baseline;">
+                    <div>
+                        <div style="font-size: 0.9rem; color: var(--gray);">Precio Unitario</div>
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">${product.precioUnitario || 'Consultar'}</div>
                     </div>
+                    ${product.precioFinal ? `
+                    <div>
+                        <div style="font-size: 0.9rem; color: var(--gray);">Precio Final / Pack</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent);">${product.precioFinal}</div>
+                    </div>` : ''}
+                </div>
+            </div>
 
-                    <div class="detail-section">
-                        <h3>Descripción</h3>
-                        <p class="detail-description">${product.longDesc}</p>
-                    </div>
-                    <div class="detail-section">
-                        <h3>Colores disponibles</h3>
-                        <div class="colors-list">${colorsHTML}</div>
-                    </div>
-                    <div class="detail-section">
-                        <h3>Características</h3>
-                        <ul class="features-list">${featuresHTML}</ul>
-                    </div>
-                    <div class="detail-cta">
-                        <a href="https://wa.me/5491125467576?text=${whatsappMsg}" target="_blank" class="btn-large btn-whatsapp-large">💬 Consultar por WhatsApp</a>
-                        <button class="btn-large ${btnClass}" onclick="toggleCartProduct(${product.id})">${btnText}</button>
-                        <button class="btn-large btn-back-large" onclick="closeProductView()">← Volver al catálogo</button>
-                    </div>
-                </div>
-            `;
-            
-            document.getElementById('catalogo').style.display = 'none';
-            document.querySelector('.filters-section').style.display = 'none';
-            document.getElementById('productView').classList.add('active');
-            
-            setTimeout(() => {
-                document.getElementById('productView').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
-        }
+            <div class="detail-section">
+                <h3>Descripción</h3>
+                <p class="detail-description">${product.longDesc || product.shortDesc || ''}</p>
+            </div>
+            ${colorsHTML ? `
+            <div class="detail-section">
+                <h3>Colores disponibles</h3>
+                <div class="colors-list">${colorsHTML}</div>
+            </div>` : ''}
+            ${featuresHTML ? `
+            <div class="detail-section">
+                <h3>Características</h3>
+                <ul class="features-list">${featuresHTML}</ul>
+            </div>` : ''}
+            <div class="detail-cta">
+                <a href="https://wa.me/5491125467576?text=${whatsappMsg}" target="_blank" class="btn-large btn-whatsapp-large">💬 Consultar por WhatsApp</a>
+                <button class="btn-large ${btnClass}" onclick="toggleCartProduct(${product.id})">${btnText}</button>
+                <button class="btn-large btn-back-large" onclick="closeProductView()">← Volver al catálogo</button>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('catalogo').style.display = 'none';
+    document.querySelector('.filters-section').style.display = 'none';
+    document.getElementById('productView').classList.add('active');
+    
+    setTimeout(() => {
+        document.getElementById('productView').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+}
         function closeProductView() {
             document.getElementById('productView').classList.remove('active');
             document.getElementById('catalogo').style.display = 'block';
