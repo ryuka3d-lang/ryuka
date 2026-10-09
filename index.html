@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryuka | Merchandising 3D Personalizado</title>
     
+    <!-- MEJORAS DE SEO -->
+    <title>Ryuka | Merchandising 3D Personalizado en CABA y GBA</title>
+    <meta name="description" content="Diseñamos y fabricamos merchandising 3D personalizado: llaveros, displays, cajas y souvenirs para marcas, agencias y eventos. Calidad premium y envíos a todo el país.">
+    <meta name="keywords" content="impresión 3d, merchandising personalizado, llaveros 3d, souvenirs corporativos, regalos empresariales, CABA, GBA, Ryuka">
+    <meta name="author" content="Ryuka 3D Merch">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Para que se vea lindo al compartir en WhatsApp/Instagram) -->
+    <meta property="og:title" content="Ryuka | Merchandising 3D Personalizado">
+    <meta property="og:description" content="Transformamos tus ideas en productos 3D únicos. Llaveros, displays y más. ¡Cotizá online!">
+    <meta property="og:image" content="hero-bg.jpeg">
+    <meta property="og:url" content="https://ryuka3dmerch.netlify.app">
+    <meta property="og:type" content="website">
+
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
@@ -135,9 +148,10 @@
         .product-category { font-size: 0.75rem; text-transform: uppercase; color: var(--primary); font-weight: 700; letter-spacing: 1.5px; margin-bottom: 0.5rem; }
         .product-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text); line-height: 1.3; }
         .product-desc { font-size: 0.9rem; color: var(--gray); margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.6; }
-        .product-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--gray-light); gap: 10px; }
-        .product-price { font-size: 0.85rem; color: var(--gray); font-weight: 500; }
-        .product-price strong { color: var(--text); font-size: 1rem; }
+        .product-footer { display: flex; justify-content: space-between; align-items: flex-start; padding-top: 1rem; border-top: 1px solid var(--gray-light); gap: 10px; }
+        .product-price { display: flex; flex-direction: column; }
+        .price-unit { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+        .price-pack { font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-top: 2px; }
         .product-actions { display: flex; gap: 8px; }
         .view-btn { background: var(--primary); color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; }
         .view-btn:hover { background: var(--primary-dark); }
@@ -205,6 +219,18 @@
         .client-card h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 0.5rem; }
         .client-card p { color: var(--gray); font-size: 0.9rem; }
 
+        /* TESTIMONIOS (NUEVO) */
+        .testimonials { padding: 5rem 1rem; background: var(--white); text-align: center; }
+        .testimonials h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
+        .testimonials > p { color: var(--gray); max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .testimonial-card { background: var(--light); padding: 2rem; border-radius: 16px; text-align: left; border: 1px solid var(--gray-light); transition: var(--transition); }
+        .testimonial-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .stars { color: var(--accent); font-size: 1.2rem; margin-bottom: 1rem; }
+        .testimonial-text { color: var(--text); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; font-style: italic; }
+        .testimonial-author { font-weight: 700; color: var(--primary); font-size: 0.95rem; }
+        .testimonial-role { color: var(--gray); font-size: 0.85rem; }
+
         /* PROCESO */
         .process { background: var(--white); padding: 5rem 1rem; text-align: center; border-top: 1px solid var(--gray-light); border-bottom: 1px solid var(--gray-light); }
         .process h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text); }
@@ -223,9 +249,11 @@
         .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
         .btn-white { background: white; color: var(--primary); padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; }
         .btn-white:hover { transform: translateY(-3px); }
+        .btn-email { background: transparent; color: white; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; border: 2px solid white; }
+        .btn-email:hover { background: rgba(255,255,255,0.1); }
 
         /* VISITANOS */
-        .visit-us { padding: 4rem 1rem; background: var(--white); text-align: center; }
+        .visit-us { padding: 4rem 1rem; background: var(--light); text-align: center; }
         .visit-us h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
         .visit-us > p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; }
         .social-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
@@ -243,6 +271,32 @@
         .footer-col a:hover { color: var(--accent); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.9rem; }
 
+        /* BOTÓN FLOTANTE WHATSAPP (NUEVO) */
+        .float-wpp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+        .float-wpp:hover { transform: scale(1.1); background: #128C7E; }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
@@ -258,6 +312,7 @@
             .about-image img { height: 250px; }
             .cart-panel { width: 100%; right: -100%; }
             .social-links { flex-direction: column; align-items: center; }
+            .float-wpp { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 1.8rem; }
         }
         @media (max-width: 480px) {
             .hero { padding: 4rem 1rem; }
@@ -286,7 +341,7 @@
                 <button class="cart-btn" onclick="toggleCart()">
                     🛒 <span class="cart-count" id="cartCount">0</span>
                 </button>
-                <button class="control-btn" id="themeBtn" onclick="toggleTheme()"> Oscuro</button>
+                <button class="control-btn" id="themeBtn" onclick="toggleTheme()">🌙 Oscuro</button>
             </div>
         </div>
     </header>
@@ -295,7 +350,7 @@
     <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
     <div class="cart-panel" id="cartPanel">
         <div class="cart-header">
-            <h2> Consulta de productos</h2>
+            <h2>📋 Consulta de productos</h2>
             <button class="cart-close" onclick="toggleCart()">✕</button>
         </div>
         <div class="cart-items" id="cartItems">
@@ -350,7 +405,7 @@
                 <p>En Ryuka, cada proyecto empieza con una idea y crece con nosotros.</p>
             </div>
             <div class="about-image">
-                <img src="hero-bg.jpeg" alt="Ryuka 3D">
+                <img src="hero-bg.jpeg" alt="Impresión 3D Ryuka">
             </div>
         </div>
     </section>
@@ -418,6 +473,44 @@
         </div>
     </section>
 
+    <!-- TESTIMONIOS (NUEVO) -->
+    <section class="testimonials">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <p>La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación.</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Los llaveros para la entrega de autos quedaron increíbles. La calidad del relieve y los colores superaron nuestras expectativas. ¡Muy recomendables!"</p>
+                <div class="testimonial-author">Martín G.</div>
+                <div class="testimonial-role">Gerente de Concesionaria</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Pedimos cajas organizadoras personalizadas para nuestro taller y el resultado fue excelente. Atención al detalle y cumplimiento en los tiempos de entrega."</p>
+                <div class="testimonial-author">Lucía R.</div>
+                <div class="testimonial-role">Dueña de Taller de Costura</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"El merchandising para el evento de rock quedó espectacular. Los señaladores y llaveros fueron un éxito total entre el público. ¡Gracias Ryuka!"</p>
+                <div class="testimonial-author">Santiago M.</div>
+                <div class="testimonial-role">Productor de Eventos</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Compramos los rompecabezas 3D para los cumpleaños de los chicos del equipo. Fueron un regalo original, divertido y de muy buena calidad."</p>
+                <div class="testimonial-author">Carolina P.</div>
+                <div class="testimonial-role">Coordinadora de RRHH</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Excelente atención y asesoramiento desde el primer mensaje. Me ayudaron a materializar una idea que tenía para mi marca de ropa. 100% recomendados."</p>
+                <div class="testimonial-author">Julián D.</div>
+                <div class="testimonial-role">Fundador de Marca de Ropa</div>
+            </div>
+        </div>
+    </section>
+
     <!-- PROCESO -->
     <section id="proceso" class="process">
         <h2>¿Cómo trabajamos?</h2>
@@ -435,11 +528,6 @@
             </div>
             <div class="step">
                 <div class="step-number">3</div>
-                <h3>Muestra física</h3>
-                <p>Te llevamos un prototipo real en 24-48hs para que apruebes la calidad.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
                 <h3>Producción y entrega</h3>
                 <p>Fabricamos tu pedido y lo entregamos en tu local, agencia o coordinamos envío.</p>
             </div>
@@ -449,10 +537,13 @@
     <!-- CTA -->
     <section class="cta-section" id="contacto">
         <h2>¿Listo para tener tu merchandising 3D?</h2>
-        <p>Conversemos sobre tu proyecto. Te llevamos una muestra física sin cargo.</p>
+        <p>Conversemos sobre tu proyecto y te respondemos con una propuesta en menos de 24 horas hábiles.</p>
         <div class="cta-buttons">
             <a href="https://wa.me/5491125467576?text=Hola!%20Vi%20su%20catálogo%20web%20y%20me%20interesa%20consultar%20por%20merchandising%203D%20personalizado" target="_blank" class="btn-white">
                 💬 Escribir por WhatsApp
+            </a>
+            <a href="mailto:ryuka.3d@gmail.com" class="btn-email">
+                ✉️ Enviar un Email
             </a>
         </div>
     </section>
@@ -462,13 +553,13 @@
         <h2>Visitanos en nuestras redes</h2>
         <p>Seguinos para ver nuestros últimos trabajos, procesos de creación y novedades</p>
         <div class="social-links">
-            <a href="https://instagram.com/ryuka3d" target="_blank" class="social-link instagram">
+            <a href="https://instagram.com/ryuka.3d" target="_blank" class="social-link instagram">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
                 Instagram
             </a>
-            <a href="https://tiktok.com/@ryuka3d" target="_blank" class="social-link tiktok">
+            <a href="https://www.tiktok.com/@ryuka3d" target="_blank" class="social-link tiktok">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                 </svg>
@@ -487,7 +578,8 @@
             <div class="footer-col">
                 <h3>Contacto</h3>
                 <a href="https://wa.me/5491125467576">📱 WhatsApp: +54 9 11 2546-7576</a>
-                <p> Zona de cobertura: CABA y GBA</p>
+                <a href="mailto:ryuka.3d@gmail.com">✉️ ryuka.3d@gmail.com</a>
+                <p style="margin-top: 10px;">📍 Zona de cobertura: CABA y GBA</p>
             </div>
             <div class="footer-col">
                 <h3>Enlaces</h3>
@@ -498,14 +590,19 @@
             </div>
             <div class="footer-col">
                 <h3>Seguinos</h3>
-                <a href="https://instagram.com/ryuka3d" target="_blank">📷 Instagram</a>
-                <a href="https://tiktok.com/@ryuka3d" target="_blank">🎵 TikTok</a>
+                <a href="https://instagram.com/ryuka.3d" target="_blank">📷 Instagram</a>
+                <a href="https://www.tiktok.com/@ryuka3d" target="_blank">🎵 TikTok</a>
             </div>
         </div>
         <div class="footer-bottom">
             <p>© 2026 Ryuka. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/5491125467576?text=Hola!%20Vi%20su%20web%20y%20quiero%20hacer%20una%20consulta" target="_blank" class="float-wpp" title="Chateá con nosotros">
+        💬
+    </a>
 
     <script>
         // ============ DATOS DE PRODUCTOS ============
@@ -545,56 +642,35 @@
                 products = data.productos || [];
                 
                 products.forEach(p => {
-                    // Título
-                    if (!p.title) {
-                        p.title = 'Sin nombre';
-                    }
-                    
-                    // Descripciones
+                    if (!p.title) p.title = 'Sin nombre';
                     if (!p.shortDesc) p.shortDesc = '';
                     if (!p.longDesc) p.longDesc = p.shortDesc || '';
                     
-                    // Categoría
+                    // PRECIOS (NUEVO)
+                    if (!p.precioUnitario) p.precioUnitario = "Consultar";
+                    if (!p.precioFinal) p.precioFinal = "";
+                    
                     if (!p.categoryLabel) {
                         const catMap = {
-                            'agencia llavero': 'Agencia',
-                            'restaurante llavero': 'Restaurante',
-                            'souvenir llavero': 'Souvenir',
-                            'anime': 'Anime',
-                            'ninos': 'Niños',
-                            'ninos anime': 'Niños / Anime',
-                            'souvenir ninos': 'Souvenir / Niños',
-                            'costura': 'Costura',
-                            'fitness llavero': 'Fitness',
-                            'musica llavero': 'Música',
-                            'souvenir': 'Souvenir',
-                            'fitness': 'Fitness',
-                            'musica': 'Música'
+                            'agencia llavero': 'Agencia', 'restaurante llavero': 'Restaurante',
+                            'souvenir llavero': 'Souvenir', 'anime': 'Anime', 'ninos': 'Niños',
+                            'ninos anime': 'Niños / Anime', 'souvenir ninos': 'Souvenir / Niños',
+                            'costura': 'Costura', 'fitness llavero': 'Fitness', 'musica llavero': 'Música',
+                            'souvenir': 'Souvenir', 'fitness': 'Fitness', 'musica': 'Música'
                         };
                         p.categoryLabel = catMap[p.category] || p.category || '';
                     }
-                    
-                    // Imágenes
                     if (!p.images) p.images = [p.image || ''];
-                    
-                    // Colores
                     if (!p.colors) {
                         p.colors = [
                             { name: 'Personalizable', hex: '#810404' },
                             { name: 'Consultar disponibilidad', hex: 'linear-gradient(45deg, #ff0000, #0000ff)' }
                         ];
                     }
-                    
-                    // Características
                     if (!p.features) {
-                        p.features = [
-                            'Impresión 3D de alta calidad',
-                            'Diseño 100% personalizable',
-                            'Múltiples colores disponibles'
-                        ];
+                        p.features = ['Impresión 3D de alta calidad', 'Diseño 100% personalizable', 'Múltiples colores disponibles'];
                     }
                 });
-                
                 renderProducts('todos');
             } catch (error) {
                 console.error('Error cargando productos:', error);
@@ -622,17 +698,25 @@
                 const btnText = isInCart ? '✓ Agregado' : 'Agregar a consulta';
                 const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
                 
+                // HTML del precio (NUEVO)
+                const priceHTML = `
+                    <div class="product-price">
+                        <span class="price-unit">${product.precioUnitario}</span>
+                        ${product.precioFinal ? `<span class="price-pack">${product.precioFinal}</span>` : ''}
+                    </div>
+                `;
+                
                 card.innerHTML = `
                     ${badgeHTML}
                     <div class="product-img-container" onclick="openProductView(${product.id})">
-                        <img src="${product.images[0]}" alt="${product.title}" class="product-img">
+                        <img src="${product.images[0]}" alt="${product.title}" class="product-img" loading="lazy">
                     </div>
                     <div class="product-info">
                         <div class="product-category">${product.categoryLabel}</div>
                         <h3 class="product-title">${product.title}</h3>
                         <p class="product-desc">${product.shortDesc}</p>
                         <div class="product-footer">
-                            <span class="product-price">Desde <strong>Consultar</strong></span>
+                            ${priceHTML}
                             <div class="product-actions">
                                 <button class="${btnClass}" onclick="event.stopPropagation(); toggleCartProduct(${product.id})">${btnText}</button>
                                 <button class="view-btn" onclick="event.stopPropagation(); openProductView(${product.id})">Ver detalles</button>
@@ -652,7 +736,7 @@
             const detail = document.getElementById('productDetail');
             
             let thumbnailsHTML = product.images.map((img, idx) => 
-                `<img src="${img}" class="thumbnail ${idx === 0 ? 'active' : ''}" onclick="changeMainImage('${img}', this)" alt="Thumbnail ${idx + 1}">`
+                `<img src="${img}" class="thumbnail ${idx === 0 ? 'active' : ''}" onclick="changeMainImage('${img}', this)" alt="Thumbnail ${idx + 1}" loading="lazy">`
             ).join('');
             
             let colorsHTML = product.colors.map(c => 
@@ -660,7 +744,6 @@
             ).join('');
             
             let featuresHTML = product.features.map(f => `<li>${f}</li>`).join('');
-            
             const whatsappMsg = encodeURIComponent(`Hola! Vi su catálogo web y me interesa consultar por: *${product.title}*. ¿Me podrían pasar precios y tiempos de entrega?`);
             
             const isInCart = cart.some(item => item.id === product.id);
@@ -669,12 +752,27 @@
             
             detail.innerHTML = `
                 <div class="product-gallery">
-                    <img src="${product.images[0]}" class="main-image" id="mainImage" alt="${product.title}">
+                    <img src="${product.images[0]}" class="main-image" id="mainImage" alt="${product.title}" loading="lazy">
                     ${product.images.length > 1 ? `<div class="thumbnail-list">${thumbnailsHTML}</div>` : ''}
                 </div>
                 <div class="product-detail-info">
                     <span class="detail-category">${product.categoryLabel}</span>
                     <h1>${product.title}</h1>
+                    
+                    <div class="detail-section" style="margin-top: 0; padding-top: 0; border: none;">
+                        <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: baseline;">
+                            <div>
+                                <div style="font-size: 0.9rem; color: var(--gray);">Precio Unitario</div>
+                                <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">${product.precioUnitario}</div>
+                            </div>
+                            ${product.precioFinal ? `
+                            <div>
+                                <div style="font-size: 0.9rem; color: var(--gray);">Precio Final / Pack</div>
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent);">${product.precioFinal}</div>
+                            </div>` : ''}
+                        </div>
+                    </div>
+
                     <div class="detail-section">
                         <h3>Descripción</h3>
                         <p class="detail-description">${product.longDesc}</p>
@@ -720,20 +818,13 @@
         function toggleCartProduct(id) {
             const product = products.find(p => p.id === id);
             if (!product) return;
-            
             const index = cart.findIndex(item => item.id === id);
-            if (index > -1) {
-                cart.splice(index, 1);
-            } else {
-                cart.push(product);
-            }
+            if (index > -1) cart.splice(index, 1);
+            else cart.push(product);
             
             updateCartUI();
             renderProducts(getCurrentFilter());
-            
-            if (document.getElementById('productView').classList.contains('active')) {
-                openProductView(id);
-            }
+            if (document.getElementById('productView').classList.contains('active')) openProductView(id);
         }
 
         function removeFromCart(id) {
@@ -746,24 +837,12 @@
             const activeBtn = document.querySelector('.filter-btn.active');
             if (!activeBtn) return 'todos';
             const text = activeBtn.textContent.toLowerCase();
-            const map = {
-                'todos': 'todos',
-                'agencia': 'agencia',
-                'restaurante': 'restaurante',
-                'souvenir': 'souvenir',
-                'anime': 'anime',
-                'niños': 'ninos',
-                'costura': 'costura',
-                'fitness': 'fitness',
-                'música': 'musica',
-                'llaveros': 'llavero'
-            };
+            const map = { 'todos': 'todos', 'agencia': 'agencia', 'restaurante': 'restaurante', 'souvenir': 'souvenir', 'anime': 'anime', 'niños': 'ninos', 'costura': 'costura', 'fitness': 'fitness', 'música': 'musica', 'llaveros': 'llavero' };
             return map[text] || 'todos';
         }
 
         function updateCartUI() {
             document.getElementById('cartCount').textContent = cart.length;
-            
             const cartItems = document.getElementById('cartItems');
             const sendBtn = document.getElementById('cartSendBtn');
             
@@ -772,11 +851,10 @@
                 sendBtn.disabled = true;
                 return;
             }
-            
             sendBtn.disabled = false;
             cartItems.innerHTML = cart.map(item => `
                 <div class="cart-item">
-                    <img src="${item.images[0]}" class="cart-item-img" alt="${item.title}">
+                    <img src="${item.images[0]}" class="cart-item-img" alt="${item.title}" loading="lazy">
                     <div class="cart-item-info">
                         <div class="cart-item-title">${item.title}</div>
                         <div class="cart-item-category">${item.categoryLabel}</div>
@@ -793,15 +871,10 @@
 
         function sendCartWhatsApp() {
             if (cart.length === 0) return;
-            
             let mensaje = 'Hola! Vi su catálogo web y me interesan los siguientes productos:\n\n';
-            cart.forEach((item, idx) => {
-                mensaje += `${idx + 1}. ${item.title}\n`;
-            });
+            cart.forEach((item, idx) => { mensaje += `${idx + 1}. ${item.title}\n`; });
             mensaje += '\n¿Me podrían pasar precios y tiempos de entrega?';
-            
-            const url = `https://wa.me/5491125467576?text=${encodeURIComponent(mensaje)}`;
-            window.open(url, '_blank');
+            window.open(`https://wa.me/5491125467576?text=${encodeURIComponent(mensaje)}`, '_blank');
         }
 
         // ============ FILTROS ============
@@ -824,7 +897,7 @@
                 document.getElementById('themeBtn').innerHTML = '☀️ Claro';
             } else {
                 document.body.classList.remove('dark-mode');
-                document.getElementById('themeBtn').innerHTML = ' Oscuro';
+                document.getElementById('themeBtn').innerHTML = '🌙 Oscuro';
             }
         }
     </script>
