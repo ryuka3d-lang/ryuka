@@ -728,10 +728,17 @@
             });
         }
 
-        // ============ VISTA DE PRODUCTO ============
+               // ============ VISTA DE PRODUCTO ============
         function openProductView(id) {
-            const product = products.find(p => p.id === id);
-            if (!product) return;
+            // Buscamos el producto convirtiendo ambos a texto para evitar errores de tipo (número vs texto)
+            const product = products.find(p => String(p.id) === String(id));
+            
+            if (!product) {
+                console.error("❌ Producto no encontrado. ID buscado:", id);
+                console.log("Productos cargados:", products);
+                alert("Hubo un error al cargar el producto. Revisá la consola (F12).");
+                return;
+            }
             
             const detail = document.getElementById('productDetail');
             
@@ -746,13 +753,13 @@
             let featuresHTML = product.features.map(f => `<li>${f}</li>`).join('');
             const whatsappMsg = encodeURIComponent(`Hola! Vi su catálogo web y me interesa consultar por: *${product.title}*. ¿Me podrían pasar precios y tiempos de entrega?`);
             
-            const isInCart = cart.some(item => item.id === product.id);
+            const isInCart = cart.some(item => String(item.id) === String(product.id));
             const btnText = isInCart ? '✓ Agregado' : 'Agregar a consulta';
             const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
             
             detail.innerHTML = `
                 <div class="product-gallery">
-                    <img src="${product.images[0]}" class="main-image" id="mainImage" alt="${product.title}" loading="lazy">
+                    <img src="${product.images[0] || 'hero-bg.jpeg'}" class="main-image" id="mainImage" alt="${product.title}" loading="lazy">
                     ${product.images.length > 1 ? `<div class="thumbnail-list">${thumbnailsHTML}</div>` : ''}
                 </div>
                 <div class="product-detail-info">
@@ -763,7 +770,7 @@
                         <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: baseline;">
                             <div>
                                 <div style="font-size: 0.9rem; color: var(--gray);">Precio Unitario</div>
-                                <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">${product.precioUnitario}</div>
+                                <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">${product.precioUnitario || 'Consultar'}</div>
                             </div>
                             ${product.precioFinal ? `
                             <div>
@@ -801,7 +808,6 @@
                 document.getElementById('productView').scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 100);
         }
-
         function closeProductView() {
             document.getElementById('productView').classList.remove('active');
             document.getElementById('catalogo').style.display = 'block';
