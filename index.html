@@ -224,6 +224,17 @@
         .btn-white { background: white; color: var(--primary); padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; }
         .btn-white:hover { transform: translateY(-3px); }
 
+        /* VISITANOS */
+        .visit-us { padding: 4rem 1rem; background: var(--white); text-align: center; }
+        .visit-us h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
+        .visit-us > p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; }
+        .social-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+        .social-link { display: flex; align-items: center; gap: 12px; padding: 16px 32px; border-radius: 12px; font-weight: 600; font-size: 1.1rem; transition: var(--transition); text-decoration: none; }
+        .social-link:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .social-link.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; }
+        .social-link.tiktok { background: #000000; color: white; }
+        .social-link svg { width: 28px; height: 28px; fill: currentColor; }
+
         /* FOOTER */
         footer { background: var(--secondary); color: white; padding: 3rem 1rem 2rem; }
         .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2rem; }
@@ -246,6 +257,7 @@
             .about-container { grid-template-columns: 1fr; }
             .about-image img { height: 250px; }
             .cart-panel { width: 100%; right: -100%; }
+            .social-links { flex-direction: column; align-items: center; }
         }
         @media (max-width: 480px) {
             .hero { padding: 4rem 1rem; }
@@ -264,18 +276,17 @@
                 </a>
             </div>
             <nav class="nav-links">
-                <a onclick="navigateTo('catalogo')" data-i18n="nav_catalog">Catálogo</a>
-                <a onclick="navigateTo('clientes')" data-i18n="nav_clients">Clientes</a>
-                <a onclick="navigateTo('sobre')" data-i18n="nav_about">Sobre Nosotros</a>
-                <a onclick="navigateTo('proceso')" data-i18n="nav_process">Cómo Trabajamos</a>
-                <a onclick="navigateTo('contacto')" class="nav-cta" data-i18n="nav_contact">Contactar</a>
+                <a onclick="navigateTo('catalogo')">Catálogo</a>
+                <a onclick="navigateTo('clientes')">Clientes</a>
+                <a onclick="navigateTo('sobre')">Sobre Nosotros</a>
+                <a onclick="navigateTo('proceso')">Cómo Trabajamos</a>
+                <a onclick="navigateTo('contacto')" class="nav-cta">Contactar</a>
             </nav>
             <div class="controls">
                 <button class="cart-btn" onclick="toggleCart()">
                     🛒 <span class="cart-count" id="cartCount">0</span>
                 </button>
-                <button class="control-btn" id="langBtn" onclick="toggleLanguage()">🌐 EN</button>
-                <button class="control-btn" id="themeBtn" onclick="toggleTheme()">🌙 <span data-i18n="theme_dark">Oscuro</span></button>
+                <button class="control-btn" id="themeBtn" onclick="toggleTheme()"> Oscuro</button>
             </div>
         </div>
     </header>
@@ -284,15 +295,15 @@
     <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
     <div class="cart-panel" id="cartPanel">
         <div class="cart-header">
-            <h2 data-i18n="cart_title"> Consulta de productos</h2>
-            <button class="cart-close" onclick="toggleCart()"></button>
+            <h2> Consulta de productos</h2>
+            <button class="cart-close" onclick="toggleCart()">✕</button>
         </div>
         <div class="cart-items" id="cartItems">
-            <div class="cart-empty" data-i18n="cart_empty">No hay productos seleccionados</div>
+            <div class="cart-empty">No hay productos seleccionados</div>
         </div>
         <div class="cart-footer">
             <button class="cart-send-btn" id="cartSendBtn" onclick="sendCartWhatsApp()" disabled>
-                💬 <span data-i18n="cart_send">Enviar consulta por WhatsApp</span>
+                💬 Enviar consulta por WhatsApp
             </button>
         </div>
     </div>
@@ -300,12 +311,12 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="badge" data-i18n="hero_badge">🔥 Merchandising 3D Personalizado</div>
-            <h1 data-i18n="hero_title">Tu marca en <span>3D</span>, tu estilo en cada detalle</h1>
-            <p data-i18n="hero_desc">Diseñamos y fabricamos merchandising personalizado para cualquier industria con calidad premium.</p>
+            <div class="badge">🔥 Merchandising 3D Personalizado</div>
+            <h1>Tu marca en <span>3D</span>, tu estilo en cada detalle</h1>
+            <p>Diseñamos y fabricamos merchandising personalizado para cualquier industria con calidad premium.</p>
             <div class="hero-buttons">
-                <a onclick="navigateTo('catalogo')" class="btn-primary" style="cursor:pointer" data-i18n="hero_btn_catalog">Ver Catálogo</a>
-                <a href="https://wa.me/5491125467576" target="_blank" class="btn-secondary" data-i18n="hero_btn_whatsapp">💬 Hablar por WhatsApp</a>
+                <a onclick="navigateTo('catalogo')" class="btn-primary" style="cursor:pointer">Ver Catálogo</a>
+                <a href="https://wa.me/5491125467576" target="_blank" class="btn-secondary">💬 Hablar por WhatsApp</a>
             </div>
         </div>
     </section>
@@ -315,15 +326,15 @@
         <div class="stats-container">
             <div class="stat-item">
                 <h3>100%</h3>
-                <p data-i18n="stat_1">Personalizable</p>
+                <p>Personalizable</p>
             </div>
             <div class="stat-item">
                 <h3>3D</h3>
-                <p data-i18n="stat_2">Impresión de alta calidad</p>
+                <p>Impresión de alta calidad</p>
             </div>
             <div class="stat-item">
                 <h3>QR</h3>
-                <p data-i18n="stat_3">Funcional integrado opcional</p>
+                <p>Funcional integrado opcional</p>
             </div>
         </div>
     </section>
@@ -332,11 +343,11 @@
     <section id="sobre" class="about">
         <div class="about-container">
             <div class="about-text">
-                <h2 data-i18n="about_title">Sobre <span>Ryuka</span></h2>
-                <p data-i18n="about_p1">Detrás de cada idea, hay un mundo por crear.</p>
-                <p data-i18n="about_p2">Somos Ryuka, un emprendimiento de impresión 3D creado por dos personas apasionadas por diseñar, crear y transformar ideas en algo real.</p>
-                <p data-i18n="about_p3">Trabajamos con particulares, marcas y empresas para desarrollar productos personalizados, poniendo dedicación, creatividad y atención en cada detalle. Nos gusta escuchar cada idea, acompañar el proceso y encontrar juntos la mejor manera de hacerla realidad.</p>
-                <p data-i18n="about_p4">En Ryuka, cada proyecto empieza con una idea y crece con nosotros.</p>
+                <h2>Sobre <span>Ryuka</span></h2>
+                <p>Detrás de cada idea, hay un mundo por crear.</p>
+                <p>Somos Ryuka, un emprendimiento de impresión 3D creado por dos personas apasionadas por diseñar, crear y transformar ideas en algo real.</p>
+                <p>Trabajamos con particulares, marcas y empresas para desarrollar productos personalizados, poniendo dedicación, creatividad y atención en cada detalle. Nos gusta escuchar cada idea, acompañar el proceso y encontrar juntos la mejor manera de hacerla realidad.</p>
+                <p>En Ryuka, cada proyecto empieza con una idea y crece con nosotros.</p>
             </div>
             <div class="about-image">
                 <img src="hero-bg.jpeg" alt="Ryuka 3D">
@@ -347,101 +358,121 @@
     <!-- FILTROS -->
     <section class="filters-section" id="filtersSection">
         <div class="filters">
-            <button class="filter-btn active" onclick="filterProducts('todos', event)" data-i18n="filter_all">Todos</button>
-            <button class="filter-btn" onclick="filterProducts('agencia', event)" data-i18n="filter_agency">Agencia</button>
-            <button class="filter-btn" onclick="filterProducts('restaurante', event)" data-i18n="filter_restaurant">Restaurante</button>
-            <button class="filter-btn" onclick="filterProducts('souvenir', event)" data-i18n="filter_souvenir">Souvenir</button>
-            <button class="filter-btn" onclick="filterProducts('anime', event)" data-i18n="filter_anime">Anime</button>
-            <button class="filter-btn" onclick="filterProducts('ninos', event)" data-i18n="filter_kids">Niños</button>
-            <button class="filter-btn" onclick="filterProducts('costura', event)" data-i18n="filter_sewing">Costura</button>
-            <button class="filter-btn" onclick="filterProducts('fitness', event)" data-i18n="filter_fitness">Fitness</button>
-            <button class="filter-btn" onclick="filterProducts('musica', event)" data-i18n="filter_music">Música</button>
-            <button class="filter-btn" onclick="filterProducts('llavero', event)" data-i18n="filter_keychains">Llaveros</button>
+            <button class="filter-btn active" onclick="filterProducts('todos', event)">Todos</button>
+            <button class="filter-btn" onclick="filterProducts('agencia', event)">Agencia</button>
+            <button class="filter-btn" onclick="filterProducts('restaurante', event)">Restaurante</button>
+            <button class="filter-btn" onclick="filterProducts('souvenir', event)">Souvenir</button>
+            <button class="filter-btn" onclick="filterProducts('anime', event)">Anime</button>
+            <button class="filter-btn" onclick="filterProducts('ninos', event)">Niños</button>
+            <button class="filter-btn" onclick="filterProducts('costura', event)">Costura</button>
+            <button class="filter-btn" onclick="filterProducts('fitness', event)">Fitness</button>
+            <button class="filter-btn" onclick="filterProducts('musica', event)">Música</button>
+            <button class="filter-btn" onclick="filterProducts('llavero', event)">Llaveros</button>
         </div>
     </section>
 
     <!-- CATÁLOGO -->
     <section id="catalogo" class="catalog-section">
         <div class="section-header">
-            <h2 data-i18n="catalog_title">Nuestro Catálogo</h2>
-            <p data-i18n="catalog_desc">Cada pieza es única, diseñada y fabricada para representar tu marca con la más alta calidad.</p>
+            <h2>Nuestro Catálogo</h2>
+            <p>Cada pieza es única, diseñada y fabricada para representar tu marca con la más alta calidad.</p>
         </div>
         <div class="catalog" id="product-grid"></div>
     </section>
 
     <!-- VISTA DE PRODUCTO DETALLADA -->
     <section class="product-view" id="productView">
-        <button class="back-btn" onclick="closeProductView()">← <span data-i18n="back_catalog">Volver al catálogo</span></button>
+        <button class="back-btn" onclick="closeProductView()">← Volver al catálogo</button>
         <div class="product-detail" id="productDetail"></div>
     </section>
 
     <!-- CLIENTES -->
     <section id="clientes" class="clients">
-        <h2 data-i18n="clients_title">Confían en Nosotros</h2>
-        <p data-i18n="clients_desc">Marcas y emprendimientos que eligieron Ryuka para su merchandising</p>
+        <h2>Confían en Nosotros</h2>
+        <p>Marcas y emprendimientos que eligieron Ryuka para su merchandising</p>
         <div class="clients-grid">
             <div class="client-card">
                 <h3>KAVAK</h3>
-                <p data-i18n="client_kavak">Concesionaria de autos usados. Llaveros corporativos con QR para entrega de vehículos.</p>
+                <p>Concesionaria de autos usados. Llaveros corporativos con QR para entrega de vehículos.</p>
             </div>
             <div class="client-card">
                 <h3>El Nono</h3>
-                <p data-i18n="client_nono">Restaurante. Llaveros personalizados con logo para clientes y promociones.</p>
+                <p>Restaurante. Llaveros personalizados con logo para clientes y promociones.</p>
             </div>
             <div class="client-card">
                 <h3>KOY</h3>
-                <p data-i18n="client_koy">Automotriz. Llaveros con diseño de dragón personalizado.</p>
+                <p>Automotriz. Llaveros con diseño de dragón personalizado.</p>
             </div>
             <div class="client-card">
                 <h3>Ale Kurz</h3>
-                <p data-i18n="client_kurz">Cantante de rock nacional. Merchandising para fans y eventos.</p>
+                <p>Cantante de rock nacional. Merchandising para fans y eventos.</p>
             </div>
             <div class="client-card">
                 <h3>Mhoa</h3>
-                <p data-i18n="client_mhoa">Emprendimiento de marca de ropa.</p>
+                <p>Emprendimiento de marca de ropa.</p>
             </div>
             <div class="client-card">
                 <h3>FOCUS</h3>
-                <p data-i18n="client_focus">Equipo de calistenia. Llaveros y contenedores de suplementos personalizados.</p>
+                <p>Equipo de calistenia. Llaveros y contenedores de suplementos personalizados.</p>
             </div>
         </div>
     </section>
 
     <!-- PROCESO -->
     <section id="proceso" class="process">
-        <h2 data-i18n="process_title">¿Cómo trabajamos?</h2>
-        <p data-i18n="process_desc">Un proceso simple y profesional para que tengas tu merchandising 3D en pocos días.</p>
+        <h2>¿Cómo trabajamos?</h2>
+        <p>Un proceso simple y profesional para que tengas tu merchandising 3D en pocos días.</p>
         <div class="steps">
             <div class="step">
                 <div class="step-number">1</div>
-                <h3 data-i18n="step1_title">Nos contás tu idea</h3>
-                <p data-i18n="step1_desc">Nos pasás tu logo, diseño o idea. Te asesoramos sin cargo sobre la mejor opción.</p>
+                <h3>Nos contás tu idea</h3>
+                <p>Nos pasás tu logo, diseño o idea. Te asesoramos sin cargo sobre la mejor opción.</p>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
-                <h3 data-i18n="step2_title">Diseñamos y modelamos</h3>
-                <p data-i18n="step2_desc">Creamos el modelo 3D y te mostramos una vista previa antes de fabricar.</p>
+                <h3>Diseñamos y modelamos</h3>
+                <p>Creamos el modelo 3D y te mostramos una vista previa antes de fabricar.</p>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
-                <h3 data-i18n="step3_title">Muestra física</h3>
-                <p data-i18n="step3_desc">Te llevamos un prototipo real en 24-48hs para que apruebes la calidad.</p>
+                <h3>Muestra física</h3>
+                <p>Te llevamos un prototipo real en 24-48hs para que apruebes la calidad.</p>
             </div>
             <div class="step">
                 <div class="step-number">4</div>
-                <h3 data-i18n="step4_title">Producción y entrega</h3>
-                <p data-i18n="step4_desc">Fabricamos tu pedido y lo entregamos en tu local, agencia o coordinamos envío.</p>
+                <h3>Producción y entrega</h3>
+                <p>Fabricamos tu pedido y lo entregamos en tu local, agencia o coordinamos envío.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
     <section class="cta-section" id="contacto">
-        <h2 data-i18n="cta_title">¿Listo para tener tu merchandising 3D?</h2>
-        <p data-i18n="cta_desc">Conversemos sobre tu proyecto. Te llevamos una muestra física sin cargo.</p>
+        <h2>¿Listo para tener tu merchandising 3D?</h2>
+        <p>Conversemos sobre tu proyecto. Te llevamos una muestra física sin cargo.</p>
         <div class="cta-buttons">
             <a href="https://wa.me/5491125467576?text=Hola!%20Vi%20su%20catálogo%20web%20y%20me%20interesa%20consultar%20por%20merchandising%203D%20personalizado" target="_blank" class="btn-white">
-                💬 <span data-i18n="cta_btn_whatsapp">Escribir por WhatsApp</span>
+                💬 Escribir por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- VISITANOS -->
+    <section class="visit-us">
+        <h2>Visitanos en nuestras redes</h2>
+        <p>Seguinos para ver nuestros últimos trabajos, procesos de creación y novedades</p>
+        <div class="social-links">
+            <a href="https://instagram.com/ryuka3d" target="_blank" class="social-link instagram">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Instagram
+            </a>
+            <a href="https://tiktok.com/@ryuka3d" target="_blank" class="social-link tiktok">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+                TikTok
             </a>
         </div>
     </section>
@@ -451,23 +482,28 @@
         <div class="footer-content">
             <div class="footer-col">
                 <h3>RYUKA 3D Merch</h3>
-                <p data-i18n="footer_desc">Merchandising 3D personalizado para cualquier marca. Calidad premium y diseños únicos.</p>
+                <p>Merchandising 3D personalizado para cualquier marca. Calidad premium y diseños únicos.</p>
             </div>
             <div class="footer-col">
-                <h3 data-i18n="footer_contact">Contacto</h3>
+                <h3>Contacto</h3>
                 <a href="https://wa.me/5491125467576">📱 WhatsApp: +54 9 11 2546-7576</a>
-                <p data-i18n="footer_location">📍 Zona de cobertura: CABA y GBA</p>
+                <p> Zona de cobertura: CABA y GBA</p>
             </div>
             <div class="footer-col">
-                <h3 data-i18n="footer_links">Enlaces</h3>
-                <a onclick="navigateTo('catalogo')" style="cursor:pointer" data-i18n="nav_catalog">Catálogo</a>
-                <a onclick="navigateTo('clientes')" style="cursor:pointer" data-i18n="nav_clients">Clientes</a>
-                <a onclick="navigateTo('sobre')" style="cursor:pointer" data-i18n="nav_about">Sobre Nosotros</a>
-                <a onclick="navigateTo('proceso')" style="cursor:pointer" data-i18n="nav_process">Cómo Trabajamos</a>
+                <h3>Enlaces</h3>
+                <a onclick="navigateTo('catalogo')" style="cursor:pointer">Catálogo</a>
+                <a onclick="navigateTo('clientes')" style="cursor:pointer">Clientes</a>
+                <a onclick="navigateTo('sobre')" style="cursor:pointer">Sobre Nosotros</a>
+                <a onclick="navigateTo('proceso')" style="cursor:pointer">Cómo Trabajamos</a>
+            </div>
+            <div class="footer-col">
+                <h3>Seguinos</h3>
+                <a href="https://instagram.com/ryuka3d" target="_blank">📷 Instagram</a>
+                <a href="https://tiktok.com/@ryuka3d" target="_blank">🎵 TikTok</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Ryuka. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
+            <p>© 2026 Ryuka. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -476,97 +512,11 @@
         let products = [];
         let cart = [];
 
-        // ============ TRADUCCIONES ============
-        const i18n = {
-            es: {
-                nav_catalog: "Catálogo", nav_clients: "Clientes", nav_about: "Sobre Nosotros", nav_process: "Cómo Trabajamos", nav_contact: "Contactar",
-                theme_dark: "Oscuro", theme_light: "Claro",
-                hero_badge: "🔥 Merchandising 3D Personalizado",
-                hero_title: 'Tu marca en <span>3D</span>, tu estilo en cada detalle',
-                hero_desc: "Diseñamos y fabricamos merchandising personalizado para cualquier industria con calidad premium.",
-                hero_btn_catalog: "Ver Catálogo", hero_btn_whatsapp: "💬 Hablar por WhatsApp",
-                stat_1: "Personalizable", stat_2: "Impresión de alta calidad", stat_3: "Funcional integrado opcional",
-                about_title: 'Sobre <span>Ryuka</span>',
-                about_p1: "Detrás de cada idea, hay un mundo por crear.",
-                about_p2: "Somos Ryuka, un emprendimiento de impresión 3D creado por dos personas apasionadas por diseñar, crear y transformar ideas en algo real.",
-                about_p3: "Trabajamos con particulares, marcas y empresas para desarrollar productos personalizados, poniendo dedicación, creatividad y atención en cada detalle. Nos gusta escuchar cada idea, acompañar el proceso y encontrar juntos la mejor manera de hacerla realidad.",
-                about_p4: "En Ryuka, cada proyecto empieza con una idea y crece con nosotros.",
-                filter_all: "Todos", filter_agency: "Agencia", filter_restaurant: "Restaurante", filter_souvenir: "Souvenir",
-                filter_anime: "Anime", filter_kids: "Niños", filter_sewing: "Costura", filter_fitness: "Fitness",
-                filter_music: "Música", filter_keychains: "Llaveros",
-                catalog_title: "Nuestro Catálogo", catalog_desc: "Cada pieza es única, diseñada y fabricada para representar tu marca con la más alta calidad.",
-                back_catalog: "Volver al catálogo", product_colors: "Colores disponibles", product_features: "Características",
-                product_description: "Descripción", consult_whatsapp: "💬 Consultar por WhatsApp",
-                add_to_consult: "Agregar a consulta", added_to_consult: "✓ Agregado",
-                clients_title: "Confían en Nosotros", clients_desc: "Marcas y emprendimientos que eligieron Ryuka para su merchandising",
-                client_kavak: "Concesionaria de autos usados. Llaveros corporativos con QR para entrega de vehículos.",
-                client_nono: "Restaurante. Llaveros personalizados con logo para clientes y promociones.",
-                client_koy: "Automotriz. Llaveros con diseño de dragón personalizado.",
-                client_kurz: "Cantante de rock nacional. Merchandising para fans y eventos.",
-                client_mhoa: "Emprendimiento de marca de ropa.",
-                client_focus: "Equipo de calistenia. Llaveros y contenedores de suplementos personalizados.",
-                process_title: "¿Cómo trabajamos?", process_desc: "Un proceso simple y profesional para que tengas tu merchandising 3D en pocos días.",
-                step1_title: "Nos contás tu idea", step1_desc: "Nos pasás tu logo, diseño o idea. Te asesoramos sin cargo sobre la mejor opción.",
-                step2_title: "Diseñamos y modelamos", step2_desc: "Creamos el modelo 3D y te mostramos una vista previa antes de fabricar.",
-                step3_title: "Muestra física", step3_desc: "Te llevamos un prototipo real en 24-48hs para que apruebes la calidad.",
-                step4_title: "Producción y entrega", step4_desc: "Fabricamos tu pedido y lo entregamos en tu local, agencia o coordinamos envío.",
-                cta_title: "¿Listo para tener tu merchandising 3D?", cta_desc: "Conversemos sobre tu proyecto. Te llevamos una muestra física sin cargo.",
-                cta_btn_whatsapp: "Escribir por WhatsApp",
-                footer_desc: "Merchandising 3D personalizado para cualquier marca. Calidad premium y diseños únicos.",
-                footer_contact: "Contacto", footer_location: "📍 Zona de cobertura: CABA y GBA",
-                footer_links: "Enlaces", footer_rights: "Todos los derechos reservados.",
-                cart_title: "📋 Consulta de productos", cart_empty: "No hay productos seleccionados",
-                cart_send: "Enviar consulta por WhatsApp", cart_count_text: "productos en consulta"
-            },
-            en: {
-                nav_catalog: "Catalog", nav_clients: "Clients", nav_about: "About Us", nav_process: "How We Work", nav_contact: "Contact",
-                theme_dark: "Dark", theme_light: "Light",
-                hero_badge: " Custom 3D Merchandising",
-                hero_title: 'Your brand in <span>3D</span>, your style in every detail',
-                hero_desc: "We design and manufacture custom merchandising for any industry with premium quality.",
-                hero_btn_catalog: "View Catalog", hero_btn_whatsapp: "💬 Chat on WhatsApp",
-                stat_1: "Customizable", stat_2: "High quality printing", stat_3: "Optional functional QR",
-                about_title: 'About <span>Ryuka</span>',
-                about_p1: "Behind every idea, there's a world to create.",
-                about_p2: "We are Ryuka, a 3D printing venture created by two people passionate about designing, creating and transforming ideas into something real.",
-                about_p3: "We work with individuals, brands and companies to develop personalized products, putting dedication, creativity and attention to every detail. We like to listen to each idea, accompany the process and find together the best way to make it happen.",
-                about_p4: "At Ryuka, every project starts with an idea and grows with us.",
-                filter_all: "All", filter_agency: "Agency", filter_restaurant: "Restaurant", filter_souvenir: "Souvenir",
-                filter_anime: "Anime", filter_kids: "Kids", filter_sewing: "Sewing", filter_fitness: "Fitness",
-                filter_music: "Music", filter_keychains: "Keychains",
-                catalog_title: "Our Catalog", catalog_desc: "Each piece is unique, designed and manufactured to represent your brand with the highest quality.",
-                back_catalog: "Back to catalog", product_colors: "Available colors", product_features: "Features",
-                product_description: "Description", consult_whatsapp: "💬 Consult via WhatsApp",
-                add_to_consult: "Add to inquiry", added_to_consult: "✓ Added",
-                clients_title: "They Trust Us", clients_desc: "Brands and entrepreneurs who chose Ryuka for their merchandising",
-                client_kavak: "Used car dealership. Corporate keychains with QR for vehicle delivery.",
-                client_nono: "Restaurant. Custom keychains with logo for customers and promotions.",
-                client_koy: "Automotive. Keychains with custom dragon design.",
-                client_kurz: "National rock singer. Merchandising for fans and events.",
-                client_mhoa: "Clothing brand entrepreneurship.",
-                client_focus: "Calisthenics team. Keychains and custom supplement containers.",
-                process_title: "How do we work?", process_desc: "A simple and professional process to get your 3D merchandising in a few days.",
-                step1_title: "Tell us your idea", step1_desc: "Send us your logo, design or idea. We advise you free of charge on the best option.",
-                step2_title: "We design and model", step2_desc: "We create the 3D model and show you a preview before manufacturing.",
-                step3_title: "Physical sample", step3_desc: "We bring you a real prototype in 24-48h so you can approve the quality.",
-                step4_title: "Production and delivery", step4_desc: "We manufacture your order and deliver it to your store, agency or coordinate shipping.",
-                cta_title: "Ready to have your 3D merchandising?", cta_desc: "Let's talk about your project. We bring you a physical sample free of charge.",
-                cta_btn_whatsapp: "Write on WhatsApp",
-                footer_desc: "Custom 3D merchandising for any brand. Premium quality and unique designs.",
-                footer_contact: "Contact", footer_location: "📍 Coverage area: CABA and GBA",
-                footer_links: "Links", footer_rights: "All rights reserved.",
-                cart_title: "📋 Product inquiry", cart_empty: "No products selected",
-                cart_send: "Send inquiry via WhatsApp", cart_count_text: "products in inquiry"
-            }
-        };
-
         // ============ ESTADO ============
-        let currentLang = localStorage.getItem('ryuka_lang') || 'es';
         let currentTheme = localStorage.getItem('ryuka_theme') || 'light';
 
         // ============ INICIALIZACIÓN ============
         document.addEventListener('DOMContentLoaded', () => {
-            applyLanguage(currentLang);
             applyTheme(currentTheme);
             cargarProductos();
         });
@@ -596,43 +546,32 @@
                 
                 products.forEach(p => {
                     // Título
-                    if (typeof p.title === 'string') {
-                        p.title = { es: p.title, en: p.title };
-                    } else if (!p.title) {
-                        p.title = { es: 'Sin nombre', en: 'Unnamed' };
+                    if (!p.title) {
+                        p.title = 'Sin nombre';
                     }
                     
                     // Descripciones
-                    if (typeof p.shortDesc === 'string') {
-                        p.shortDesc = { es: p.shortDesc, en: p.shortDesc };
-                    } else if (!p.shortDesc) {
-                        p.shortDesc = { es: '', en: '' };
-                    }
-                    
-                    if (typeof p.longDesc === 'string') {
-                        p.longDesc = { es: p.longDesc, en: p.longDesc };
-                    } else if (!p.longDesc) {
-                        p.longDesc = p.shortDesc || { es: '', en: '' };
-                    }
+                    if (!p.shortDesc) p.shortDesc = '';
+                    if (!p.longDesc) p.longDesc = p.shortDesc || '';
                     
                     // Categoría
                     if (!p.categoryLabel) {
                         const catMap = {
-                            'agencia llavero': { es: 'Agencia', en: 'Agency' },
-                            'restaurante llavero': { es: 'Restaurante', en: 'Restaurant' },
-                            'souvenir llavero': { es: 'Souvenir', en: 'Souvenir' },
-                            'anime': { es: 'Anime', en: 'Anime' },
-                            'ninos': { es: 'Niños', en: 'Kids' },
-                            'ninos anime': { es: 'Niños / Anime', en: 'Kids / Anime' },
-                            'souvenir ninos': { es: 'Souvenir / Niños', en: 'Souvenir / Kids' },
-                            'costura': { es: 'Costura', en: 'Sewing' },
-                            'fitness llavero': { es: 'Fitness', en: 'Fitness' },
-                            'musica llavero': { es: 'Música', en: 'Music' },
-                            'souvenir': { es: 'Souvenir', en: 'Souvenir' },
-                            'fitness': { es: 'Fitness', en: 'Fitness' },
-                            'musica': { es: 'Música', en: 'Music' }
+                            'agencia llavero': 'Agencia',
+                            'restaurante llavero': 'Restaurante',
+                            'souvenir llavero': 'Souvenir',
+                            'anime': 'Anime',
+                            'ninos': 'Niños',
+                            'ninos anime': 'Niños / Anime',
+                            'souvenir ninos': 'Souvenir / Niños',
+                            'costura': 'Costura',
+                            'fitness llavero': 'Fitness',
+                            'musica llavero': 'Música',
+                            'souvenir': 'Souvenir',
+                            'fitness': 'Fitness',
+                            'musica': 'Música'
                         };
-                        p.categoryLabel = catMap[p.category] || { es: p.category || '', en: p.category || '' };
+                        p.categoryLabel = catMap[p.category] || p.category || '';
                     }
                     
                     // Imágenes
@@ -641,25 +580,18 @@
                     // Colores
                     if (!p.colors) {
                         p.colors = [
-                            { name: { es: 'Personalizable', en: 'Customizable' }, hex: '#810404' },
-                            { name: { es: 'Consultar disponibilidad', en: 'Check availability' }, hex: 'linear-gradient(45deg, #ff0000, #0000ff)' }
+                            { name: 'Personalizable', hex: '#810404' },
+                            { name: 'Consultar disponibilidad', hex: 'linear-gradient(45deg, #ff0000, #0000ff)' }
                         ];
-                    } else if (Array.isArray(p.colors)) {
-                        p.colors.forEach(c => {
-                            if (typeof c.name === 'string') {
-                                c.name = { es: c.name, en: c.name };
-                            }
-                        });
                     }
                     
                     // Características
                     if (!p.features) {
-                        p.features = {
-                            es: ['Impresión 3D de alta calidad', 'Diseño 100% personalizable', 'Múltiples colores disponibles'],
-                            en: ['High quality 3D printing', '100% customizable design', 'Multiple colors available']
-                        };
-                    } else if (Array.isArray(p.features)) {
-                        p.features = { es: p.features, en: p.features };
+                        p.features = [
+                            'Impresión 3D de alta calidad',
+                            'Diseño 100% personalizable',
+                            'Múltiples colores disponibles'
+                        ];
                     }
                 });
                 
@@ -683,27 +615,27 @@
                 card.className = 'product-card';
                 
                 let badgeHTML = '';
-                if (product.badge === 'popular') badgeHTML = `<span class="product-badge popular">${currentLang === 'es' ? 'Popular' : 'Popular'}</span>`;
-                if (product.badge === 'new') badgeHTML = `<span class="product-badge new">${currentLang === 'es' ? 'Nuevo' : 'New'}</span>`;
+                if (product.badge === 'popular') badgeHTML = '<span class="product-badge popular">Popular</span>';
+                if (product.badge === 'new') badgeHTML = '<span class="product-badge new">Nuevo</span>';
                 
                 const isInCart = cart.some(item => item.id === product.id);
-                const btnText = isInCart ? i18n[currentLang].added_to_consult : i18n[currentLang].add_to_consult;
+                const btnText = isInCart ? '✓ Agregado' : 'Agregar a consulta';
                 const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
                 
                 card.innerHTML = `
                     ${badgeHTML}
                     <div class="product-img-container" onclick="openProductView(${product.id})">
-                        <img src="${product.images[0]}" alt="${product.title[currentLang] || 'Producto'}" class="product-img">
+                        <img src="${product.images[0]}" alt="${product.title}" class="product-img">
                     </div>
                     <div class="product-info">
-                        <div class="product-category">${product.categoryLabel[currentLang] || ''}</div>
-                        <h3 class="product-title">${product.title[currentLang] || 'Sin nombre'}</h3>
-                        <p class="product-desc">${product.shortDesc[currentLang] || ''}</p>
+                        <div class="product-category">${product.categoryLabel}</div>
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-desc">${product.shortDesc}</p>
                         <div class="product-footer">
-                            <span class="product-price">${currentLang === 'es' ? 'Desde' : 'From'} <strong>${currentLang === 'es' ? 'Consultar' : 'Inquire'}</strong></span>
+                            <span class="product-price">Desde <strong>Consultar</strong></span>
                             <div class="product-actions">
                                 <button class="${btnClass}" onclick="event.stopPropagation(); toggleCartProduct(${product.id})">${btnText}</button>
-                                <button class="view-btn" onclick="event.stopPropagation(); openProductView(${product.id})">${currentLang === 'es' ? 'Ver detalles' : 'View details'}</button>
+                                <button class="view-btn" onclick="event.stopPropagation(); openProductView(${product.id})">Ver detalles</button>
                             </div>
                         </div>
                     </div>
@@ -724,41 +656,41 @@
             ).join('');
             
             let colorsHTML = product.colors.map(c => 
-                `<div class="color-item"><span class="color-dot" style="background: ${c.hex}"></span>${c.name[currentLang] || c.name.es || ''}</div>`
+                `<div class="color-item"><span class="color-dot" style="background: ${c.hex}"></span>${c.name}</div>`
             ).join('');
             
-            let featuresHTML = (product.features[currentLang] || product.features.es || []).map(f => `<li>${f}</li>`).join('');
+            let featuresHTML = product.features.map(f => `<li>${f}</li>`).join('');
             
-            const whatsappMsg = encodeURIComponent(`Hola! Vi su catálogo web y me interesa consultar por: *${product.title[currentLang] || product.title.es}*. ¿Me podrían pasar precios y tiempos de entrega?`);
+            const whatsappMsg = encodeURIComponent(`Hola! Vi su catálogo web y me interesa consultar por: *${product.title}*. ¿Me podrían pasar precios y tiempos de entrega?`);
             
             const isInCart = cart.some(item => item.id === product.id);
-            const btnText = isInCart ? i18n[currentLang].added_to_consult : i18n[currentLang].add_to_consult;
+            const btnText = isInCart ? '✓ Agregado' : 'Agregar a consulta';
             const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
             
             detail.innerHTML = `
                 <div class="product-gallery">
-                    <img src="${product.images[0]}" class="main-image" id="mainImage" alt="${product.title[currentLang] || ''}">
+                    <img src="${product.images[0]}" class="main-image" id="mainImage" alt="${product.title}">
                     ${product.images.length > 1 ? `<div class="thumbnail-list">${thumbnailsHTML}</div>` : ''}
                 </div>
                 <div class="product-detail-info">
-                    <span class="detail-category">${product.categoryLabel[currentLang] || ''}</span>
-                    <h1>${product.title[currentLang] || ''}</h1>
+                    <span class="detail-category">${product.categoryLabel}</span>
+                    <h1>${product.title}</h1>
                     <div class="detail-section">
-                        <h3>${i18n[currentLang].product_description}</h3>
-                        <p class="detail-description">${product.longDesc[currentLang] || product.longDesc.es || ''}</p>
+                        <h3>Descripción</h3>
+                        <p class="detail-description">${product.longDesc}</p>
                     </div>
                     <div class="detail-section">
-                        <h3>${i18n[currentLang].product_colors}</h3>
+                        <h3>Colores disponibles</h3>
                         <div class="colors-list">${colorsHTML}</div>
                     </div>
                     <div class="detail-section">
-                        <h3>${i18n[currentLang].product_features}</h3>
+                        <h3>Características</h3>
                         <ul class="features-list">${featuresHTML}</ul>
                     </div>
                     <div class="detail-cta">
-                        <a href="https://wa.me/5491125467576?text=${whatsappMsg}" target="_blank" class="btn-large btn-whatsapp-large">${i18n[currentLang].consult_whatsapp}</a>
+                        <a href="https://wa.me/5491125467576?text=${whatsappMsg}" target="_blank" class="btn-large btn-whatsapp-large">💬 Consultar por WhatsApp</a>
                         <button class="btn-large ${btnClass}" onclick="toggleCartProduct(${product.id})">${btnText}</button>
-                        <button class="btn-large btn-back-large" onclick="closeProductView()">← ${i18n[currentLang].back_catalog}</button>
+                        <button class="btn-large btn-back-large" onclick="closeProductView()">← Volver al catálogo</button>
                     </div>
                 </div>
             `;
@@ -767,7 +699,6 @@
             document.querySelector('.filters-section').style.display = 'none';
             document.getElementById('productView').classList.add('active');
             
-            // Scroll a la vista del producto, no al inicio
             setTimeout(() => {
                 document.getElementById('productView').scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 100);
@@ -798,9 +729,8 @@
             }
             
             updateCartUI();
-            renderProducts(document.querySelector('.filter-btn.active')?.textContent.toLowerCase() === 'todos' ? 'todos' : getCurrentFilter());
+            renderProducts(getCurrentFilter());
             
-            // Si estamos en la vista de producto, actualizar el botón
             if (document.getElementById('productView').classList.contains('active')) {
                 openProductView(id);
             }
@@ -817,16 +747,16 @@
             if (!activeBtn) return 'todos';
             const text = activeBtn.textContent.toLowerCase();
             const map = {
-                'todos': 'todos', 'all': 'todos',
-                'agencia': 'agencia', 'agency': 'agencia',
-                'restaurante': 'restaurante', 'restaurant': 'restaurante',
+                'todos': 'todos',
+                'agencia': 'agencia',
+                'restaurante': 'restaurante',
                 'souvenir': 'souvenir',
                 'anime': 'anime',
-                'niños': 'ninos', 'kids': 'ninos',
-                'costura': 'costura', 'sewing': 'costura',
+                'niños': 'ninos',
+                'costura': 'costura',
                 'fitness': 'fitness',
-                'música': 'musica', 'music': 'musica',
-                'llaveros': 'llavero', 'keychains': 'llavero'
+                'música': 'musica',
+                'llaveros': 'llavero'
             };
             return map[text] || 'todos';
         }
@@ -838,7 +768,7 @@
             const sendBtn = document.getElementById('cartSendBtn');
             
             if (cart.length === 0) {
-                cartItems.innerHTML = `<div class="cart-empty">${i18n[currentLang].cart_empty}</div>`;
+                cartItems.innerHTML = '<div class="cart-empty">No hay productos seleccionados</div>';
                 sendBtn.disabled = true;
                 return;
             }
@@ -846,10 +776,10 @@
             sendBtn.disabled = false;
             cartItems.innerHTML = cart.map(item => `
                 <div class="cart-item">
-                    <img src="${item.images[0]}" class="cart-item-img" alt="${item.title[currentLang] || ''}">
+                    <img src="${item.images[0]}" class="cart-item-img" alt="${item.title}">
                     <div class="cart-item-info">
-                        <div class="cart-item-title">${item.title[currentLang] || item.title.es || ''}</div>
-                        <div class="cart-item-category">${item.categoryLabel[currentLang] || ''}</div>
+                        <div class="cart-item-title">${item.title}</div>
+                        <div class="cart-item-category">${item.categoryLabel}</div>
                     </div>
                     <button class="cart-item-remove" onclick="removeFromCart(${item.id})">✕</button>
                 </div>
@@ -866,7 +796,7 @@
             
             let mensaje = 'Hola! Vi su catálogo web y me interesan los siguientes productos:\n\n';
             cart.forEach((item, idx) => {
-                mensaje += `${idx + 1}. ${item.title[currentLang] || item.title.es}\n`;
+                mensaje += `${idx + 1}. ${item.title}\n`;
             });
             mensaje += '\n¿Me podrían pasar precios y tiempos de entrega?';
             
@@ -881,30 +811,6 @@
             renderProducts(category);
         }
 
-        // ============ IDIOMA ============
-        function toggleLanguage() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            localStorage.setItem('ryuka_lang', currentLang);
-            applyLanguage(currentLang);
-            renderProducts(getCurrentFilter());
-            updateCartUI();
-        }
-
-        function applyLanguage(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (i18n[lang][key]) {
-                    if (key === 'hero_title' || key === 'about_title') {
-                        el.innerHTML = i18n[lang][key];
-                    } else {
-                        el.textContent = i18n[lang][key];
-                    }
-                }
-            });
-            document.getElementById('langBtn').innerHTML = lang === 'es' ? '🌐 EN' : ' ES';
-            document.documentElement.lang = lang;
-        }
-
         // ============ TEMA ============
         function toggleTheme() {
             currentTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -915,10 +821,10 @@
         function applyTheme(theme) {
             if (theme === 'dark') {
                 document.body.classList.add('dark-mode');
-                document.getElementById('themeBtn').innerHTML = '☀️ <span>' + (currentLang === 'es' ? 'Claro' : 'Light') + '</span>';
+                document.getElementById('themeBtn').innerHTML = '☀️ Claro';
             } else {
                 document.body.classList.remove('dark-mode');
-                document.getElementById('themeBtn').innerHTML = '🌙 <span>' + (currentLang === 'es' ? 'Oscuro' : 'Dark') + '</span>';
+                document.getElementById('themeBtn').innerHTML = ' Oscuro';
             }
         }
     </script>
