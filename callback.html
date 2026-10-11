@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Autenticando...</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const error = params.get('error');
+    
+    if (error) {
+      document.body.innerHTML = '<h1>Error de autenticación</h1><p>' + error + '</p>';
+    } else if (code) {
+      if (window.opener) {
+        window.opener.postMessage({
+          type: 'authorization_code',
+          code: code
+        }, window.location.origin);
+        window.close();
+      } else {
+        document.body.innerHTML = '<h1>Error</h1><p>No se pudo completar la autenticación. Por favor, cerrá esta ventana y volvé a intentar.</p>';
+      }
+    } else {
+      document.body.innerHTML = '<h1>Autenticando...</h1>';
+    }
+  </script>
+</head>
+<body>
+  <p>Procesando autenticación...</p>
+</body>
+</html>
