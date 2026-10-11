@@ -616,10 +616,15 @@
 
         async function cargarProductos() {
             try {
-                const response = await fetch('productos.json');
-                const data = await response.json();
-                products = data.productos || [];
-                clientes = data.clientes || [];
+                // 1. Cargar productos
+                const resProd = await fetch('productos.json');
+                const dataProd = await resProd.json();
+                products = dataProd.productos || [];
+                
+                // 2. Cargar clientes (desde su propio archivo)
+                const resCli = await fetch('clientes.json');
+                const dataCli = await resCli.json();
+                clientes = dataCli.clientes || [];
                 
                 products.forEach(p => {
                     if (!p.title) p.title = 'Sin nombre';
@@ -641,15 +646,12 @@
                         p.categoryLabel = catMap[p.category] || p.category || '';
                     }
                     
-                    // Galería: combinar imagen principal + galería extra
                     const galleryImages = p.gallery ? p.gallery.map(g => g.img || g).filter(Boolean) : [];
                     p.images = [p.image, ...galleryImages].filter(Boolean);
                     if (p.images.length === 0) p.images = ['hero-bg.jpeg'];
                     
                     if (!p.colors) {
-                        p.colors = [
-                            { name: { es: 'Personalizable', en: 'Customizable' }, hex: '#810404' }
-                        ];
+                        p.colors = [{ name: { es: 'Personalizable', en: 'Customizable' }, hex: '#810404' }];
                     }
                     if (!p.features) {
                         p.features = { es: ['Impresión 3D de alta calidad', 'Diseño 100% personalizable'] };
@@ -659,7 +661,7 @@
                 renderProductos('todos');
                 renderClientes();
             } catch (error) {
-                console.error('Error cargando productos:', error);
+                console.error('Error cargando datos:', error);
                 products = [];
                 renderProductos('todos');
             }
