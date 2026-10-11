@@ -1,8 +1,9 @@
 backend:
   name: github
-  repo: ryuka3d-lang/ryuka
+  repo: ryuka3d/ryuka
   branch: main
   auth_scope: repo
+  app_id: Ov23limNlfT32Yz6hojF
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
