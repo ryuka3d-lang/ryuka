@@ -4,14 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panel de Administración - Ryuka</title>
-</head>
-<body>
-  <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
+  
+  <!-- ⚠️ IMPORTANTE: CMS_MANUAL_INIT debe ir ANTES de cargar Decap CMS -->
   <script>
     window.CMS_MANUAL_INIT = true;
   </script>
+  
+  <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
+</head>
+<body>
   <script>
-    const config = {
+    const CONFIG = {
       backend: {
         name: 'github',
         repo: 'ryuka3d/ryuka',
@@ -50,15 +53,11 @@
                         { label: 'Agencia + Llavero', value: 'agencia llavero' },
                         { label: 'Restaurante + Llavero', value: 'restaurante llavero' },
                         { label: 'Souvenir + Llavero', value: 'souvenir llavero' },
-                        { label: 'Fitness + Llavero', value: 'fitness llavero' },
-                        { label: 'Música + Llavero', value: 'musica llavero' },
                         { label: 'Llaveros', value: 'llaveros' },
                         { label: 'Llaveros y Deporte', value: 'llaveros y deporte' },
                         { label: 'Deporte', value: 'deporte' },
                         { label: 'Anime', value: 'anime' },
                         { label: 'Niños', value: 'ninos' },
-                        { label: 'Niños + Anime', value: 'ninos anime' },
-                        { label: 'Souvenir + Niños', value: 'souvenir ninos' },
                         { label: 'Costura', value: 'costura' },
                         { label: 'Souvenir', value: 'souvenir' },
                         { label: 'Fitness', value: 'fitness' },
@@ -130,12 +129,13 @@
       ]
     };
 
-    if (window.CMS) {
-      window.CMS.init({ config });
+    // Inicializar CMS con la configuración manual
+    if (window.CMS && window.CMS.init) {
+      window.CMS.init({ config: CONFIG });
     } else {
       window.addEventListener('DOMContentLoaded', function() {
         if (window.CMS && window.CMS.init) {
-          window.CMS.init({ config });
+          window.CMS.init({ config: CONFIG });
         }
       });
     }
