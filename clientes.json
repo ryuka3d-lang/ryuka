@@ -1,10 +1,40 @@
 {
   "clientes": [
-    { "nombre": "KAVAK", "descripcion": "Concesionaria de autos usados. Llaveros corporativos con QR para entrega de vehículos." },
-    { "nombre": "El Nono", "descripcion": "Restaurante. Llaveros personalizados con logo para clientes y promociones." },
-    { "nombre": "KOY", "descripcion": "Automotriz. Llaveros con diseño de dragón personalizado." },
-    { "nombre": "Ale Kurz", "descripcion": "Cantante de rock nacional. Merchandising para fans y eventos." },
-    { "nombre": "Mhoa", "descripcion": "Emprendimiento de marca de ropa." },
-    { "nombre": "FOCUS", "descripcion": "Equipo de calistenia. Llaveros y contenedores de suplementos personalizados." }
+    {
+      "nombre": "KAVAK",
+      "descripcion": "Concesionaria de autos usados. Llaveros corporativos para entrega de vehículos."
+    },
+    {
+      "nombre": "El Nono",
+      "descripcion": "Restaurante. Llaveros personalizados con logo para clientes."
+    },
+    {
+      "nombre": "Ale Kurz",
+      "descripcion": "Cantante de rock nacional. Merchandising para fans y eventos."
+    },
+    {
+      "nombre": "Mhoa",
+      "descripcion": "Emprendimiento de marca de ropa."
+    },
+    {
+      "nombre": "Paperboard Desing",
+      "descripcion": "Cuadernos, agendas, pines, stickers, señaladores, imanes, postales y productos personalizados!"
+    },
+    {
+      "nombre": "Helikrisa",
+      "descripcion": "Cosmética natural. Shampoo cremas y jabones naturales Sin T.A.C.C."
+    },
+    {
+      "nombre": "Origen Tigre",
+      "descripcion": "Programa municipal del Partido de Tigre que apoya, capacita y visibiliza a los emprendedores, artesanos y productores locales de la economía social y solidaria."
+    },
+    {
+      "nombre": "KOY",
+      "descripcion": "Automotriz. Llaveros con diseño de dragón personalizado."
+    },
+    {
+      "nombre": "FOCUS",
+      "descripcion": "Equipo de calistenia. Llaveros y contenedores de suplementos personalizados."
+    }
   ]
 }
