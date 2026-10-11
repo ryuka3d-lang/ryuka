@@ -28,32 +28,36 @@ collections:
                   - { label: "Agencia + Llavero", value: "agencia llavero" }
                   - { label: "Restaurante + Llavero", value: "restaurante llavero" }
                   - { label: "Souvenir + Llavero", value: "souvenir llavero" }
+                  - { label: "Fitness + Llavero", value: "fitness llavero" }
+                  - { label: "Música + Llavero", value: "musica llavero" }
+                  - { label: "Llaveros", value: "llaveros" }
+                  - { label: "Llaveros y Deporte", value: "llaveros y deporte" }
+                  - { label: "Deporte", value: "deporte" }
                   - { label: "Anime", value: "anime" }
                   - { label: "Niños", value: "ninos" }
                   - { label: "Niños + Anime", value: "ninos anime" }
                   - { label: "Souvenir + Niños", value: "souvenir ninos" }
                   - { label: "Costura", value: "costura" }
-                  - { label: "Fitness + Llavero", value: "fitness llavero" }
-                  - { label: "Música + Llavero", value: "musica llavero" }
                   - { label: "Souvenir", value: "souvenir" }
                   - { label: "Fitness", value: "fitness" }
                   - { label: "Música", value: "musica" }
                 allow_add: true
               - { label: "Descripción Corta", name: "shortDesc", widget: "string", required: false }
               - { label: "Descripción Completa", name: "longDesc", widget: "text", required: false }
-              
-              # 👇 AQUÍ ESTÁN LOS CAMPOS DE PRECIO NUEVOS 👇
               - { label: "Precio Unitario", name: "precioUnitario", widget: "string", hint: "Ej: $1.500 c/u", required: false }
               - { label: "Precio Final / Pack", name: "precioFinal", widget: "string", hint: "Ej: $15.000 (pack x10)", required: false }
-              # 👆 AQUÍ TERMINAN 👆
-
-              - label: "Imagen del producto"
+              - label: "Imagen Principal"
                 name: "image"
                 widget: "image"
                 required: false
-                allow_multiple: false
                 media_folder: "images/uploads"
                 public_folder: "/images/uploads"
+              - label: "Galería de Fotos (opcional)"
+                name: "gallery"
+                widget: "list"
+                required: false
+                allow_add: true
+                field: { label: "Imagen", name: "img", widget: "image", media_folder: "images/uploads", public_folder: "/images/uploads" }
               - label: "Etiqueta"
                 name: "badge"
                 widget: "select"
@@ -62,3 +66,19 @@ collections:
                   - { label: "Ninguna", value: "" }
                   - { label: "Nuevo", value: "new" }
                   - { label: "Popular", value: "popular" }
+
+  - name: "clientes"
+    label: "Clientes que Confían"
+    files:
+      - name: "lista-clientes"
+        label: "Lista de Clientes"
+        file: "clientes.json"
+        fields:
+          - label: "Clientes"
+            name: "clientes"
+            widget: "list"
+            summary: "{{fields.nombre}}"
+            allow_add: true
+            fields:
+              - { label: "Nombre del Cliente/Marca", name: "nombre", widget: "string", required: true }
+              - { label: "Descripción", name: "descripcion", widget: "text", required: false }
