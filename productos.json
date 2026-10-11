@@ -755,5 +755,12 @@
       "image": "/images/uploads/dragon.png",
       "category": "ninos"
     }
+    {
+  "productos": [ ... ],
+  "clientes": [
+    { "nombre": "KAVAK", "descripcion": "Concesionaria de autos usados. Llaveros corporativos con QR." },
+    { "nombre": "El Nono", "descripcion": "Restaurante. Llaveros personalizados con logo." }
+  ]
+}
   ]
 }
