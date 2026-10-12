@@ -13,7 +13,7 @@
     <meta property="og:title" content="Ryuka | Merchandising 3D Personalizado">
     <meta property="og:description" content="Transformamos tus ideas en productos 3D únicos. Llaveros, displays y más. ¡Cotizá online!">
     <meta property="og:image" content="hero-bg.jpeg">
-    <meta property="og:url" content="https://ryuka3dmerch.netlify.app">
+    <meta property="og:url" content="https://ryuka3d-lang.github.io/ryuka/">
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
@@ -24,6 +24,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
+    <!-- Librería para leer Google Sheets (CSV) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
     <style>
         :root {
             --primary: #810404;
@@ -352,7 +355,6 @@
             left: -9999px !important;
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
 <body>
 
@@ -467,12 +469,12 @@
         <div class="product-detail" id="productDetail"></div>
     </section>
 
-    <!-- CLIENTES (dinámico desde JSON) -->
+    <!-- CLIENTES (dinámico desde Google Sheets) -->
     <section id="clientes" class="clients">
         <h2>Confían en Nosotros</h2>
         <p>Marcas y emprendimientos que eligieron Ryuka para su merchandising</p>
         <div class="clients-grid" id="clients-grid">
-            <!-- Se carga desde clientes.json -->
+            <!-- Se carga dinámicamente -->
         </div>
     </section>
 
@@ -498,18 +500,6 @@
                 <p class="testimonial-text">"El merchandising para el evento de rock quedó espectacular. Los señaladores y llaveros fueron un éxito total entre el público. ¡Gracias Ryuka!"</p>
                 <div class="testimonial-author">Santiago M.</div>
                 <div class="testimonial-role">Productor de Eventos</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Compramos los rompecabezas 3D para los cumpleaños de los chicos del equipo. Fueron un regalo original, divertido y de muy buena calidad."</p>
-                <div class="testimonial-author">Carolina P.</div>
-                <div class="testimonial-role">Coordinadora de RRHH</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Excelente atención y asesoramiento desde el primer mensaje. Me ayudaron a materializar una idea que tenía para mi marca de ropa. 100% recomendados."</p>
-                <div class="testimonial-author">Julián D.</div>
-                <div class="testimonial-role">Fundador de Marca de Ropa</div>
             </div>
         </div>
     </section>
@@ -614,12 +604,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             applyTheme(currentTheme);
             cargarProductos();
-            
-        document.addEventListener('DOMContentLoaded', () => {
-            applyTheme(currentTheme);
-            cargarProductos();
-            renderClientes(); // <--- ¡AGREGAR ESTA LÍNEA!
-        });
+            cargarClientes(); // <--- ¡AHORA SÍ SE CARGAN LOS CLIENTES!
         });
 
         function navigateTo(sectionId) {
@@ -635,80 +620,107 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // ==========================================
+        // 1. CARGAR PRODUCTOS DESDE GOOGLE SHEETS
+        // ==========================================
         async function cargarProductos() {
-    try {
-        const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkx4eNhSxLHpGyA_we1CLvZPriEUt5l9h6Ebd96gKDV8BWAhsNEq4pyiT847Yx9nXUv2hatxZ1FTNf/pub?gid=0&single=true&output=csv';
-        
-        const response = await fetch(sheetURL);
-        const csvText = await response.text();
-        
-        Papa.parse(csvText, {
-            header: true,
-            skipEmptyLines: true,
-            complete: function(results) {
-                products = results.data.map((p, index) => {
-                    const product = {
-                        id: p.id || index + 1,
-                        title: p.title || 'Sin nombre',
-                        category: p.category || '',
-                        shortDesc: p.shortDesc || '',
-                        longDesc: p.longDesc || p.shortDesc || '',
-                        precioUnitario: p.precioUnitario || 'Consultar',
-                        precioFinal: p.precioFinal || '',
-                        image: p.image || 'hero-bg.jpeg',
-                        badge: p.badge || ''
-                    };
-
-                    // Crear array de imágenes (carrusel)
-const images = [product.image];
-if (p.image2) images.push(p.image2);
-if (p.image3) images.push(p.image3);
-if (p.image4) images.push(p.image4);
-
-                    const catMap = {
-                        'agencia llavero': 'Agencia', 'restaurante llavero': 'Restaurante',
-                        'souvenir llavero': 'Souvenir', 'anime': 'Anime', 'ninos': 'Niños',
-                        'ninos anime': 'Niños / Anime', 'souvenir ninos': 'Souvenir / Niños',
-                        'costura': 'Costura', 'fitness llavero': 'Fitness', 'musica llavero': 'Música',
-                        'souvenir': 'Souvenir', 'fitness': 'Fitness', 'musica': 'Música',
-                        'llaveros': 'Llaveros', 'llaveros y deporte': 'Llaveros y Deporte',
-                        'deporte': 'Deporte'
-                    };
-                    product.categoryLabel = catMap[product.category.toLowerCase()] || product.category;
-                    product.images = [product.image];
-                    
-                    return product;
-                });
+            try {
+                // ⚠️ PEGÁ ACÁ TU LINK DE GOOGLE SHEETS DE PRODUCTOS (el que termina en output=csv)
+                const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkx4eNhSxLHpGyA_we1CLvZPriEUt5l9h6Ebd96gKDV8BWAhsNEq4pyiT847Yx9nXUv2hatxZ1FTNf/pub?gid=0&single=true&output=csv';
                 
+                const response = await fetch(sheetURL);
+                const csvText = await response.text();
+                
+                Papa.parse(csvText, {
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: function(results) {
+                        products = results.data.map((p, index) => {
+                            const product = {
+                                id: p.id || index + 1,
+                                title: p.title || 'Sin nombre',
+                                category: p.category || '',
+                                shortDesc: p.shortDesc || '',
+                                longDesc: p.longDesc || p.shortDesc || '',
+                                precioUnitario: p.precioUnitario || 'Consultar',
+                                precioFinal: p.precioFinal || '',
+                                image: p.image || 'hero-bg.jpeg',
+                                badge: p.badge || ''
+                            };
+
+                            // Crear array de imágenes (carrusel) - ¡CORREGIDO!
+                            const images = [product.image];
+                            if (p.image2) images.push(p.image2);
+                            if (p.image3) images.push(p.image3);
+                            if (p.image4) images.push(p.image4);
+                            product.images = images;
+
+                            const catMap = {
+                                'agencia llavero': 'Agencia', 'restaurante llavero': 'Restaurante',
+                                'souvenir llavero': 'Souvenir', 'anime': 'Anime', 'ninos': 'Niños',
+                                'ninos anime': 'Niños / Anime', 'souvenir ninos': 'Souvenir / Niños',
+                                'costura': 'Costura', 'fitness llavero': 'Fitness', 'musica llavero': 'Música',
+                                'souvenir': 'Souvenir', 'fitness': 'Fitness', 'musica': 'Música',
+                                'llaveros': 'Llaveros', 'llaveros y deporte': 'Llaveros y Deporte',
+                                'deporte': 'Deporte'
+                            };
+                            product.categoryLabel = catMap[product.category.toLowerCase()] || product.category;
+                            
+                            return product;
+                        });
+                        
+                        renderProductos('todos');
+                    }
+                });
+            } catch (error) {
+                console.error('Error cargando productos:', error);
+                products = [];
                 renderProductos('todos');
             }
-        });
-    } catch (error) {
-        console.error('Error cargando productos:', error);
-        products = [];
-        renderProductos('todos');
-    }
-}
+        }
+
+        // ==========================================
+        // 2. CARGAR CLIENTES DESDE GOOGLE SHEETS
+        // ==========================================
+        async function cargarClientes() {
+            try {
+                // ⚠️ PEGÁ ACÁ TU LINK DE GOOGLE SHEETS DE CLIENTES (el que termina en output=csv)
+                const sheetURLClientes = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkx4eNhSxLHpGyA_we1CLvZPriEUt5l9h6Ebd96gKDV8BWAhsNEq4pyiT847Yx9nXUv2hatxZ1FTNf/pub?gid=1063306625&single=true&output=csv';
+                
+                const response = await fetch(sheetURLClientes);
+                const csvText = await response.text();
+                
+                Papa.parse(csvText, {
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: function(results) {
+                        clientes = results.data.map(c => ({
+                            nombre: c.nombre || 'Cliente',
+                            descripcion: c.descripcion || ''
+                        }));
+                        renderClientes();
+                    }
+                });
+            } catch (error) {
+                console.error('Error cargando clientes:', error);
+                // Fallback por si falla la hoja
+                clientes = [
+                    { nombre: 'KAVAK', descripcion: 'Concesionaria de autos usados. Llaveros corporativos con QR.' },
+                    { nombre: 'El Nono', descripcion: 'Restaurante. Llaveros personalizados con logo.' },
+                    { nombre: 'KOY', descripcion: 'Automotriz. Llaveros con diseño de dragón personalizado.' }
+                ];
+                renderClientes();
+            }
+        }
 
         function renderClientes() {
             const grid = document.getElementById('clients-grid');
             if (!grid) return;
             
-            if (clientes.length === 0) {
-                clientes = [
-                    { nombre: 'KAVAK', descripcion: 'Concesionaria de autos usados. Llaveros corporativos con QR para entrega de vehículos.' },
-                    { nombre: 'El Nono', descripcion: 'Restaurante. Llaveros personalizados con logo para clientes y promociones.' },
-                    { nombre: 'KOY', descripcion: 'Automotriz. Llaveros con diseño de dragón personalizado.' },
-                    { nombre: 'Ale Kurz', descripcion: 'Cantante de rock nacional. Merchandising para fans y eventos.' },
-                    { nombre: 'Mhoa', descripcion: 'Emprendimiento de marca de ropa.' },
-                    { nombre: 'FOCUS', descripcion: 'Equipo de calistenia. Llaveros y contenedores de suplementos personalizados.' }
-                ];
-            }
-            
             grid.innerHTML = clientes.map(c => `
                 <div class="client-card">
                     <h3>${c.nombre}</h3>
-                    <p>${c.descripcion || ''}</p>
+                    <p>${c.descripcion}</p>
                 </div>
             `).join('');
         }
@@ -773,22 +785,6 @@ if (p.image4) images.push(p.image4);
                 ).join('');
             }
             
-            let colorsHTML = '';
-            if (product.colors && product.colors.length > 0) {
-                colorsHTML = product.colors.map(c => {
-                    const colorName = (typeof c.name === 'object') ? (c.name.es || c.name.en || '') : (c.name || '');
-                    return `<div class="color-item"><span class="color-dot" style="background: ${c.hex}"></span>${colorName}</div>`;
-                }).join('');
-            }
-            
-            let featuresHTML = '';
-            if (product.features) {
-                const featuresList = Array.isArray(product.features) 
-                    ? product.features 
-                    : (product.features.es || product.features.en || []);
-                featuresHTML = featuresList.map(f => `<li>${f}</li>`).join('');
-            }
-            
             const whatsappMsg = encodeURIComponent(`Hola! Vi su catálogo web y me interesa consultar por: *${product.title}*. ¿Me podrían pasar precios y tiempos de entrega?`);
             
             const isInCart = cart.some(item => String(item.id) === String(product.id));
@@ -822,8 +818,6 @@ if (p.image4) images.push(p.image4);
                         <h3>Descripción</h3>
                         <p class="detail-description">${product.longDesc || product.shortDesc || ''}</p>
                     </div>
-                    ${colorsHTML ? `<div class="detail-section"><h3>Colores disponibles</h3><div class="colors-list">${colorsHTML}</div></div>` : ''}
-                    ${featuresHTML ? `<div class="detail-section"><h3>Características</h3><ul class="features-list">${featuresHTML}</ul></div>` : ''}
                     <div class="detail-cta">
                         <a href="https://wa.me/5491125467576?text=${whatsappMsg}" target="_blank" class="btn-large btn-whatsapp-large">💬 Consultar por WhatsApp</a>
                         <button class="btn-large ${btnClass}" onclick="toggleCartProduct(${product.id})">${btnText}</button>
