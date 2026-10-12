@@ -16,12 +16,10 @@
         name: 'github',
         repo: 'ryuka3d-lang/ryuka',
         branch: 'main',
-        auth_scope: 'repo',
-        app_id: 'Ov23limNlfT32Yz6hojF',
-        auth_endpoint: '/ryuka/admin/callback'
+        token: 'TU_TOKEN_AQUI'
       },
       media_folder: 'images/uploads',
-      public_folder: '/ryuka/images/uploads',
+      public_folder: '/images/uploads',
       publish_mode: 'editorial_workflow',
       collections: [
         {
@@ -70,8 +68,8 @@
                     { label: 'Descripción Completa', name: 'longDesc', widget: 'text', required: false },
                     { label: 'Precio Unitario', name: 'precioUnitario', widget: 'string', hint: 'Ej: $1.500 c/u', required: false },
                     { label: 'Precio Final / Pack', name: 'precioFinal', widget: 'string', hint: 'Ej: $15.000 (pack x10)', required: false },
-                    { label: 'Imagen Principal', name: 'image', widget: 'image', required: false, media_folder: 'images/uploads', public_folder: '/ryuka/images/uploads' },
-                    { label: 'Galería de Fotos (opcional)', name: 'gallery', widget: 'list', required: false, allow_add: true, field: { label: 'Imagen', name: 'img', widget: 'image', media_folder: 'images/uploads', public_folder: '/ryuka/images/uploads' } },
+                    { label: 'Imagen Principal', name: 'image', widget: 'image', required: false },
+                    { label: 'Galería de Fotos (opcional)', name: 'gallery', widget: 'list', required: false, allow_add: true, field: { label: 'Imagen', name: 'img', widget: 'image' } },
                     { label: 'Etiqueta', name: 'badge', widget: 'select', required: false, options: [ { label: 'Ninguna', value: '' }, { label: 'Nuevo', value: 'new' }, { label: 'Popular', value: 'popular' } ] }
                   ]
                 }
