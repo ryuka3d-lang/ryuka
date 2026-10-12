@@ -352,6 +352,7 @@
             left: -9999px !important;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
 <body>
 
@@ -629,55 +630,53 @@
         }
 
         async function cargarProductos() {
-            try {
-                const resProd = await fetch('productos.json');
-                const dataProd = await resProd.json();
-                products = dataProd.productos || [];
-                
-                const resCli = await fetch('clientes.json');
-                const dataCli = await resCli.json();
-                clientes = dataCli.clientes || [];
-                
-                products.forEach(p => {
-                    if (!p.title) p.title = 'Sin nombre';
-                    if (!p.shortDesc) p.shortDesc = '';
-                    if (!p.longDesc) p.longDesc = p.shortDesc || '';
-                    if (!p.precioUnitario) p.precioUnitario = "Consultar";
-                    if (!p.precioFinal) p.precioFinal = "";
+    try {
+        const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkx4eNhSxLHpGyA_we1CLvZPriEUt5l9h6Ebd96gKDV8BWAhsNEq4pyiT847Yx9nXUv2hatxZ1FTNf/pub?gid=0&single=true&output=csv';
+        
+        const response = await fetch(sheetURL);
+        const csvText = await response.text();
+        
+        Papa.parse(csvText, {
+            header: true,
+            skipEmptyLines: true,
+            complete: function(results) {
+                products = results.data.map((p, index) => {
+                    const product = {
+                        id: p.id || index + 1,
+                        title: p.title || 'Sin nombre',
+                        category: p.category || '',
+                        shortDesc: p.shortDesc || '',
+                        longDesc: p.longDesc || p.shortDesc || '',
+                        precioUnitario: p.precioUnitario || 'Consultar',
+                        precioFinal: p.precioFinal || '',
+                        image: p.image || 'hero-bg.jpeg',
+                        badge: p.badge || ''
+                    };
+
+                    const catMap = {
+                        'agencia llavero': 'Agencia', 'restaurante llavero': 'Restaurante',
+                        'souvenir llavero': 'Souvenir', 'anime': 'Anime', 'ninos': 'Niños',
+                        'ninos anime': 'Niños / Anime', 'souvenir ninos': 'Souvenir / Niños',
+                        'costura': 'Costura', 'fitness llavero': 'Fitness', 'musica llavero': 'Música',
+                        'souvenir': 'Souvenir', 'fitness': 'Fitness', 'musica': 'Música',
+                        'llaveros': 'Llaveros', 'llaveros y deporte': 'Llaveros y Deporte',
+                        'deporte': 'Deporte'
+                    };
+                    product.categoryLabel = catMap[product.category.toLowerCase()] || product.category;
+                    product.images = [product.image];
                     
-                    if (!p.categoryLabel) {
-                        const catMap = {
-                            'agencia llavero': 'Agencia', 'restaurante llavero': 'Restaurante',
-                            'souvenir llavero': 'Souvenir', 'anime': 'Anime', 'ninos': 'Niños',
-                            'ninos anime': 'Niños / Anime', 'souvenir ninos': 'Souvenir / Niños',
-                            'costura': 'Costura', 'fitness llavero': 'Fitness', 'musica llavero': 'Música',
-                            'souvenir': 'Souvenir', 'fitness': 'Fitness', 'musica': 'Música',
-                            'llaveros': 'Llaveros', 'llaveros y deporte': 'Llaveros y Deporte',
-                            'deporte': 'Deporte'
-                        };
-                        p.categoryLabel = catMap[p.category] || p.category || '';
-                    }
-                    
-                    const galleryImages = p.gallery ? p.gallery.map(g => g.img || g).filter(Boolean) : [];
-                    p.images = [p.image, ...galleryImages].filter(Boolean);
-                    if (p.images.length === 0) p.images = ['hero-bg.jpeg'];
-                    
-                    if (!p.colors) {
-                        p.colors = [{ name: { es: 'Personalizable', en: 'Customizable' }, hex: '#810404' }];
-                    }
-                    if (!p.features) {
-                        p.features = { es: ['Impresión 3D de alta calidad', 'Diseño 100% personalizable'] };
-                    }
+                    return product;
                 });
                 
                 renderProductos('todos');
-                renderClientes();
-            } catch (error) {
-                console.error('Error cargando datos:', error);
-                products = [];
-                renderProductos('todos');
             }
-        }
+        });
+    } catch (error) {
+        console.error('Error cargando productos:', error);
+        products = [];
+        renderProductos('todos');
+    }
+}
 
         function renderClientes() {
             const grid = document.getElementById('clients-grid');
