@@ -614,6 +614,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             applyTheme(currentTheme);
             cargarProductos();
+            
+        document.addEventListener('DOMContentLoaded', () => {
+            applyTheme(currentTheme);
+            cargarProductos();
+            renderClientes(); // <--- ¡AGREGAR ESTA LÍNEA!
+        });
         });
 
         function navigateTo(sectionId) {
