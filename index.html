@@ -12,7 +12,7 @@
     
     <meta property="og:title" content="Ryuka | Merchandising 3D Personalizado">
     <meta property="og:description" content="Transformamos tus ideas en productos 3D únicos. Llaveros, displays y más. ¡Cotizá online!">
-    <meta property="og:image" content="https://ryuka3d-lang.github.io/ryuka/hero-bg.jpeg">
+    <meta property="og:image" content="hero-bg.jpeg">
     <meta property="og:url" content="https://ryuka3dmerch.netlify.app">
     <meta property="og:type" content="website">
 
@@ -429,7 +429,7 @@
                 <p>En Ryuka, cada proyecto empieza con una idea y crece con nosotros.</p>
             </div>
             <div class="about-image">
-                <img src="ryuka/hero-bg.jpeg" alt="Impresión 3D Ryuka">
+                <img src="hero-bg.jpeg" alt="Impresión 3D Ryuka">
             </div>
         </div>
     </section>
@@ -630,11 +630,11 @@
 
         async function cargarProductos() {
             try {
-                const resProd = await fetch('ryuka/productos.json');
+                const resProd = await fetch('productos.json');
                 const dataProd = await resProd.json();
                 products = dataProd.productos || [];
                 
-                const resCli = await fetch('ryuka/clientes.json');
+                const resCli = await fetch('clientes.json');
                 const dataCli = await resCli.json();
                 clientes = dataCli.clientes || [];
                 
@@ -660,7 +660,7 @@
                     
                     const galleryImages = p.gallery ? p.gallery.map(g => g.img || g).filter(Boolean) : [];
                     p.images = [p.image, ...galleryImages].filter(Boolean);
-                    if (p.images.length === 0) p.images = ['ryuka/hero-bg.jpeg'];
+                    if (p.images.length === 0) p.images = ['hero-bg.jpeg'];
                     
                     if (!p.colors) {
                         p.colors = [{ name: { es: 'Personalizable', en: 'Customizable' }, hex: '#810404' }];
