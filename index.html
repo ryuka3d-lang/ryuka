@@ -337,6 +337,20 @@
             .hero { padding: 4rem 1rem; }
             .hero h1 { font-size: 1.8rem; }
         }
+
+        /* OCULTAR BADGE DE NETLIFY */
+        [class*="netlify-badge"],
+        [id*="netlify-badge"],
+        .netlify-badge,
+        footer a[href*="netlify"],
+        div[class*="netlify"] a[href*="netlify"],
+        [data-testid="netlify-badge"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            position: absolute !important;
+            left: -9999px !important;
+        }
     </style>
 </head>
 <body>
@@ -909,7 +923,7 @@
         function applyTheme(theme) {
             if (theme === 'dark') {
                 document.body.classList.add('dark-mode');
-                document.getElementById('themeBtn').innerHTML = '️ Claro';
+                document.getElementById('themeBtn').innerHTML = '☀️ Claro';
             } else {
                 document.body.classList.remove('dark-mode');
                 document.getElementById('themeBtn').innerHTML = '🌙 Oscuro';
