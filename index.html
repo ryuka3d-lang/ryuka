@@ -653,6 +653,13 @@
                         badge: p.badge || ''
                     };
 
+                    // Crear array de imágenes (carrusel)
+const images = [product.image];
+if (p.image2) images.push(p.image2);
+if (p.image3) images.push(p.image3);
+if (p.image4) images.push(p.image4);
+product.images = images;
+
                     const catMap = {
                         'agencia llavero': 'Agencia', 'restaurante llavero': 'Restaurante',
                         'souvenir llavero': 'Souvenir', 'anime': 'Anime', 'ninos': 'Niños',
