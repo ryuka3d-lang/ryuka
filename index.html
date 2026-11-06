@@ -318,24 +318,166 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1rem; }
-            .nav-links { display: none; }
-            .section-header h2 { font-size: 1.8rem; }
-            .catalog { grid-template-columns: 1fr; }
-            .stats-container { grid-template-columns: repeat(2, 1fr); }
-            .product-detail { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem; }
-            .main-image { height: 350px; }
-            .controls { width: 100%; justify-content: center; }
-            .about-container { grid-template-columns: 1fr; }
-            .about-image img { height: 250px; }
-            .cart-panel { width: 100%; right: -100%; }
-            .social-links { flex-direction: column; align-items: center; }
-            .float-wpp { bottom: 20px; right: 20px; width: 55px; height: 55px; }
-            .float-wpp svg { width: 28px; height: 28px; }
-        }
+        /* RESPONSIVE - MÓVIL MEJORADO */
+@media (max-width: 768px) {
+    /* Header más compacto */
+    header { padding: 0.6rem 3%; }
+    .logo-img { height: 45px; }
+    .nav-container { gap: 6px; }
+    
+    /* Botones del header más chicos */
+    .cart-btn, .control-btn { 
+        padding: 6px 10px; 
+        font-size: 0.75rem; 
+        min-height: auto;
+    }
+    .cart-count { width: 18px; height: 18px; font-size: 0.7rem; }
+    
+    /* Hero más compacto */
+    .hero { padding: 3rem 1rem; }
+    .hero h1 { font-size: 1.8rem; margin-bottom: 1rem; }
+    .hero p { font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .badge { font-size: 0.75rem; padding: 6px 14px; }
+    
+    /* Botones del Hero más chicos */
+    .btn-primary, .btn-secondary { 
+        padding: 10px 20px; 
+        font-size: 0.9rem; 
+    }
+    
+    /* Stats más compactos */
+    .stats { padding: 1.5rem 1rem; }
+    .stat-item h3 { font-size: 2rem; }
+    .stat-item p { font-size: 0.85rem; }
+    
+    /* Sobre Nosotros */
+    .about { padding: 3rem 1rem; }
+    .about-text h2 { font-size: 1.8rem; }
+    .about-text p { font-size: 0.95rem; }
+    .about-image img { height: 220px; }
+    
+    /* FILTROS: scroll horizontal en vez de ocupar toda la pantalla */
+    .filters-section { 
+        padding: 1rem; 
+        position: sticky; 
+        top: 60px; 
+        z-index: 50;
+    }
+    .filters { 
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 8px;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+    .filters::-webkit-scrollbar { 
+        display: none; /* Chrome/Safari */
+    }
+    .filter-btn { 
+        padding: 8px 16px; 
+        font-size: 0.8rem; 
+        white-space: nowrap;
+        flex-shrink: 0;
+        border-radius: 20px;
+    }
+    
+    /* Catálogo más compacto */
+    .catalog-section { padding: 2rem 1rem 3rem; }
+    .section-header h2 { font-size: 1.6rem; }
+    .section-header p { font-size: 0.9rem; }
+    .catalog { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 12px; 
+    }
+    
+    /* Tarjetas de producto más chicas */
+    .product-img-container { height: 180px; }
+    .product-info { padding: 1rem; }
+    .product-title { font-size: 0.95rem; margin-bottom: 0.4rem; }
+    .product-desc { font-size: 0.75rem; margin-bottom: 0.8rem; }
+    .product-category { font-size: 0.65rem; padding: 3px 8px; }
+    .price-unit { font-size: 0.9rem; }
+    .price-pack { font-size: 0.7rem; }
+    .view-btn, .add-cart-btn { 
+        padding: 6px 10px; 
+        font-size: 0.7rem; 
+    }
+    .product-badge { 
+        top: 8px; 
+        left: 8px; 
+        font-size: 0.65rem; 
+        padding: 3px 8px; 
+    }
+    
+    /* Vista de producto */
+    .product-detail { padding: 1.2rem; gap: 1.5rem; }
+    .main-image { height: 280px; }
+    .product-detail-info h1 { font-size: 1.4rem; }
+    .detail-category { font-size: 0.75rem; }
+    .detail-description { font-size: 0.9rem; }
+    .btn-large { 
+        padding: 12px 20px; 
+        font-size: 0.85rem; 
+    }
+    
+    /* Clientes */
+    .clients { padding: 3rem 1rem; }
+    .clients h2 { font-size: 1.6rem; }
+    .clients > p { font-size: 0.9rem; margin-bottom: 2rem; }
+    .client-card { padding: 1.2rem 1rem; }
+    .client-card h3 { font-size: 1.1rem; }
+    .client-card p { font-size: 0.8rem; }
+    
+    /* Testimonios */
+    .testimonials { padding: 3rem 1rem; }
+    .testimonials h2 { font-size: 1.6rem; }
+    .testimonial-card { padding: 1.5rem; }
+    
+    /* Proceso */
+    .process { padding: 3rem 1rem; }
+    .process h2 { font-size: 1.6rem; }
+    .step { padding: 1.5rem 1rem; }
+    .step-number { width: 50px; height: 50px; font-size: 1.3rem; }
+    
+    /* CTA */
+    .cta-section { padding: 3rem 1rem; }
+    .cta-section h2 { font-size: 1.6rem; }
+    .cta-section p { font-size: 1rem; }
+    
+    /* Visitanos */
+    .visit-us { padding: 3rem 1rem; }
+    .visit-us h2 { font-size: 1.6rem; }
+    .social-link { padding: 12px 24px; font-size: 1rem; }
+    
+    /* Footer */
+    footer { padding: 2rem 1rem 1.5rem; }
+    .footer-col h3 { font-size: 1.1rem; }
+    .footer-col p, .footer-col a { font-size: 0.85rem; }
+    
+    /* Botón flotante WhatsApp más chico */
+    .float-wpp { 
+        bottom: 15px; 
+        right: 15px; 
+        width: 50px; 
+        height: 50px; 
+    }
+    .float-wpp svg { width: 28px; height: 28px; }
+    
+    /* Carrito panel */
+    .cart-panel { width: 100%; right: -100%; }
+}
+
+/* Móviles muy chicos */
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.5rem; }
+    .hero { padding: 2.5rem 1rem; }
+    .catalog { grid-template-columns: 1fr; }
+    .product-img-container { height: 220px; }
+    .stats-container { grid-template-columns: 1fr; gap: 1rem; }
+}
         @media (max-width: 480px) {
             .hero { padding: 4rem 1rem; }
             .hero h1 { font-size: 1.8rem; }
