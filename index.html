@@ -501,28 +501,37 @@
 <body>
 
     <!-- HEADER -->
-    <header>
-        <div class="nav-container">
-            <div class="logo-container">
-                <a href="#" onclick="goHome(); return false;">
-                    <img src="logo.png" alt="Ryuka Logo" class="logo-img" onerror="this.style.display='none'">
-                </a>
-            </div>
-            <nav class="nav-links">
-                <a onclick="navigateTo('catalogo')">Catálogo</a>
-                <a onclick="navigateTo('clientes')">Clientes</a>
-                <a onclick="navigateTo('sobre')">Sobre Nosotros</a>
-                <a onclick="navigateTo('proceso')">Cómo Trabajamos</a>
-                <a onclick="navigateTo('contacto')" class="nav-cta">Contactar</a>
-            </nav>
-            <div class="controls">
-                <button class="cart-btn" onclick="toggleCart()">
-                    🛒 <span class="cart-count" id="cartCount">0</span>
-                </button>
-                <button class="control-btn" id="themeBtn" onclick="toggleTheme()"> Oscuro</button>
-            </div>
+<header>
+    <div class="nav-container">
+        <div class="logo-container">
+            <a href="#" onclick="goHome(); return false;">
+                <img src="logo.png" alt="Ryuka Logo" class="logo-img" onerror="this.style.display='none'">
+            </a>
         </div>
-    </header>
+        
+        <!-- Menú hamburguesa (solo visible en móvil) -->
+        <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Navegación desktop (visible solo en escritorio) -->
+        <nav class="nav-links desktop-only">
+            <a onclick="navigateTo('catalogo')">Catálogo</a>
+            <a onclick="navigateTo('clientes')">Clientes</a>
+            <a onclick="navigateTo('sobre')">Sobre Nosotros</a>
+            <a onclick="navigateTo('proceso')">Cómo Trabajamos</a>
+            <a onclick="navigateTo('contacto')" class="nav-cta">Contactar</a>
+        </nav>
+        
+        <div class="controls">
+            <button class="cart-btn" onclick="toggleCart()">
+                🛒 <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="control-btn desktop-only" id="themeBtn" onclick="toggleTheme()">🌙 Oscuro</button>
+        </div>
+    </
 
     <!-- PANEL CARRITO -->
     <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
