@@ -435,6 +435,7 @@
     <section class="filters-section" id="filtersSection">
         <div class="filters">
             <button class="filter-btn active" onclick="filterProducts('todos', event)">Todos</button>
+            <button class="filter-btn" onclick="filterProducts('corporativo', event)">🏢 Corporativo</button>
             <button class="filter-btn" onclick="filterProducts('agencia', event)">Agencia</button>
             <button class="filter-btn" onclick="filterProducts('restaurante', event)">Restaurante</button>
             <button class="filter-btn" onclick="filterProducts('souvenir', event)">Souvenir</button>
@@ -660,7 +661,7 @@
                                 'costura': 'Costura', 'fitness llavero': 'Fitness', 'musica llavero': 'Música',
                                 'souvenir': 'Souvenir', 'fitness': 'Fitness', 'musica': 'Música',
                                 'llaveros': 'Llaveros', 'llaveros y deporte': 'Llaveros y Deporte',
-                                'deporte': 'Deporte', 'adornos': 'Adornos'
+                                'deporte': 'Deporte', 'adornos': 'Adornos', 'corporativo': 'Corporativo'
                             };
                             product.categoryLabel = catMap[product.category.toLowerCase()] || product.category;
                             return product;
