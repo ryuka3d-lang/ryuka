@@ -241,7 +241,7 @@
         .step h3 { font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text); }
         .step p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
 
-        /* PREGUNTAS FRECUENTES (NUEVO) */
+        /* PREGUNTAS FRECUENTES */
         .faq-section { padding: 5rem 1rem; background: var(--light); }
         .faq-container { max-width: 800px; margin: 0 auto; }
         .faq-item { background: var(--white); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--primary); box-shadow: var(--shadow-sm); }
@@ -495,7 +495,7 @@
         </div>
     </section>
 
-    <!-- PREGUNTAS FRECUENTES (NUEVO) -->
+    <!-- PREGUNTAS FRECUENTES -->
     <section id="faq" class="faq-section">
         <div class="faq-container">
             <div class="section-header">
@@ -661,7 +661,8 @@
                                 'costura': 'Costura', 'fitness llavero': 'Fitness', 'musica llavero': 'Música',
                                 'souvenir': 'Souvenir', 'fitness': 'Fitness', 'musica': 'Música',
                                 'llaveros': 'Llaveros', 'llaveros y deporte': 'Llaveros y Deporte',
-                                'deporte': 'Deporte', 'adornos': 'Adornos', 'corporativo': 'Corporativo'
+                                'deporte': 'Deporte', 'adornos': 'Adornos',
+                                'corporativo': 'Corporativo'
                             };
                             product.categoryLabel = catMap[product.category.toLowerCase()] || product.category;
                             return product;
@@ -719,7 +720,12 @@
             const grid = document.getElementById('product-grid');
             grid.innerHTML = '';
             products.forEach(product => {
+                // CAMBIO CLAVE: Si es "todos", ocultar los productos corporativos
+                if (category === 'todos' && product.category === 'corporativo') return;
+                
+                // Filtro normal para las demás categorías
                 if (category !== 'todos' && !product.category.includes(category)) return;
+                
                 const card = document.createElement('div');
                 card.className = 'product-card';
                 
@@ -846,7 +852,8 @@
                 'todos': 'todos', 'agencia': 'agencia', 'restaurante': 'restaurante', 
                 'souvenir': 'souvenir', 'anime': 'anime', 'niños': 'ninos', 
                 'costura': 'costura', 'fitness': 'fitness', 'música': 'musica', 
-                'llaveros': 'llavero', 'deporte': 'deporte', 'adornos': 'adornos'
+                'llaveros': 'llavero', 'deporte': 'deporte', 'adornos': 'adornos',
+                'corporativo': 'corporativo'
             };
             return map[text] || 'todos';
         }
