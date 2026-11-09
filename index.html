@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>Ryuka | Merchandising 3D Personalizado</title>
-    <meta name="description" content="Diseñamos y fabricamos merchandising 3D personalizado: llaveros, displays, cajas y souvenirs para marcas, agencias y eventos. Calidad premium y envíos a todo el país.">
-    <meta name="keywords" content="impresión 3d, merchandising personalizado, llaveros 3d, souvenirs corporativos, regalos empresariales, CABA, GBA, Ryuka">
+    <title>Ryuka | Merchandising 3D Personalizado (Mayorista y Minorista)</title>
+    <meta name="description" content="Diseñamos y fabricamos merchandising 3D personalizado: llaveros, displays, cajas y souvenirs. Venta minorista y mayorista con envíos a todo el país.">
+    <meta name="keywords" content="impresión 3d, merchandising personalizado, llaveros 3d, souvenirs corporativos, regalos empresariales, mayorista, minorista, CABA, GBA, Ryuka">
     <meta name="author" content="Ryuka 3D Merch">
     <meta name="robots" content="index, follow">
     
     <meta property="og:title" content="Ryuka | Merchandising 3D Personalizado">
-    <meta property="og:description" content="Transformamos tus ideas en productos 3D únicos. Llaveros, displays y más. ¡Cotizá online!">
+    <meta property="og:description" content="Transformamos tus ideas en productos 3D únicos. Venta minorista y mayorista. ¡Cotizá online!">
     <meta property="og:image" content="hero-bg.jpeg">
     <meta property="og:url" content="https://ryuka3d-lang.github.io/ryuka/">
     <meta property="og:type" content="website">
@@ -24,7 +24,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Librería para leer Google Sheets (CSV) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
     <style>
@@ -87,7 +86,7 @@
         .cart-btn:hover { background: var(--primary-dark); }
         .cart-count { background: var(--accent); color: var(--secondary); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; }
 
-        /* HAMBURGER MENU (Móvil) */
+        /* HAMBURGER MENU */
         .hamburger-btn { display: none; background: none; border: none; padding: 5px; flex-direction: column; gap: 5px; cursor: pointer; }
         .hamburger-btn span { display: block; width: 25px; height: 3px; background-color: var(--primary); border-radius: 2px; transition: var(--transition); }
         
@@ -116,7 +115,7 @@
         /* STATS */
         .stats { background: var(--white); padding: 2rem 1rem; border-bottom: 1px solid var(--gray-light); }
         .stats-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; }
-        .stat-item h3 { font-size: 2.5rem; color: var(--primary); font-weight: 800; margin-bottom: 0.5rem; }
+        .stat-item h3 { font-size: 1.8rem; color: var(--primary); font-weight: 800; margin-bottom: 0.5rem; }
         .stat-item p { color: var(--gray); font-size: 0.95rem; font-weight: 500; }
 
         /* SOBRE NOSOTROS */
@@ -242,6 +241,13 @@
         .step h3 { font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text); }
         .step p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
 
+        /* PREGUNTAS FRECUENTES (NUEVO) */
+        .faq-section { padding: 5rem 1rem; background: var(--light); }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--white); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--primary); box-shadow: var(--shadow-sm); }
+        .faq-item h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+        .faq-item p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
+
         /* CTA */
         .cta-section { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 5rem 1rem; text-align: center; }
         .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
@@ -253,7 +259,7 @@
         .btn-email:hover { background: rgba(255,255,255,0.1); }
 
         /* VISITANOS */
-        .visit-us { padding: 4rem 1rem; background: var(--light); text-align: center; }
+        .visit-us { padding: 4rem 1rem; background: var(--white); text-align: center; }
         .visit-us h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
         .visit-us > p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; }
         .social-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
@@ -269,6 +275,8 @@
         .footer-col h3 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent); }
         .footer-col p, .footer-col a { color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.8; display: block; }
         .footer-col a:hover { color: var(--accent); }
+        .payment-icons { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+        .payment-badge { background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 6px; font-size: 0.8rem; }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: rgba(255,255,255,0.6); font-size: 0.85rem; }
         body.dark-mode .footer-col p, body.dark-mode .footer-col a { color: #cbd5e1; }
 
@@ -282,23 +290,17 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* ========================================== */
-        /* RESPONSIVE - MÓVIL MEJORADO                */
-        /* ========================================== */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .desktop-only { display: none !important; }
             .hamburger-btn { display: flex; }
-            
             header { padding: 0.8rem 4%; }
             .logo-img { height: 40px; }
-            
             .hero { padding: 4rem 1rem; }
             .hero h1 { font-size: 2rem; }
             .hero p { font-size: 1rem; }
-            
             .about-container { grid-template-columns: 1fr; gap: 2rem; }
             .about-image img { height: 250px; }
-            
             .catalog { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .product-img-container { height: 160px; }
             .product-info { padding: 1rem; }
@@ -306,17 +308,13 @@
             .product-desc { font-size: 0.75rem; margin-bottom: 1rem; }
             .price-unit { font-size: 0.9rem; }
             .view-btn, .add-cart-btn { padding: 6px 10px; font-size: 0.75rem; }
-            
-            /* CORRECCIÓN IMAGEN DE PRODUCTO EN MÓVIL */
             .product-detail { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
             .main-image { height: auto; max-height: 350px; width: 100%; object-fit: contain; }
             .product-detail-info h1 { font-size: 1.5rem; }
             .btn-large { width: 100%; min-width: unset; }
-            
-            .clients h2, .testimonials h2, .process h2, .cta-section h2, .visit-us h2 { font-size: 1.8rem; }
+            .clients h2, .testimonials h2, .process h2, .cta-section h2, .visit-us h2, .faq-section h2 { font-size: 1.8rem; }
             .social-links { flex-direction: column; align-items: center; }
             .social-link { width: 100%; max-width: 300px; justify-content: center; }
-            
             .float-wpp { width: 55px; height: 55px; bottom: 20px; right: 20px; }
             .float-wpp svg { width: 28px; height: 28px; }
         }
@@ -328,7 +326,6 @@
             .hero h1 { font-size: 1.8rem; }
         }
 
-        /* OCULTAR BADGE DE NETLIFY */
         [class*="netlify-badge"], [id*="netlify-badge"], .netlify-badge, footer a[href*="netlify"], div[class*="netlify"] a[href*="netlify"], [data-testid="netlify-badge"] {
             display: none !important; visibility: hidden !important; opacity: 0 !important; position: absolute !important; left: -9999px !important;
         }
@@ -348,8 +345,7 @@
             <nav class="nav-links desktop-only">
                 <a onclick="navigateTo('catalogo')">Catálogo</a>
                 <a onclick="navigateTo('clientes')">Clientes</a>
-                <a onclick="navigateTo('sobre')">Sobre Nosotros</a>
-                <a onclick="navigateTo('proceso')">Cómo Trabajamos</a>
+                <a onclick="navigateTo('faq')">Preguntas Frecuentes</a>
                 <a onclick="navigateTo('contacto')" class="nav-cta">Contactar</a>
             </nav>
             
@@ -358,7 +354,6 @@
                     🛒 <span class="cart-count" id="cartCount">0</span>
                 </button>
                 <button class="control-btn desktop-only" id="themeBtn" onclick="toggleTheme()">🌙 Oscuro</button>
-                
                 <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menú">
                     <span></span><span></span><span></span>
                 </button>
@@ -366,15 +361,14 @@
         </div>
     </header>
 
-    <!-- MENÚ MÓVIL OVERLAY -->
+    <!-- MENÚ MÓVIL -->
     <div class="mobile-menu-overlay" id="mobileMenu" onclick="toggleMobileMenu()">
         <div class="mobile-menu-content" onclick="event.stopPropagation()">
             <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
             <nav class="mobile-nav-links">
                 <a onclick="navigateTo('catalogo'); toggleMobileMenu()">Catálogo</a>
                 <a onclick="navigateTo('clientes'); toggleMobileMenu()">Clientes</a>
-                <a onclick="navigateTo('sobre'); toggleMobileMenu()">Sobre Nosotros</a>
-                <a onclick="navigateTo('proceso'); toggleMobileMenu()">Cómo Trabajamos</a>
+                <a onclick="navigateTo('faq'); toggleMobileMenu()">Preguntas Frecuentes</a>
                 <a onclick="navigateTo('contacto'); toggleMobileMenu()" class="nav-cta" style="text-align:center; display:block;">Contactar</a>
                 <button class="control-btn mobile-theme-btn" id="mobileThemeBtn" onclick="toggleTheme()">🌙 Modo Oscuro</button>
             </nav>
@@ -401,9 +395,9 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="badge">🔥 Merchandising 3D Personalizado</div>
+            <div class="badge">🔥 Venta Minorista y Mayorista</div>
             <h1>Tu marca en <span>3D</span>, tu estilo en cada detalle</h1>
-            <p>Diseñamos y fabricamos merchandising personalizado para cualquier industria con calidad premium.</p>
+            <p>Diseñamos y fabricamos merchandising personalizado para cualquier industria con calidad premium. Desde 1 unidad hasta grandes volúmenes.</p>
             <div class="hero-buttons">
                 <a onclick="navigateTo('catalogo')" class="btn-primary" style="cursor:pointer">Ver Catálogo</a>
                 <a href="https://wa.me/5491125467576" target="_blank" class="btn-secondary">💬 Hablar por WhatsApp</a>
@@ -416,7 +410,8 @@
         <div class="stats-container">
             <div class="stat-item"><h3>100%</h3><p>Personalizable</p></div>
             <div class="stat-item"><h3>3D</h3><p>Impresión de alta calidad</p></div>
-            <div class="stat-item"><h3>QR</h3><p>Funcional integrado opcional</p></div>
+            <div class="stat-item"><h3>Mayorista</h3><p>Precios por volumen</p></div>
+            <div class="stat-item"><h3>Envíos</h3><p>A todo el país</p></div>
         </div>
     </section>
 
@@ -476,32 +471,6 @@
         <div class="clients-grid" id="clients-grid"></div>
     </section>
 
-    <!-- TESTIMONIOS -->
-    <section class="testimonials">
-        <h2>Lo que dicen nuestros clientes</h2>
-        <p>La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación.</p>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Los llaveros para la entrega de autos quedaron increíbles. La calidad del relieve y los colores superaron nuestras expectativas."</p>
-                <div class="testimonial-author">Martín G.</div>
-                <div class="testimonial-role">Gerente de Concesionaria</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Pedimos cajas organizadoras personalizadas para nuestro taller y el resultado fue excelente. Atención al detalle."</p>
-                <div class="testimonial-author">Lucía R.</div>
-                <div class="testimonial-role">Dueña de Taller de Costura</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"El merchandising para el evento de rock quedó espectacular. Los señaladores y llaveros fueron un éxito total."</p>
-                <div class="testimonial-author">Santiago M.</div>
-                <div class="testimonial-role">Productor de Eventos</div>
-            </div>
-        </div>
-    </section>
-
     <!-- PROCESO -->
     <section id="proceso" class="process">
         <h2>¿Cómo trabajamos?</h2>
@@ -520,7 +489,41 @@
             <div class="step">
                 <div class="step-number">3</div>
                 <h3>Producción y entrega</h3>
-                <p>Fabricamos tu pedido y lo entregamos en tu local, agencia o coordinamos envío.</p>
+                <p>Fabricamos tu pedido y lo entregamos en tu local, agencia o coordinamos envío a todo el país.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (NUEVO) -->
+    <section id="faq" class="faq-section">
+        <div class="faq-container">
+            <div class="section-header">
+                <h2>Preguntas Frecuentes</h2>
+                <p>Resolvemos las dudas más comunes de nuestros clientes minoristas y mayoristas.</p>
+            </div>
+            <div class="faq-item">
+                <h3>📦 ¿Venden al por mayor y al por menor?</h3>
+                <p>¡Sí! Trabajamos con ambos sectores. Atendemos pedidos desde 1 unidad (minorista) hasta grandes volúmenes con precios escalonados especiales para mayoristas.</p>
+            </div>
+            <div class="faq-item">
+                <h3>🔢 ¿Cuál es el pedido mínimo?</h3>
+                <p>Para minoristas, no hay pedido mínimo (podés comprar 1 unidad). Para precios mayoristas, consultanos por cantidades (generalmente a partir de 50 o 100 unidades, según el producto).</p>
+            </div>
+            <div class="faq-item">
+                <h3>🎨 ¿Qué formatos de archivo necesitan para el logo?</h3>
+                <p>Preferimos archivos vectoriales (.AI, .SVG, .PDF) o imágenes de alta resolución (.PNG, .JPG). ¡Pero si solo tenés un boceto a mano alzada o una idea, también podemos ayudarte a diseñarlo!</p>
+            </div>
+            <div class="faq-item">
+                <h3>⏱️ ¿Cuáles son los tiempos de entrega?</h3>
+                <p>El tiempo estimado es de 5 a 10 días hábiles una vez aprobado el diseño 3D final. Para pedidos mayoristas grandes, el plazo se coordina según la cantidad.</p>
+            </div>
+            <div class="faq-item">
+                <h3>🚚 ¿Hacen envíos a todo el país?</h3>
+                <p>Sí, realizamos envíos por correo o transporte a todo el país. También ofrecemos la opción de retiro en persona en nuestra zona de cobertura (CABA / GBA).</p>
+            </div>
+            <div class="faq-item">
+                <h3>💳 ¿Qué formas de pago aceptan?</h3>
+                <p>Aceptamos transferencia bancaria, MercadoPago y efectivo. Para pedidos mayoristas, generalmente se solicita una seña del 50% para iniciar la producción.</p>
             </div>
         </div>
     </section>
@@ -556,7 +559,7 @@
         <div class="footer-content">
             <div class="footer-col">
                 <h3>RYUKA 3D Merch</h3>
-                <p>Merchandising 3D personalizado para cualquier marca. Calidad premium y diseños únicos.</p>
+                <p>Merchandising 3D personalizado para cualquier marca. Calidad premium y diseños únicos. Venta minorista y mayorista.</p>
             </div>
             <div class="footer-col">
                 <h3>Contacto</h3>
@@ -565,16 +568,19 @@
                 <p style="margin-top: 10px;">📍 Zona de cobertura: CABA y GBA</p>
             </div>
             <div class="footer-col">
-                <h3>Enlaces</h3>
-                <a onclick="navigateTo('catalogo')" style="cursor:pointer">Catálogo</a>
-                <a onclick="navigateTo('clientes')" style="cursor:pointer">Clientes</a>
-                <a onclick="navigateTo('sobre')" style="cursor:pointer">Sobre Nosotros</a>
-                <a onclick="navigateTo('proceso')" style="cursor:pointer">Cómo Trabajamos</a>
+                <h3>Envíos y Pagos</h3>
+                <p>🚚 Envíos a todo el país</p>
+                <div class="payment-icons">
+                    <span class="payment-badge">💳 MercadoPago</span>
+                    <span class="payment-badge">🏦 Transferencia</span>
+                    <span class="payment-badge">💵 Efectivo</span>
+                </div>
             </div>
             <div class="footer-col">
-                <h3>Seguinos</h3>
-                <a href="https://instagram.com/ryuka.3d" target="_blank"> Instagram</a>
-                <a href="https://www.tiktok.com/@ryuka3d" target="_blank">🎵 TikTok</a>
+                <h3>Enlaces</h3>
+                <a onclick="navigateTo('catalogo')" style="cursor:pointer">Catálogo</a>
+                <a onclick="navigateTo('faq')" style="cursor:pointer">Preguntas Frecuentes</a>
+                <a onclick="navigateTo('contacto')" style="cursor:pointer">Contacto</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -601,7 +607,6 @@
             cargarClientes();
         });
 
-        // --- FUNCIONES DEL MENÚ MÓVIL ---
         function toggleMobileMenu() {
             document.getElementById('mobileMenu').classList.toggle('active');
         }
@@ -619,9 +624,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // ==========================================
-        // 1. CARGAR PRODUCTOS DESDE GOOGLE SHEETS
-        // ==========================================
         async function cargarProductos() {
             try {
                 const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkx4eNhSxLHpGyA_we1CLvZPriEUt5l9h6Ebd96gKDV8BWAhsNEq4pyiT847Yx9nXUv2hatxZ1FTNf/pub?gid=0&single=true&output=csv';
@@ -673,9 +675,6 @@
             }
         }
 
-        // ==========================================
-        // 2. CARGAR CLIENTES DESDE GOOGLE SHEETS
-        // ==========================================
         async function cargarClientes() {
             try {
                 const sheetURLClientes = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkx4eNhSxLHpGyA_we1CLvZPriEUt5l9h6Ebd96gKDV8BWAhsNEq4pyiT847Yx9nXUv2hatxZ1FTNf/pub?gid=1063306625&single=true&output=csv';
@@ -728,7 +727,7 @@
                 if (product.badge === 'new') badgeHTML = '<span class="product-badge new">Nuevo</span>';
                 
                 const isInCart = cart.some(item => String(item.id) === String(product.id));
-                const btnText = isInCart ? '✓ Agregado' : 'Agregar a consulta';
+                const btnText = isInCart ? '✓ Agregado' : 'Consultar Presupuesto';
                 const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
                 
                 card.innerHTML = `
@@ -770,7 +769,7 @@
             
             const whatsappMsg = encodeURIComponent(`Hola! Vi su catálogo web y me interesa consultar por: *${product.title}*. ¿Me podrían pasar precios y tiempos de entrega?`);
             const isInCart = cart.some(item => String(item.id) === String(product.id));
-            const btnText = isInCart ? '✓ Agregado' : 'Agregar a consulta';
+            const btnText = isInCart ? '✓ Agregado' : 'Consultar Presupuesto';
             const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
             
             detail.innerHTML = `
