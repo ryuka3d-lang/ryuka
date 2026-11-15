@@ -127,7 +127,7 @@
         .about-image { border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-lg); }
         .about-image img { width: 100%; height: 400px; object-fit: cover; }
 
-        /* FILTROS MODERNOS CON ICONOS */
+        /* FILTROS AUTOMÁTICOS */
         .filters-section { 
             background: var(--white); 
             padding: 1.5rem 1rem; 
@@ -141,27 +141,28 @@
             display: flex; 
             flex-wrap: nowrap; 
             overflow-x: auto; 
-            gap: 8px; 
-            max-width: 1200px; 
+            gap: 10px; 
+            max-width: 1400px; 
             margin: 0 auto; 
-            padding-bottom: 5px; 
+            padding-bottom: 8px; 
             scrollbar-width: none;
+            align-items: center;
         }
         .filters::-webkit-scrollbar { display: none; }
         
         .filter-btn { 
-            background: var(--light); 
+            background: var(--white); 
             border: 2px solid var(--gray-light); 
-            padding: 10px 18px; 
-            border-radius: 25px; 
+            padding: 10px 20px; 
+            border-radius: 30px; 
             font-weight: 600; 
             color: var(--text); 
-            font-size: 0.85rem; 
+            font-size: 0.9rem; 
             white-space: nowrap; 
             flex-shrink: 0;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             transition: all 0.3s ease;
             cursor: pointer;
         }
@@ -188,6 +189,7 @@
         .filter-corp:hover {
             background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
             color: white;
+            border-color: #334155;
         }
         .filter-corp.active {
             background: linear-gradient(135deg, #810404 0%, #5c0303 100%);
@@ -195,13 +197,13 @@
         }
         
         .filter-icon {
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
         
         .filter-divider {
             width: 2px;
+            height: 30px;
             background: var(--gray-light);
-            margin: 0 4px;
             flex-shrink: 0;
         }
 
@@ -211,7 +213,7 @@
         .section-header h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
         .section-header p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
         .catalog { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
-        .product-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; border: 1px solid var(--gray-light); cursor: pointer; transition: var(--transition); }
+        .product-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; border: 1px solid var(--gray-light); cursor: pointer; transition: var(--transition); position: relative; }
         .product-card:hover { box-shadow: var(--shadow-lg); border-color: var(--primary); transform: translateY(-3px); }
         .product-badge { position: absolute; top: 15px; left: 15px; background: var(--accent); color: var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; z-index: 2; }
         .product-badge.new { background: #10b981; color: white; }
@@ -288,17 +290,6 @@
         .client-card:hover { border-color: var(--primary); }
         .client-card h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 0.5rem; }
         .client-card p { color: var(--gray); font-size: 0.9rem; }
-
-        /* TESTIMONIOS */
-        .testimonials { padding: 5rem 1rem; background: var(--white); text-align: center; }
-        .testimonials h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
-        .testimonials > p { color: var(--gray); max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem; }
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .testimonial-card { background: var(--light); padding: 2rem; border-radius: 16px; text-align: left; border: 1px solid var(--gray-light); }
-        .stars { color: var(--accent); font-size: 1.2rem; margin-bottom: 1rem; }
-        .testimonial-text { color: var(--text); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; font-style: italic; }
-        .testimonial-author { font-weight: 700; color: var(--primary); font-size: 0.95rem; }
-        .testimonial-role { color: var(--gray); font-size: 0.85rem; }
 
         /* PROCESO */
         .process { background: var(--white); padding: 5rem 1rem; text-align: center; border-top: 1px solid var(--gray-light); border-bottom: 1px solid var(--gray-light); }
@@ -382,13 +373,13 @@
             .main-image { height: auto; max-height: 350px; width: 100%; object-fit: contain; }
             .product-detail-info h1 { font-size: 1.5rem; }
             .btn-large { width: 100%; min-width: unset; }
-            .clients h2, .testimonials h2, .process h2, .cta-section h2, .visit-us h2, .faq-section h2 { font-size: 1.8rem; }
+            .clients h2, .process h2, .cta-section h2, .visit-us h2, .faq-section h2 { font-size: 1.8rem; }
             .social-links { flex-direction: column; align-items: center; }
             .social-link { width: 100%; max-width: 300px; justify-content: center; }
             .float-wpp { width: 55px; height: 55px; bottom: 20px; right: 20px; }
             .float-wpp svg { width: 28px; height: 28px; }
-            .filter-btn { padding: 8px 14px; font-size: 0.8rem; }
-            .filter-icon { font-size: 0.9rem; }
+            .filter-btn { padding: 8px 16px; font-size: 0.85rem; }
+            .filter-icon { font-size: 1rem; }
         }
 
         @media (max-width: 480px) {
@@ -503,49 +494,10 @@
         </div>
     </section>
 
-    <!-- FILTROS MODERNOS CON ICONOS -->
+    <!-- FILTROS AUTOMÁTICOS (se generan desde Google Sheets) -->
     <section class="filters-section" id="filtersSection">
-        <div class="filters">
-            <button class="filter-btn active" onclick="filterProducts('todos', event)">
-                <span class="filter-icon">🎯</span> Todos
-            </button>
-            <button class="filter-btn filter-corp" onclick="filterProducts('corporativo', event)">
-                <span class="filter-icon">🏢</span> Corporativo
-            </button>
-            <div class="filter-divider"></div>
-            <button class="filter-btn" onclick="filterProducts('agencia', event)">
-                <span class="filter-icon">🚗</span> Agencia
-            </button>
-            <button class="filter-btn" onclick="filterProducts('restaurante', event)">
-                <span class="filter-icon">🍽️</span> Restaurante
-            </button>
-            <button class="filter-btn" onclick="filterProducts('souvenir', event)">
-                <span class="filter-icon">🎁</span> Souvenir
-            </button>
-            <button class="filter-btn" onclick="filterProducts('anime', event)">
-                <span class="filter-icon">⚔️</span> Anime
-            </button>
-            <button class="filter-btn" onclick="filterProducts('ninos', event)">
-                <span class="filter-icon">🧸</span> Niños
-            </button>
-            <button class="filter-btn" onclick="filterProducts('costura', event)">
-                <span class="filter-icon">🧵</span> Costura
-            </button>
-            <button class="filter-btn" onclick="filterProducts('fitness', event)">
-                <span class="filter-icon">💪</span> Fitness
-            </button>
-            <button class="filter-btn" onclick="filterProducts('musica', event)">
-                <span class="filter-icon">🎵</span> Música
-            </button>
-            <button class="filter-btn" onclick="filterProducts('llavero', event)">
-                <span class="filter-icon">🔑</span> Llaveros
-            </button>
-            <button class="filter-btn" onclick="filterProducts('deporte', event)">
-                <span class="filter-icon">⚽</span> Deporte
-            </button>
-            <button class="filter-btn" onclick="filterProducts('adornos', event)">
-                <span class="filter-icon">🎨</span> Adornos
-            </button>
+        <div class="filters" id="filtersContainer">
+            <!-- Los botones se generan automáticamente con JavaScript -->
         </div>
     </section>
 
@@ -701,6 +653,65 @@
         let cart = [];
         let currentTheme = localStorage.getItem('ryuka_theme') || 'light';
 
+        // ==========================================
+        // ICONOS POR CATEGORÍA (agregá los que necesites)
+        // ==========================================
+        const categoryIcons = {
+            'todos': '🎯',
+            'corporativo': '🏢',
+            'agencia': '🚗',
+            'agencia llavero': '🚗',
+            'restaurante': '🍽️',
+            'restaurante llavero': '🍽️',
+            'souvenir': '🎁',
+            'souvenir llavero': '🎁',
+            'anime': '⚔️',
+            'ninos': '🧸',
+            'ninos anime': '🧸',
+            'souvenir ninos': '🎁',
+            'costura': '🧵',
+            'fitness': '💪',
+            'fitness llavero': '💪',
+            'musica': '🎵',
+            'musica llavero': '🎵',
+            'llaveros': '🔑',
+            'llaveros y deporte': '🔑',
+            'deporte': '⚽',
+            'adornos': '🎨',
+            // 👇 AGREGÁ NUEVAS CATEGORÍAS ACÁ CUANDO LAS NECESITES
+            // 'tecnologia': '💻',
+            // 'hogar': '🏠',
+            // 'belleza': '💄',
+        };
+
+        // ==========================================
+        // NOMBRES BONITOS PARA LAS CATEGORÍAS
+        // ==========================================
+        const categoryLabels = {
+            'todos': 'Todos',
+            'corporativo': 'Corporativo',
+            'agencia': 'Agencia',
+            'agencia llavero': 'Agencia',
+            'restaurante': 'Restaurante',
+            'restaurante llavero': 'Restaurante',
+            'souvenir': 'Souvenir',
+            'souvenir llavero': 'Souvenir',
+            'anime': 'Anime',
+            'ninos': 'Niños',
+            'ninos anime': 'Niños / Anime',
+            'souvenir ninos': 'Souvenir / Niños',
+            'costura': 'Costura',
+            'fitness': 'Fitness',
+            'fitness llavero': 'Fitness',
+            'musica': 'Música',
+            'musica llavero': 'Música',
+            'llaveros': 'Llaveros',
+            'llaveros y deporte': 'Llaveros y Deporte',
+            'deporte': 'Deporte',
+            'adornos': 'Adornos',
+            // 👇 AGREGÁ NUEVAS CATEGORÍAS ACÁ
+        };
+
         document.addEventListener('DOMContentLoaded', () => {
             applyTheme(currentTheme);
             cargarProductos();
@@ -724,6 +735,53 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // ==========================================
+        // GENERAR FILTROS AUTOMÁTICAMENTE
+        // ==========================================
+        function generarFiltros(categoriasUnicas) {
+            const container = document.getElementById('filtersContainer');
+            container.innerHTML = '';
+
+            // Botón "Todos" (siempre primero)
+            const btnTodos = document.createElement('button');
+            btnTodos.className = 'filter-btn active';
+            btnTodos.onclick = (e) => filterProducts('todos', e);
+            btnTodos.innerHTML = `<span class="filter-icon">${categoryIcons['todos'] || '🎯'}</span> Todos`;
+            container.appendChild(btnTodos);
+
+            // Botón "Corporativo" (destacado, siempre segundo)
+            if (categoriasUnicas.includes('corporativo')) {
+                const btnCorp = document.createElement('button');
+                btnCorp.className = 'filter-btn filter-corp';
+                btnCorp.onclick = (e) => filterProducts('corporativo', e);
+                btnCorp.innerHTML = `<span class="filter-icon">${categoryIcons['corporativo'] || '🏢'}</span> Corporativo`;
+                container.appendChild(btnCorp);
+
+                // Línea divisoria
+                const divider = document.createElement('div');
+                divider.className = 'filter-divider';
+                container.appendChild(divider);
+            }
+
+            // Resto de categorías (ordenadas alfabéticamente)
+            const otrasCategorias = categoriasUnicas
+                .filter(c => c !== 'corporativo' && c !== 'todos')
+                .sort();
+
+            otrasCategorias.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.onclick = (e) => filterProducts(cat, e);
+                const icon = categoryIcons[cat] || '📦';
+                const label = categoryLabels[cat] || cat.charAt(0).toUpperCase() + cat.slice(1);
+                btn.innerHTML = `<span class="filter-icon">${icon}</span> ${label}`;
+                container.appendChild(btn);
+            });
+        }
+
+        // ==========================================
+        // CARGAR PRODUCTOS DESDE GOOGLE SHEETS
+        // ==========================================
         async function cargarProductos() {
             try {
                 const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkx4eNhSxLHpGyA_we1CLvZPriEUt5l9h6Ebd96gKDV8BWAhsNEq4pyiT847Yx9nXUv2hatxZ1FTNf/pub?gid=0&single=true&output=csv';
@@ -738,7 +796,7 @@
                             const product = {
                                 id: p.id || index + 1,
                                 title: p.title || 'Sin nombre',
-                                category: p.category || '',
+                                category: (p.category || '').toLowerCase().trim(),
                                 shortDesc: p.shortDesc || '',
                                 longDesc: p.longDesc || p.shortDesc || '',
                                 precioUnitario: p.precioUnitario || 'Consultar',
@@ -753,19 +811,16 @@
                             if (p.image4) images.push(p.image4);
                             product.images = images;
 
-                            const catMap = {
-                                'agencia llavero': 'Agencia', 'restaurante llavero': 'Restaurante',
-                                'souvenir llavero': 'Souvenir', 'anime': 'Anime', 'ninos': 'Niños',
-                                'ninos anime': 'Niños / Anime', 'souvenir ninos': 'Souvenir / Niños',
-                                'costura': 'Costura', 'fitness llavero': 'Fitness', 'musica llavero': 'Música',
-                                'souvenir': 'Souvenir', 'fitness': 'Fitness', 'musica': 'Música',
-                                'llaveros': 'Llaveros', 'llaveros y deporte': 'Llaveros y Deporte',
-                                'deporte': 'Deporte', 'adornos': 'Adornos',
-                                'corporativo': 'Corporativo'
-                            };
-                            product.categoryLabel = catMap[product.category.toLowerCase()] || product.category;
+                            // Etiqueta bonita para la categoría
+                            product.categoryLabel = categoryLabels[product.category] || product.category;
                             return product;
                         });
+
+                        // Obtener categorías únicas y generar filtros
+                        const categoriasUnicas = [...new Set(products.map(p => p.category).filter(c => c))];
+                        generarFiltros(categoriasUnicas);
+
+                        // Renderizar productos (mostrando todos excepto corporativos)
                         renderProductos('todos');
                     }
                 });
@@ -776,6 +831,9 @@
             }
         }
 
+        // ==========================================
+        // CARGAR CLIENTES DESDE GOOGLE SHEETS
+        // ==========================================
         async function cargarClientes() {
             try {
                 const sheetURLClientes = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkx4eNhSxLHpGyA_we1CLvZPriEUt5l9h6Ebd96gKDV8BWAhsNEq4pyiT847Yx9nXUv2hatxZ1FTNf/pub?gid=1063306625&single=true&output=csv';
@@ -823,7 +881,7 @@
                 if (category === 'todos' && product.category === 'corporativo') return;
                 
                 // Filtro normal para las demás categorías
-                if (category !== 'todos' && !product.category.includes(category)) return;
+                if (category !== 'todos' && product.category !== category) return;
                 
                 const card = document.createElement('div');
                 card.className = 'product-card';
@@ -946,23 +1004,13 @@
         function getCurrentFilter() {
             const activeBtn = document.querySelector('.filter-btn.active');
             if (!activeBtn) return 'todos';
-            const text = activeBtn.textContent.toLowerCase().trim();
-            const map = { 
-                'todos': 'todos', '🎯 todos': 'todos',
-                'corporativo': 'corporativo', '🏢 corporativo': 'corporativo',
-                'agencia': 'agencia', '🚗 agencia': 'agencia',
-                'restaurante': 'restaurante', '🍽️ restaurante': 'restaurante',
-                'souvenir': 'souvenir', '🎁 souvenir': 'souvenir',
-                'anime': 'anime', '⚔️ anime': 'anime',
-                'niños': 'ninos', '🧸 niños': 'ninos',
-                'costura': 'costura', '🧵 costura': 'costura',
-                'fitness': 'fitness', '💪 fitness': 'fitness',
-                'música': 'musica', '🎵 música': 'musica',
-                'llaveros': 'llavero', '🔑 llaveros': 'llavero',
-                'deporte': 'deporte', '⚽ deporte': 'deporte',
-                'adornos': 'adornos', '🎨 adornos': 'adornos'
-            };
-            return map[text] || 'todos';
+            // Obtener el texto del botón sin el icono
+            const text = activeBtn.textContent.trim().toLowerCase();
+            // Buscar en el mapa de labels
+            for (const [key, label] of Object.entries(categoryLabels)) {
+                if (label.toLowerCase() === text || key === text) return key;
+            }
+            return 'todos';
         }
 
         function updateCartUI() {
@@ -1002,7 +1050,10 @@
 
         function filterProducts(category, event) {
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            if (event) event.target.closest('.filter-btn').classList.add('active');
+            if (event) {
+                const btn = event.target.closest('.filter-btn');
+                if (btn) btn.classList.add('active');
+            }
             renderProductos(category);
         }
 
