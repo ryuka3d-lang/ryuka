@@ -127,10 +127,10 @@
         .about-image { border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-lg); }
         .about-image img { width: 100%; height: 400px; object-fit: cover; }
 
-        /* FILTROS AUTOMÁTICOS */
+        /* FILTROS AUTOMÁTICOS - MÚLTIPLES FILAS */
         .filters-section { 
             background: var(--white); 
-            padding: 1.5rem 1rem; 
+            padding: 2rem 1rem; 
             position: sticky; 
             top: 70px; 
             z-index: 50; 
@@ -139,32 +139,29 @@
         }
         .filters { 
             display: flex; 
-            flex-wrap: nowrap; 
-            overflow-x: auto; 
-            gap: 10px; 
+            flex-wrap: wrap; /* ← CAMBIO CLAVE: permite múltiples filas */
+            gap: 12px; 
             max-width: 1400px; 
             margin: 0 auto; 
-            padding-bottom: 8px; 
-            scrollbar-width: none;
+            justify-content: center; /* Centra los botones */
             align-items: center;
         }
-        .filters::-webkit-scrollbar { display: none; }
         
         .filter-btn { 
             background: var(--white); 
             border: 2px solid var(--gray-light); 
-            padding: 10px 20px; 
+            padding: 12px 22px; 
             border-radius: 30px; 
             font-weight: 600; 
             color: var(--text); 
             font-size: 0.9rem; 
             white-space: nowrap; 
-            flex-shrink: 0;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         .filter-btn:hover { 
             border-color: var(--primary); 
@@ -201,10 +198,10 @@
         }
         
         .filter-divider {
-            width: 2px;
-            height: 30px;
+            width: 100%;
+            height: 1px;
             background: var(--gray-light);
-            flex-shrink: 0;
+            margin: 8px 0;
         }
 
         /* CATÁLOGO */
@@ -378,7 +375,7 @@
             .social-link { width: 100%; max-width: 300px; justify-content: center; }
             .float-wpp { width: 55px; height: 55px; bottom: 20px; right: 20px; }
             .float-wpp svg { width: 28px; height: 28px; }
-            .filter-btn { padding: 8px 16px; font-size: 0.85rem; }
+            .filter-btn { padding: 10px 18px; font-size: 0.85rem; }
             .filter-icon { font-size: 1rem; }
         }
 
@@ -387,6 +384,7 @@
             .product-img-container { height: 220px; }
             .stats-container { grid-template-columns: 1fr; gap: 1.5rem; }
             .hero h1 { font-size: 1.8rem; }
+            .filter-btn { padding: 8px 14px; font-size: 0.8rem; }
         }
 
         [class*="netlify-badge"], [id*="netlify-badge"], .netlify-badge, footer a[href*="netlify"], div[class*="netlify"] a[href*="netlify"], [data-testid="netlify-badge"] {
@@ -494,7 +492,7 @@
         </div>
     </section>
 
-    <!-- FILTROS AUTOMÁTICOS (se generan desde Google Sheets) -->
+    <!-- FILTROS AUTOMÁTICOS - MÚLTIPLES FILAS -->
     <section class="filters-section" id="filtersSection">
         <div class="filters" id="filtersContainer">
             <!-- Los botones se generan automáticamente con JavaScript -->
@@ -654,7 +652,7 @@
         let currentTheme = localStorage.getItem('ryuka_theme') || 'light';
 
         // ==========================================
-        // ICONOS POR CATEGORÍA (agregá los que necesites)
+        // ICONOS POR CATEGORÍA
         // ==========================================
         const categoryIcons = {
             'todos': '🎯',
@@ -678,10 +676,6 @@
             'llaveros y deporte': '🔑',
             'deporte': '⚽',
             'adornos': '🎨',
-            // 👇 AGREGÁ NUEVAS CATEGORÍAS ACÁ CUANDO LAS NECESITES
-            // 'tecnologia': '💻',
-            // 'hogar': '🏠',
-            // 'belleza': '💄',
         };
 
         // ==========================================
@@ -709,7 +703,6 @@
             'llaveros y deporte': 'Llaveros y Deporte',
             'deporte': 'Deporte',
             'adornos': 'Adornos',
-            // 👇 AGREGÁ NUEVAS CATEGORÍAS ACÁ
         };
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -736,7 +729,7 @@
         }
 
         // ==========================================
-        // GENERAR FILTROS AUTOMÁTICAMENTE
+        // GENERAR FILTROS AUTOMÁTICAMENTE - MÚLTIPLES FILAS
         // ==========================================
         function generarFiltros(categoriasUnicas) {
             const container = document.getElementById('filtersContainer');
@@ -757,7 +750,7 @@
                 btnCorp.innerHTML = `<span class="filter-icon">${categoryIcons['corporativo'] || '🏢'}</span> Corporativo`;
                 container.appendChild(btnCorp);
 
-                // Línea divisoria
+                // Línea divisoria (ocupa toda la fila)
                 const divider = document.createElement('div');
                 divider.className = 'filter-divider';
                 container.appendChild(divider);
@@ -811,16 +804,13 @@
                             if (p.image4) images.push(p.image4);
                             product.images = images;
 
-                            // Etiqueta bonita para la categoría
                             product.categoryLabel = categoryLabels[product.category] || product.category;
                             return product;
                         });
 
-                        // Obtener categorías únicas y generar filtros
                         const categoriasUnicas = [...new Set(products.map(p => p.category).filter(c => c))];
                         generarFiltros(categoriasUnicas);
 
-                        // Renderizar productos (mostrando todos excepto corporativos)
                         renderProductos('todos');
                     }
                 });
@@ -831,9 +821,6 @@
             }
         }
 
-        // ==========================================
-        // CARGAR CLIENTES DESDE GOOGLE SHEETS
-        // ==========================================
         async function cargarClientes() {
             try {
                 const sheetURLClientes = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkx4eNhSxLHpGyA_we1CLvZPriEUt5l9h6Ebd96gKDV8BWAhsNEq4pyiT847Yx9nXUv2hatxZ1FTNf/pub?gid=1063306625&single=true&output=csv';
@@ -877,10 +864,7 @@
             const grid = document.getElementById('product-grid');
             grid.innerHTML = '';
             products.forEach(product => {
-                // Si es "todos", ocultar los productos corporativos
                 if (category === 'todos' && product.category === 'corporativo') return;
-                
-                // Filtro normal para las demás categorías
                 if (category !== 'todos' && product.category !== category) return;
                 
                 const card = document.createElement('div');
@@ -1004,9 +988,7 @@
         function getCurrentFilter() {
             const activeBtn = document.querySelector('.filter-btn.active');
             if (!activeBtn) return 'todos';
-            // Obtener el texto del botón sin el icono
             const text = activeBtn.textContent.trim().toLowerCase();
-            // Buscar en el mapa de labels
             for (const [key, label] of Object.entries(categoryLabels)) {
                 if (label.toLowerCase() === text || key === text) return key;
             }
