@@ -3,61 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <title>Ryuka | Merchandising 3D Personalizado (Mayorista y Minorista)</title>
+    <title>Ryuka | Merchandising 3D Personalizado</title>
     <meta name="description" content="Diseñamos y fabricamos merchandising 3D personalizado: llaveros, displays, cajas y souvenirs. Venta minorista y mayorista con envíos a todo el país.">
     <meta name="keywords" content="impresión 3d, merchandising personalizado, llaveros 3d, souvenirs corporativos, regalos empresariales, mayorista, minorista, CABA, GBA, Ryuka">
     <meta name="author" content="Ryuka 3D Merch">
     <meta name="robots" content="index, follow">
-    
     <meta property="og:title" content="Ryuka | Merchandising 3D Personalizado">
     <meta property="og:description" content="Transformamos tus ideas en productos 3D únicos. Venta minorista y mayorista. ¡Cotizá online!">
     <meta property="og:image" content="hero-bg.jpeg">
-    <meta property="og:url" content="https://ryuka3d-lang.github.io/ryuka/">
+    <meta property="og:url" content="https://ryuka.com.ar/">
     <meta property="og:type" content="website">
-
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-
     <style>
         :root {
-            --primary: #810404;
-            --primary-dark: #5c0303;
-            --primary-light: #a80606;
-            --secondary: #1e293b;
-            --accent: #f59e0b;
-            --light: #fafafa;
-            --gray: #64748b;
-            --gray-light: #e2e8f0;
-            --white: #ffffff;
-            --text: #1e293b;
-            --card-bg: #ffffff;
+            --primary: #810404; --primary-dark: #5c0303; --primary-light: #a80606;
+            --secondary: #1e293b; --accent: #f59e0b; --light: #fafafa;
+            --gray: #64748b; --gray-light: #e2e8f0; --white: #ffffff;
+            --text: #1e293b; --card-bg: #ffffff;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
             --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
             --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
             --transition: all 0.2s ease;
         }
-
         body.dark-mode {
-            --light: #0f172a;
-            --gray: #94a3b8;
-            --gray-light: #334155;
-            --white: #1e293b;
-            --text: #f1f5f9;
-            --secondary: #0f172a;
+            --light: #0f172a; --gray: #94a3b8; --gray-light: #334155;
+            --white: #1e293b; --text: #f1f5f9; --secondary: #0f172a;
             --card-bg: #1e293b;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
             --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
             --shadow-lg: 0 10px 30px rgba(0,0,0,0.5);
         }
-
         html, body { overflow-x: hidden; max-width: 100vw; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: var(--light); color: var(--text); line-height: 1.6; }
@@ -66,19 +47,16 @@
         img { max-width: 100%; display: block; }
         button { font-family: 'Inter', sans-serif; cursor: pointer; }
 
-        /* HEADER */
         header { background: var(--white); padding: 0.8rem 5%; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); border-bottom: 2px solid var(--primary); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
         .logo-container { display: flex; align-items: center; }
         .logo-img { height: 50px; width: auto; }
         .logo-img:hover { transform: scale(1.05); }
-        
         .nav-links { display: flex; gap: 20px; align-items: center; }
         .nav-links a { color: var(--text); font-size: 0.95rem; font-weight: 500; transition: var(--transition); cursor: pointer; }
         .nav-links a:hover { color: var(--primary); }
         .nav-cta { background: var(--primary); color: white !important; padding: 8px 18px; border-radius: 8px; font-weight: 600; }
         .nav-cta:hover { background: var(--primary-dark); }
-
         .controls { display: flex; gap: 10px; align-items: center; }
         .control-btn { background: var(--light); border: 2px solid var(--gray-light); padding: 8px 14px; border-radius: 8px; font-weight: 600; color: var(--text); font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
         .control-btn:hover { border-color: var(--primary); color: var(--primary); }
@@ -86,10 +64,8 @@
         .cart-btn:hover { background: var(--primary-dark); }
         .cart-count { background: var(--accent); color: var(--secondary); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; }
 
-        /* HAMBURGER MENU */
         .hamburger-btn { display: none; background: none; border: none; padding: 5px; flex-direction: column; gap: 5px; cursor: pointer; }
         .hamburger-btn span { display: block; width: 25px; height: 3px; background-color: var(--primary); border-radius: 2px; transition: var(--transition); }
-        
         .mobile-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 200; opacity: 0; visibility: hidden; transition: var(--transition); }
         .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
         .mobile-menu-content { position: absolute; top: 0; right: -300px; width: 280px; height: 100%; background: var(--white); padding: 2rem; transition: right 0.3s ease; box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
@@ -99,7 +75,6 @@
         .mobile-nav-links a { font-size: 1.1rem; font-weight: 600; color: var(--text); cursor: pointer; }
         .mobile-theme-btn { width: 100%; justify-content: center; margin-top: 1rem; }
 
-        /* HERO */
         .hero { background: linear-gradient(135deg, rgba(129, 4, 4, 0.85), rgba(30, 41, 59, 0.9)), url('hero-bg.jpeg'); background-size: cover; background-position: center; color: white; text-align: center; padding: 6rem 1rem; }
         .hero-content { max-width: 800px; margin: 0 auto; }
         .badge { background: rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 30px; font-size: 0.9rem; display: inline-block; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.3); }
@@ -112,13 +87,11 @@
         .btn-secondary { background: transparent; color: white; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 1rem; border: 2px solid rgba(255,255,255,0.5); }
         .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: white; }
 
-        /* STATS */
         .stats { background: var(--white); padding: 2rem 1rem; border-bottom: 1px solid var(--gray-light); }
         .stats-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; }
         .stat-item h3 { font-size: 1.8rem; color: var(--primary); font-weight: 800; margin-bottom: 0.5rem; }
         .stat-item p { color: var(--gray); font-size: 0.95rem; font-weight: 500; }
 
-        /* SOBRE NOSOTROS */
         .about { padding: 5rem 1rem; background: var(--white); }
         .about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
         .about-text h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1.5rem; }
@@ -127,84 +100,17 @@
         .about-image { border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-lg); }
         .about-image img { width: 100%; height: 400px; object-fit: cover; }
 
-        /* FILTROS AUTOMÁTICOS - MÚLTIPLES FILAS */
-        .filters-section { 
-            background: var(--white); 
-            padding: 2rem 1rem; 
-            position: sticky; 
-            top: 70px; 
-            z-index: 50; 
-            box-shadow: var(--shadow-sm);
-            border-bottom: 1px solid var(--gray-light);
-        }
-        .filters { 
-            display: flex; 
-            flex-wrap: wrap; /* ← CAMBIO CLAVE: permite múltiples filas */
-            gap: 12px; 
-            max-width: 1400px; 
-            margin: 0 auto; 
-            justify-content: center; /* Centra los botones */
-            align-items: center;
-        }
-        
-        .filter-btn { 
-            background: var(--white); 
-            border: 2px solid var(--gray-light); 
-            padding: 12px 22px; 
-            border-radius: 30px; 
-            font-weight: 600; 
-            color: var(--text); 
-            font-size: 0.9rem; 
-            white-space: nowrap; 
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .filter-btn:hover { 
-            border-color: var(--primary); 
-            color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(129, 4, 4, 0.15);
-        }
-        .filter-btn.active { 
-            background: var(--primary); 
-            color: white; 
-            border-color: var(--primary);
-            box-shadow: 0 4px 12px rgba(129, 4, 4, 0.3);
-        }
-        
-        /* Botón Corporativo destacado */
-        .filter-corp {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: white;
-            border-color: #1e293b;
-            font-weight: 700;
-        }
-        .filter-corp:hover {
-            background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
-            color: white;
-            border-color: #334155;
-        }
-        .filter-corp.active {
-            background: linear-gradient(135deg, #810404 0%, #5c0303 100%);
-            border-color: #810404;
-        }
-        
-        .filter-icon {
-            font-size: 1.1rem;
-        }
-        
-        .filter-divider {
-            width: 100%;
-            height: 1px;
-            background: var(--gray-light);
-            margin: 8px 0;
-        }
+        .filters-section { background: var(--white); padding: 2rem 1rem; position: sticky; top: 70px; z-index: 50; box-shadow: var(--shadow-sm); border-bottom: 1px solid var(--gray-light); }
+        .filters { display: flex; flex-wrap: wrap; gap: 12px; max-width: 1400px; margin: 0 auto; justify-content: center; align-items: center; }
+        .filter-btn { background: var(--white); border: 2px solid var(--gray-light); padding: 12px 22px; border-radius: 30px; font-weight: 600; color: var(--text); font-size: 0.9rem; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .filter-btn:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(129, 4, 4, 0.15); }
+        .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 4px 12px rgba(129, 4, 4, 0.3); }
+        .filter-corp { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; border-color: #1e293b; font-weight: 700; }
+        .filter-corp:hover { background: linear-gradient(135deg, #334155 0%, #1e293b 100%); color: white; border-color: #334155; }
+        .filter-corp.active { background: linear-gradient(135deg, #810404 0%, #5c0303 100%); border-color: #810404; }
+        .filter-icon { font-size: 1.1rem; }
+        .filter-divider { width: 100%; height: 1px; background: var(--gray-light); margin: 8px 0; }
 
-        /* CATÁLOGO */
         .catalog-section { padding: 3rem 1rem 5rem; max-width: 1400px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 3rem; }
         .section-header h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
@@ -233,7 +139,6 @@
         .add-cart-btn:hover { background: #fbbf24; }
         .add-cart-btn.added { background: #10b981; color: white; }
 
-        /* VISTA DE PRODUCTO */
         .product-view { display: none; padding: 2rem 1rem 5rem; max-width: 1200px; margin: 0 auto; }
         .product-view.active { display: block; }
         .back-btn { background: var(--light); border: 2px solid var(--gray-light); padding: 10px 20px; border-radius: 8px; font-weight: 600; color: var(--text); margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 8px; }
@@ -257,7 +162,6 @@
         .btn-back-large { background: var(--light); color: var(--text); border: 2px solid var(--gray-light); }
         .btn-back-large:hover { border-color: var(--primary); color: var(--primary); }
 
-        /* CARRITO PANEL */
         .cart-panel { position: fixed; top: 0; right: -400px; width: 100%; max-width: 400px; height: 100vh; background: var(--white); box-shadow: -5px 0 20px rgba(0,0,0,0.2); z-index: 200; transition: right 0.3s ease; overflow-y: auto; padding: 2rem; }
         .cart-panel.open { right: 0; }
         .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 150; display: none; }
@@ -278,7 +182,6 @@
         .cart-send-btn:hover { background: #128C7E; }
         .cart-send-btn:disabled { background: var(--gray-light); color: var(--gray); cursor: not-allowed; }
 
-        /* CLIENTES */
         .clients { padding: 4rem 1rem; background: var(--light); text-align: center; }
         .clients h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--text); }
         .clients > p { color: var(--gray); margin-bottom: 3rem; font-size: 1.1rem; }
@@ -288,7 +191,6 @@
         .client-card h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 0.5rem; }
         .client-card p { color: var(--gray); font-size: 0.9rem; }
 
-        /* PROCESO */
         .process { background: var(--white); padding: 5rem 1rem; text-align: center; border-top: 1px solid var(--gray-light); border-bottom: 1px solid var(--gray-light); }
         .process h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text); }
         .process > p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; }
@@ -299,14 +201,12 @@
         .step h3 { font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--text); }
         .step p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
 
-        /* PREGUNTAS FRECUENTES */
         .faq-section { padding: 5rem 1rem; background: var(--light); }
         .faq-container { max-width: 800px; margin: 0 auto; }
         .faq-item { background: var(--white); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--primary); box-shadow: var(--shadow-sm); }
         .faq-item h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
         .faq-item p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
 
-        /* CTA */
         .cta-section { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 5rem 1rem; text-align: center; }
         .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
         .cta-section p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; }
@@ -316,7 +216,6 @@
         .btn-email { background: transparent; color: white; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; border: 2px solid white; justify-content: center; }
         .btn-email:hover { background: rgba(255,255,255,0.1); }
 
-        /* VISITANOS */
         .visit-us { padding: 4rem 1rem; background: var(--white); text-align: center; }
         .visit-us h2 { font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
         .visit-us > p { color: var(--gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; }
@@ -327,7 +226,6 @@
         .social-link.tiktok { background: #000000; color: white; }
         .social-link svg { width: 24px; height: 24px; fill: currentColor; }
 
-        /* FOOTER */
         footer { background: var(--secondary); color: white; padding: 3rem 1rem 2rem; }
         .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; margin-bottom: 2rem; }
         .footer-col h3 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent); }
@@ -338,7 +236,6 @@
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: rgba(255,255,255,0.6); font-size: 0.85rem; }
         body.dark-mode .footer-col p, body.dark-mode .footer-col a { color: #cbd5e1; }
 
-        /* BOTÓN FLOTANTE WHATSAPP */
         .float-wpp { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5); z-index: 999; transition: var(--transition); animation: pulse 2s infinite; text-decoration: none; }
         .float-wpp svg { width: 32px; height: 32px; }
         .float-wpp:hover { transform: scale(1.1); background: #128C7E; }
@@ -348,7 +245,6 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .desktop-only { display: none !important; }
             .hamburger-btn { display: flex; }
@@ -378,7 +274,6 @@
             .filter-btn { padding: 10px 18px; font-size: 0.85rem; }
             .filter-icon { font-size: 1rem; }
         }
-
         @media (max-width: 480px) {
             .catalog { grid-template-columns: 1fr; }
             .product-img-container { height: 220px; }
@@ -394,7 +289,6 @@
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="nav-container">
             <div class="logo-container">
@@ -402,27 +296,20 @@
                     <img src="logo.png" alt="Ryuka Logo" class="logo-img" onerror="this.style.display='none'">
                 </a>
             </div>
-            
             <nav class="nav-links desktop-only">
                 <a onclick="navigateTo('catalogo')">Catálogo</a>
                 <a onclick="navigateTo('clientes')">Clientes</a>
                 <a onclick="navigateTo('faq')">Preguntas Frecuentes</a>
                 <a onclick="navigateTo('contacto')" class="nav-cta">Contactar</a>
             </nav>
-            
             <div class="controls">
-                <button class="cart-btn" onclick="toggleCart()">
-                    🛒 <span class="cart-count" id="cartCount">0</span>
-                </button>
+                <button class="cart-btn" onclick="toggleCart()">🛒 <span class="cart-count" id="cartCount">0</span></button>
                 <button class="control-btn desktop-only" id="themeBtn" onclick="toggleTheme()">🌙 Oscuro</button>
-                <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menú">
-                    <span></span><span></span><span></span>
-                </button>
+                <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
             </div>
         </div>
     </header>
 
-    <!-- MENÚ MÓVIL -->
     <div class="mobile-menu-overlay" id="mobileMenu" onclick="toggleMobileMenu()">
         <div class="mobile-menu-content" onclick="event.stopPropagation()">
             <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
@@ -436,24 +323,18 @@
         </div>
     </div>
 
-    <!-- PANEL CARRITO -->
     <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
     <div class="cart-panel" id="cartPanel">
         <div class="cart-header">
             <h2>📋 Consulta de productos</h2>
             <button class="cart-close" onclick="toggleCart()">✕</button>
         </div>
-        <div class="cart-items" id="cartItems">
-            <div class="cart-empty">No hay productos seleccionados</div>
-        </div>
+        <div class="cart-items" id="cartItems"><div class="cart-empty">No hay productos seleccionados</div></div>
         <div class="cart-footer">
-            <button class="cart-send-btn" id="cartSendBtn" onclick="sendCartWhatsApp()" disabled>
-                💬 Enviar consulta por WhatsApp
-            </button>
+            <button class="cart-send-btn" id="cartSendBtn" onclick="sendCartWhatsApp()" disabled>💬 Enviar consulta por WhatsApp</button>
         </div>
     </div>
 
-    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
             <div class="badge">🔥 Venta Minorista y Mayorista</div>
@@ -466,7 +347,6 @@
         </div>
     </section>
 
-    <!-- STATS -->
     <section class="stats">
         <div class="stats-container">
             <div class="stat-item"><h3>100%</h3><p>Personalizable</p></div>
@@ -476,7 +356,6 @@
         </div>
     </section>
 
-    <!-- SOBRE NOSOTROS -->
     <section id="sobre" class="about">
         <div class="about-container">
             <div class="about-text">
@@ -486,20 +365,14 @@
                 <p>Trabajamos con particulares, marcas y empresas para desarrollar productos personalizados, poniendo dedicación, creatividad y atención en cada detalle.</p>
                 <p>En Ryuka, cada proyecto empieza con una idea y crece con nosotros.</p>
             </div>
-            <div class="about-image">
-                <img src="hero-bg.jpeg" alt="Impresión 3D Ryuka">
-            </div>
+            <div class="about-image"><img src="hero-bg.jpeg" alt="Impresión 3D Ryuka"></div>
         </div>
     </section>
 
-    <!-- FILTROS AUTOMÁTICOS - MÚLTIPLES FILAS -->
     <section class="filters-section" id="filtersSection">
-        <div class="filters" id="filtersContainer">
-            <!-- Los botones se generan automáticamente con JavaScript -->
-        </div>
+        <div class="filters" id="filtersContainer"></div>
     </section>
 
-    <!-- CATÁLOGO -->
     <section id="catalogo" class="catalog-section">
         <div class="section-header">
             <h2>Nuestro Catálogo</h2>
@@ -508,77 +381,42 @@
         <div class="catalog" id="product-grid"></div>
     </section>
 
-    <!-- VISTA DE PRODUCTO -->
     <section class="product-view" id="productView">
         <button class="back-btn" onclick="closeProductView()">← Volver al catálogo</button>
         <div class="product-detail" id="productDetail"></div>
     </section>
 
-    <!-- CLIENTES -->
     <section id="clientes" class="clients">
         <h2>Confían en Nosotros</h2>
         <p>Marcas y emprendimientos que eligieron Ryuka para su merchandising</p>
         <div class="clients-grid" id="clients-grid"></div>
     </section>
 
-    <!-- PROCESO -->
     <section id="proceso" class="process">
         <h2>¿Cómo trabajamos?</h2>
         <p>Un proceso simple y profesional para que tengas tu merchandising 3D en pocos días.</p>
         <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Nos contás tu idea</h3>
-                <p>Nos pasás tu logo, diseño o idea. Te asesoramos sin cargo sobre la mejor opción.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Diseñamos y modelamos</h3>
-                <p>Creamos el modelo 3D y te mostramos una vista previa antes de fabricar.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Producción y entrega</h3>
-                <p>Fabricamos tu pedido y lo entregamos en tu local, agencia o coordinamos envío a todo el país.</p>
-            </div>
+            <div class="step"><div class="step-number">1</div><h3>Nos contás tu idea</h3><p>Nos pasás tu logo, diseño o idea. Te asesoramos sin cargo sobre la mejor opción.</p></div>
+            <div class="step"><div class="step-number">2</div><h3>Diseñamos y modelamos</h3><p>Creamos el modelo 3D y te mostramos una vista previa antes de fabricar.</p></div>
+            <div class="step"><div class="step-number">3</div><h3>Producción y entrega</h3><p>Fabricamos tu pedido y lo entregamos en tu local, agencia o coordinamos envío a todo el país.</p></div>
         </div>
     </section>
 
-    <!-- PREGUNTAS FRECUENTES -->
     <section id="faq" class="faq-section">
         <div class="faq-container">
             <div class="section-header">
                 <h2>Preguntas Frecuentes</h2>
                 <p>Resolvemos las dudas más comunes de nuestros clientes minoristas y mayoristas.</p>
             </div>
-            <div class="faq-item">
-                <h3>📦 ¿Venden al por mayor y al por menor?</h3>
-                <p>¡Sí! Trabajamos con ambos sectores. Atendemos pedidos desde 1 unidad (minorista) hasta grandes volúmenes con precios escalonados especiales para mayoristas.</p>
-            </div>
-            <div class="faq-item">
-                <h3>🔢 ¿Cuál es el pedido mínimo?</h3>
-                <p>Para minoristas, no hay pedido mínimo (podés comprar 1 unidad). Para precios mayoristas, consultanos por cantidades (generalmente a partir de 50 o 100 unidades, según el producto).</p>
-            </div>
-            <div class="faq-item">
-                <h3>🎨 ¿Qué formatos de archivo necesitan para el logo?</h3>
-                <p>Preferimos archivos vectoriales (.AI, .SVG, .PDF) o imágenes de alta resolución (.PNG, .JPG). ¡Pero si solo tenés un boceto a mano alzada o una idea, también podemos ayudarte a diseñarlo!</p>
-            </div>
-            <div class="faq-item">
-                <h3>⏱️ ¿Cuáles son los tiempos de entrega?</h3>
-                <p>El tiempo estimado es de 5 a 10 días hábiles una vez aprobado el diseño 3D final. Para pedidos mayoristas grandes, el plazo se coordina según la cantidad.</p>
-            </div>
-            <div class="faq-item">
-                <h3>🚚 ¿Hacen envíos a todo el país?</h3>
-                <p>Sí, realizamos envíos por correo o transporte a todo el país. También ofrecemos la opción de retiro en persona en nuestra zona de cobertura (CABA / GBA).</p>
-            </div>
-            <div class="faq-item">
-                <h3>💳 ¿Qué formas de pago aceptan?</h3>
-                <p>Aceptamos transferencia bancaria, MercadoPago y efectivo. Para pedidos mayoristas, generalmente se solicita una seña del 50% para iniciar la producción.</p>
-            </div>
+            <div class="faq-item"><h3>📦 ¿Venden al por mayor y al por menor?</h3><p>¡Sí! Trabajamos con ambos sectores. Atendemos pedidos desde 1 unidad (minorista) hasta grandes volúmenes con precios escalonados especiales para mayoristas.</p></div>
+            <div class="faq-item"><h3>🔢 ¿Cuál es el pedido mínimo?</h3><p>Para minoristas, no hay pedido mínimo (podés comprar 1 unidad). Para precios mayoristas, consultanos por cantidades (generalmente a partir de 50 o 100 unidades, según el producto).</p></div>
+            <div class="faq-item"><h3>🎨 ¿Qué formatos de archivo necesitan para el logo?</h3><p>Preferimos archivos vectoriales (.AI, .SVG, .PDF) o imágenes de alta resolución (.PNG, .JPG). ¡Pero si solo tenés un boceto a mano alzada o una idea, también podemos ayudarte a diseñarlo!</p></div>
+            <div class="faq-item"><h3>⏱️ ¿Cuáles son los tiempos de entrega?</h3><p>El tiempo estimado es de 5 a 10 días hábiles una vez aprobado el diseño 3D final. Para pedidos mayoristas grandes, el plazo se coordina según la cantidad.</p></div>
+            <div class="faq-item"><h3>🚚 ¿Hacen envíos a todo el país?</h3><p>Sí, realizamos envíos por correo o transporte a todo el país. También ofrecemos la opción de retiro en persona en nuestra zona de cobertura (CABA / GBA).</p></div>
+            <div class="faq-item"><h3>💳 ¿Qué formas de pago aceptan?</h3><p>Aceptamos transferencia bancaria, MercadoPago y efectivo. Para pedidos mayoristas, generalmente se solicita una seña del 50% para iniciar la producción.</p></div>
         </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-section" id="contacto">
         <h2>¿Listo para tener tu merchandising 3D?</h2>
         <p>Conversemos sobre tu proyecto y te respondemos con una propuesta en menos de 24 horas hábiles.</p>
@@ -588,7 +426,6 @@
         </div>
     </section>
 
-    <!-- VISITANOS -->
     <section class="visit-us">
         <h2>Visitanos en nuestras redes</h2>
         <p>Seguinos para ver nuestros últimos trabajos, procesos de creación y novedades</p>
@@ -604,45 +441,18 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
-            <div class="footer-col">
-                <h3>RYUKA 3D Merch</h3>
-                <p>Merchandising 3D personalizado para cualquier marca. Calidad premium y diseños únicos. Venta minorista y mayorista.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Contacto</h3>
-                <a href="https://wa.me/5491125467576">📱 WhatsApp: +54 9 11 2546-7576</a>
-                <a href="mailto:ryuka.3d@gmail.com">✉️ ryuka.3d@gmail.com</a>
-                <p style="margin-top: 10px;">📍 Zona de cobertura: CABA y GBA</p>
-            </div>
-            <div class="footer-col">
-                <h3>Envíos y Pagos</h3>
-                <p>🚚 Envíos a todo el país</p>
-                <div class="payment-icons">
-                    <span class="payment-badge">💳 MercadoPago</span>
-                    <span class="payment-badge">🏦 Transferencia</span>
-                    <span class="payment-badge">💵 Efectivo</span>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3>Enlaces</h3>
-                <a onclick="navigateTo('catalogo')" style="cursor:pointer">Catálogo</a>
-                <a onclick="navigateTo('faq')" style="cursor:pointer">Preguntas Frecuentes</a>
-                <a onclick="navigateTo('contacto')" style="cursor:pointer">Contacto</a>
-            </div>
+            <div class="footer-col"><h3>RYUKA 3D Merch</h3><p>Merchandising 3D personalizado para cualquier marca. Calidad premium y diseños únicos. Venta minorista y mayorista.</p></div>
+            <div class="footer-col"><h3>Contacto</h3><a href="https://wa.me/5491125467576">📱 WhatsApp: +54 9 11 2546-7576</a><a href="mailto:ryuka.3d@gmail.com">✉️ ryuka.3d@gmail.com</a><p style="margin-top: 10px;">📍 Zona de cobertura: CABA y GBA</p></div>
+            <div class="footer-col"><h3>Envíos y Pagos</h3><p>🚚 Envíos a todo el país</p><div class="payment-icons"><span class="payment-badge">💳 MercadoPago</span><span class="payment-badge">🏦 Transferencia</span><span class="payment-badge">💵 Efectivo</span></div></div>
+            <div class="footer-col"><h3>Enlaces</h3><a onclick="navigateTo('catalogo')" style="cursor:pointer">Catálogo</a><a onclick="navigateTo('faq')" style="cursor:pointer">Preguntas Frecuentes</a><a onclick="navigateTo('contacto')" style="cursor:pointer">Contacto</a></div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 Ryuka. Todos los derechos reservados.</p>
-        </div>
+        <div class="footer-bottom"><p>© 2026 Ryuka. Todos los derechos reservados.</p></div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
     <a href="https://wa.me/5491125467576?text=Hola!%20Vi%20su%20web%20y%20quiero%20hacer%20una%20consulta" target="_blank" class="float-wpp" title="Chateá con nosotros">
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
     <script>
@@ -651,58 +461,35 @@
         let cart = [];
         let currentTheme = localStorage.getItem('ryuka_theme') || 'light';
 
-        // ==========================================
-        // ICONOS POR CATEGORÍA
-        // ==========================================
+        // ✅ ZONA 1: LAS 9 CATEGORÍAS CANÓNICAS (actualizado con anime y navidad)
+        const CATEGORIAS_CANONICAS = ['corporativo', 'fans', 'anime', 'deportes', 'musica', 'ninos', 'hogar', 'navidad', 'costura'];
+
+        // ✅ ZONA 2: ÍCONOS POR CATEGORÍA (actualizado)
         const categoryIcons = {
             'todos': '🎯',
             'corporativo': '🏢',
-            'agencia': '🚗',
-            'agencia llavero': '🚗',
-            'restaurante': '🍽️',
-            'restaurante llavero': '🍽️',
-            'souvenir': '🎁',
-            'souvenir llavero': '🎁',
+            'fans': '🎮',
             'anime': '⚔️',
-            'ninos': '🧸',
-            'ninos anime': '🧸',
-            'souvenir ninos': '🎁',
-            'costura': '🧵',
-            'fitness': '💪',
-            'fitness llavero': '💪',
+            'deportes': '⚽',
             'musica': '🎵',
-            'musica llavero': '🎵',
-            'llaveros': '🔑',
-            'llaveros y deporte': '🔑',
-            'deporte': '⚽',
-            'adornos': '🎨',
+            'ninos': '🧸',
+            'hogar': '🏠',
+            'navidad': '🎄',
+            'costura': '🧵',
         };
 
-        // ==========================================
-        // NOMBRES BONITOS PARA LAS CATEGORÍAS
-        // ==========================================
+        // ✅ ZONA 3: ETIQUETAS BONITAS (actualizado)
         const categoryLabels = {
             'todos': 'Todos',
             'corporativo': 'Corporativo',
-            'agencia': 'Agencia',
-            'agencia llavero': 'Agencia',
-            'restaurante': 'Restaurante',
-            'restaurante llavero': 'Restaurante',
-            'souvenir': 'Souvenir',
-            'souvenir llavero': 'Souvenir',
+            'fans': 'Fans & Geek',
             'anime': 'Anime',
-            'ninos': 'Niños',
-            'ninos anime': 'Niños / Anime',
-            'souvenir ninos': 'Souvenir / Niños',
-            'costura': 'Costura',
-            'fitness': 'Fitness',
-            'fitness llavero': 'Fitness',
+            'deportes': 'Deportes & Fitness',
             'musica': 'Música',
-            'musica llavero': 'Música',
-            'llaveros': 'Llaveros',
-            'llaveros y deporte': 'Llaveros y Deporte',
-            'deporte': 'Deporte',
-            'adornos': 'Adornos',
+            'ninos': 'Niños',
+            'hogar': 'Hogar & Decoración',
+            'navidad': 'Navidad',
+            'costura': 'Costura',
         };
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -711,76 +498,48 @@
             cargarClientes();
         });
 
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('active');
-        }
-
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
         function navigateTo(sectionId) {
             closeProductView();
-            setTimeout(() => {
-                const el = document.getElementById(sectionId);
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
+            setTimeout(() => { const el = document.getElementById(sectionId); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
         }
+        function goHome() { closeProductView(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-        function goHome() {
-            closeProductView();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // ==========================================
-        // GENERAR FILTROS AUTOMÁTICAMENTE - MÚLTIPLES FILAS
-        // ==========================================
         function generarFiltros(categoriasUnicas) {
             const container = document.getElementById('filtersContainer');
             container.innerHTML = '';
-
-            // Botón "Todos" (siempre primero)
             const btnTodos = document.createElement('button');
             btnTodos.className = 'filter-btn active';
             btnTodos.onclick = (e) => filterProducts('todos', e);
-            btnTodos.innerHTML = `<span class="filter-icon">${categoryIcons['todos'] || '🎯'}</span> Todos`;
+            btnTodos.innerHTML = `<span class="filter-icon">${categoryIcons['todos']}</span> Todos`;
             container.appendChild(btnTodos);
-
-            // Botón "Corporativo" (destacado, siempre segundo)
             if (categoriasUnicas.includes('corporativo')) {
                 const btnCorp = document.createElement('button');
                 btnCorp.className = 'filter-btn filter-corp';
                 btnCorp.onclick = (e) => filterProducts('corporativo', e);
-                btnCorp.innerHTML = `<span class="filter-icon">${categoryIcons['corporativo'] || '🏢'}</span> Corporativo`;
+                btnCorp.innerHTML = `<span class="filter-icon">${categoryIcons['corporativo']}</span> Corporativo`;
                 container.appendChild(btnCorp);
-
-                // Línea divisoria (ocupa toda la fila)
                 const divider = document.createElement('div');
                 divider.className = 'filter-divider';
                 container.appendChild(divider);
             }
-
-            // Resto de categorías (ordenadas alfabéticamente)
-            const otrasCategorias = categoriasUnicas
-                .filter(c => c !== 'corporativo' && c !== 'todos')
-                .sort();
-
-            otrasCategorias.forEach(cat => {
+            const otras = categoriasUnicas
+                .filter(c => CATEGORIAS_CANONICAS.includes(c) && c !== 'corporativo')
+                .sort((a, b) => (categoryLabels[a] || a).localeCompare(categoryLabels[b] || b));
+            otras.forEach(cat => {
                 const btn = document.createElement('button');
                 btn.className = 'filter-btn';
                 btn.onclick = (e) => filterProducts(cat, e);
-                const icon = categoryIcons[cat] || '📦';
-                const label = categoryLabels[cat] || cat.charAt(0).toUpperCase() + cat.slice(1);
-                btn.innerHTML = `<span class="filter-icon">${icon}</span> ${label}`;
+                btn.innerHTML = `<span class="filter-icon">${categoryIcons[cat] || '📦'}</span> ${categoryLabels[cat] || cat}`;
                 container.appendChild(btn);
             });
         }
 
-        // ==========================================
-        // CARGAR PRODUCTOS DESDE GOOGLE SHEETS
-        // ==========================================
         async function cargarProductos() {
             try {
                 const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkx4eNhSxLHpGyA_we1CLvZPriEUt5l9h6Ebd96gKDV8BWAhsNEq4pyiT847Yx9nXUv2hatxZ1FTNf/pub?gid=0&single=true&output=csv';
                 const response = await fetch(sheetURL);
                 const csvText = await response.text();
-                
                 Papa.parse(csvText, {
                     header: true,
                     skipEmptyLines: true,
@@ -797,20 +556,16 @@
                                 image: p.image || 'hero-bg.jpeg',
                                 badge: p.badge || ''
                             };
-
                             const images = [product.image];
                             if (p.image2) images.push(p.image2);
                             if (p.image3) images.push(p.image3);
                             if (p.image4) images.push(p.image4);
                             product.images = images;
-
-                            product.categoryLabel = categoryLabels[product.category] || product.category;
+                            product.categoryLabel = categoryLabels[product.category] || product.category.charAt(0).toUpperCase() + product.category.slice(1);
                             return product;
                         });
-
                         const categoriasUnicas = [...new Set(products.map(p => p.category).filter(c => c))];
                         generarFiltros(categoriasUnicas);
-
                         renderProductos('todos');
                     }
                 });
@@ -826,15 +581,11 @@
                 const sheetURLClientes = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQkx4eNhSxLHpGyA_we1CLvZPriEUt5l9h6Ebd96gKDV8BWAhsNEq4pyiT847Yx9nXUv2hatxZ1FTNf/pub?gid=1063306625&single=true&output=csv';
                 const response = await fetch(sheetURLClientes);
                 const csvText = await response.text();
-                
                 Papa.parse(csvText, {
                     header: true,
                     skipEmptyLines: true,
                     complete: function(results) {
-                        clientes = results.data.map(c => ({
-                            nombre: c.nombre || 'Cliente',
-                            descripcion: c.descripcion || ''
-                        }));
+                        clientes = results.data.map(c => ({ nombre: c.nombre || 'Cliente', descripcion: c.descripcion || '' }));
                         renderClientes();
                     }
                 });
@@ -852,12 +603,7 @@
         function renderClientes() {
             const grid = document.getElementById('clients-grid');
             if (!grid) return;
-            grid.innerHTML = clientes.map(c => `
-                <div class="client-card">
-                    <h3>${c.nombre}</h3>
-                    <p>${c.descripcion}</p>
-                </div>
-            `).join('');
+            grid.innerHTML = clientes.map(c => `<div class="client-card"><h3>${c.nombre}</h3><p>${c.descripcion}</p></div>`).join('');
         }
 
         function renderProductos(category) {
@@ -866,18 +612,14 @@
             products.forEach(product => {
                 if (category === 'todos' && product.category === 'corporativo') return;
                 if (category !== 'todos' && product.category !== category) return;
-                
                 const card = document.createElement('div');
                 card.className = 'product-card';
-                
                 let badgeHTML = '';
                 if (product.badge === 'popular') badgeHTML = '<span class="product-badge popular">Popular</span>';
                 if (product.badge === 'new') badgeHTML = '<span class="product-badge new">Nuevo</span>';
-                
                 const isInCart = cart.some(item => String(item.id) === String(product.id));
                 const btnText = isInCart ? '✓ Agregado' : 'Consultar Presupuesto';
                 const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
-                
                 card.innerHTML = `
                     ${badgeHTML}
                     <div class="product-img-container" onclick="openProductView(${product.id})">
@@ -897,8 +639,7 @@
                                 <button class="view-btn" onclick="event.stopPropagation(); openProductView(${product.id})">Ver</button>
                             </div>
                         </div>
-                    </div>
-                `;
+                    </div>`;
                 grid.appendChild(card);
             });
         }
@@ -907,19 +648,14 @@
             const product = products.find(p => String(p.id) === String(id));
             if (!product) return;
             const detail = document.getElementById('productDetail');
-            
             let thumbnailsHTML = '';
             if (product.images && product.images.length > 1) {
-                thumbnailsHTML = product.images.map((img, idx) => 
-                    `<img src="${img}" class="thumbnail ${idx === 0 ? 'active' : ''}" onclick="changeMainImage('${img}', this)" alt="Foto ${idx + 1}" loading="lazy">`
-                ).join('');
+                thumbnailsHTML = product.images.map((img, idx) => `<img src="${img}" class="thumbnail ${idx === 0 ? 'active' : ''}" onclick="changeMainImage('${img}', this)" alt="Foto ${idx + 1}" loading="lazy">`).join('');
             }
-            
             const whatsappMsg = encodeURIComponent(`Hola! Vi su catálogo web y me interesa consultar por: *${product.title}*. ¿Me podrían pasar precios y tiempos de entrega?`);
             const isInCart = cart.some(item => String(item.id) === String(product.id));
             const btnText = isInCart ? '✓ Agregado' : 'Consultar Presupuesto';
             const btnClass = isInCart ? 'add-cart-btn added' : 'add-cart-btn';
-            
             detail.innerHTML = `
                 <div class="product-gallery">
                     <img src="${product.images[0]}" class="main-image" id="mainImage" alt="${product.title}" loading="lazy">
@@ -930,30 +666,21 @@
                     <h1>${product.title}</h1>
                     <div class="detail-section" style="margin-top: 0; padding-top: 0; border: none;">
                         <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: baseline;">
-                            <div>
-                                <div style="font-size: 0.9rem; color: var(--gray);">Precio Unitario</div>
-                                <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">${product.precioUnitario || 'Consultar'}</div>
-                            </div>
+                            <div><div style="font-size: 0.9rem; color: var(--gray);">Precio Unitario</div><div style="font-size: 2rem; font-weight: 800; color: var(--primary);">${product.precioUnitario || 'Consultar'}</div></div>
                             ${product.precioFinal ? `<div><div style="font-size: 0.9rem; color: var(--gray);">Precio Final / Pack</div><div style="font-size: 1.5rem; font-weight: 700; color: var(--accent);">${product.precioFinal}</div></div>` : ''}
                         </div>
                     </div>
-                    <div class="detail-section">
-                        <h3>Descripción</h3>
-                        <p class="detail-description">${product.longDesc || product.shortDesc || ''}</p>
-                    </div>
+                    <div class="detail-section"><h3>Descripción</h3><p class="detail-description">${product.longDesc || product.shortDesc || ''}</p></div>
                     <div class="detail-cta">
                         <a href="https://wa.me/5491125467576?text=${whatsappMsg}" target="_blank" class="btn-large btn-whatsapp-large">💬 Consultar por WhatsApp</a>
                         <button class="btn-large ${btnClass}" onclick="toggleCartProduct(${product.id})">${btnText}</button>
                         <button class="btn-large btn-back-large" onclick="closeProductView()">← Volver</button>
                     </div>
-                </div>
-            `;
+                </div>`;
             document.getElementById('catalogo').style.display = 'none';
             document.querySelector('.filters-section').style.display = 'none';
             document.getElementById('productView').classList.add('active');
-            setTimeout(() => {
-                document.getElementById('productView').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
+            setTimeout(() => { document.getElementById('productView').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
         }
 
         function closeProductView() {
@@ -961,67 +688,42 @@
             document.getElementById('catalogo').style.display = 'block';
             document.querySelector('.filters-section').style.display = 'block';
         }
-
         function changeMainImage(src, thumb) {
             document.getElementById('mainImage').src = src;
             document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
             thumb.classList.add('active');
         }
-
         function toggleCartProduct(id) {
             const product = products.find(p => String(p.id) === String(id));
             if (!product) return;
             const index = cart.findIndex(item => String(item.id) === String(id));
-            if (index > -1) cart.splice(index, 1);
-            else cart.push(product);
+            if (index > -1) cart.splice(index, 1); else cart.push(product);
             updateCartUI();
             renderProductos(getCurrentFilter());
             if (document.getElementById('productView').classList.contains('active')) openProductView(id);
         }
-
-        function removeFromCart(id) {
-            cart = cart.filter(item => String(item.id) !== String(id));
-            updateCartUI();
-            renderProductos(getCurrentFilter());
-        }
-
+        function removeFromCart(id) { cart = cart.filter(item => String(item.id) !== String(id)); updateCartUI(); renderProductos(getCurrentFilter()); }
         function getCurrentFilter() {
             const activeBtn = document.querySelector('.filter-btn.active');
             if (!activeBtn) return 'todos';
             const text = activeBtn.textContent.trim().toLowerCase();
-            for (const [key, label] of Object.entries(categoryLabels)) {
-                if (label.toLowerCase() === text || key === text) return key;
-            }
+            for (const [key, label] of Object.entries(categoryLabels)) { if (label.toLowerCase() === text || key === text) return key; }
             return 'todos';
         }
-
         function updateCartUI() {
             document.getElementById('cartCount').textContent = cart.length;
             const cartItems = document.getElementById('cartItems');
             const sendBtn = document.getElementById('cartSendBtn');
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<div class="cart-empty">No hay productos seleccionados</div>';
-                sendBtn.disabled = true;
-                return;
-            }
+            if (cart.length === 0) { cartItems.innerHTML = '<div class="cart-empty">No hay productos seleccionados</div>'; sendBtn.disabled = true; return; }
             sendBtn.disabled = false;
             cartItems.innerHTML = cart.map(item => `
                 <div class="cart-item">
                     <img src="${item.images[0]}" class="cart-item-img" alt="${item.title}" loading="lazy">
-                    <div class="cart-item-info">
-                        <div class="cart-item-title">${item.title}</div>
-                        <div class="cart-item-category">${item.categoryLabel}</div>
-                    </div>
+                    <div class="cart-item-info"><div class="cart-item-title">${item.title}</div><div class="cart-item-category">${item.categoryLabel}</div></div>
                     <button class="cart-item-remove" onclick="removeFromCart(${item.id})">✕</button>
-                </div>
-            `).join('');
+                </div>`).join('');
         }
-
-        function toggleCart() {
-            document.getElementById('cartPanel').classList.toggle('open');
-            document.getElementById('cartOverlay').classList.toggle('open');
-        }
-
+        function toggleCart() { document.getElementById('cartPanel').classList.toggle('open'); document.getElementById('cartOverlay').classList.toggle('open'); }
         function sendCartWhatsApp() {
             if (cart.length === 0) return;
             let mensaje = 'Hola! Vi su catálogo web y me interesan los siguientes productos:\n\n';
@@ -1029,22 +731,12 @@
             mensaje += '\n¿Me podrían pasar precios y tiempos de entrega?';
             window.open(`https://wa.me/5491125467576?text=${encodeURIComponent(mensaje)}`, '_blank');
         }
-
         function filterProducts(category, event) {
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            if (event) {
-                const btn = event.target.closest('.filter-btn');
-                if (btn) btn.classList.add('active');
-            }
+            if (event) { const btn = event.target.closest('.filter-btn'); if (btn) btn.classList.add('active'); }
             renderProductos(category);
         }
-
-        function toggleTheme() {
-            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-            localStorage.setItem('ryuka_theme', currentTheme);
-            applyTheme(currentTheme);
-        }
-
+        function toggleTheme() { currentTheme = currentTheme === 'light' ? 'dark' : 'light'; localStorage.setItem('ryuka_theme', currentTheme); applyTheme(currentTheme); }
         function applyTheme(theme) {
             const isDark = theme === 'dark';
             document.body.classList.toggle('dark-mode', isDark);
